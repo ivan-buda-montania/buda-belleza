@@ -7,8 +7,7 @@ import { categories } from '../../data/categories';
 import { products } from '../../data/products';
 import { cn } from '../../lib/cn';
 import { normalizeText, productMatches } from '../../lib/text';
-import { formatInteger, formatPrice } from '../../lib/format';
-import { SmartImage } from '../ui/SmartImage';
+import { formatReferences } from '../../lib/format';
 import type { Category } from '../../types/category';
 import type { Product } from '../../types/product';
 
@@ -20,7 +19,7 @@ interface SearchBarProps {
 
 type Suggestion =
   | { kind: 'category'; key: string; category: Category }
-  | { kind: 'product'; key: string; product: Product; brandName: string };
+  | { kind: 'product'; key: string; product: Product; detail: string };
 
 const MAX_SUGGESTIONS = 6;
 
@@ -44,14 +43,15 @@ export function SearchBar({ onSubmit, className, autoFocus = false }: SearchBarP
       .map((category): Suggestion => ({ kind: 'category', key: `cat-${category.slug}`, category }));
 
     const productHits = products
-      .map((product) => ({ product, brandName: getBrandById(product.brandId)?.name ?? '' }))
-      .filter(({ product }) => productMatches(product, term))
+      .filter((product) => productMatches(product, term))
       .slice(0, MAX_SUGGESTIONS - categoryHits.length)
-      .map(({ product, brandName }): Suggestion => ({
+      .map((product): Suggestion => ({
         kind: 'product',
         key: product.id,
         product,
-        brandName,
+        detail: [getBrandById(product.brandId)?.name, `Clave ${product.sku}`]
+          .filter(Boolean)
+          .join(' · '),
       }));
 
     return [...categoryHits, ...productHits];
@@ -193,7 +193,7 @@ export function SearchBar({ onSubmit, className, autoFocus = false }: SearchBarP
                         {suggestion.category.name}
                       </span>
                       <span className="text-ink-500 block text-xs">
-                        Categoría · {formatInteger(suggestion.category.skuCount)} SKUs
+                        Categoría · {formatReferences(suggestion.category.productCount)}
                       </span>
                     </span>
                   </li>
@@ -211,24 +211,22 @@ export function SearchBar({ onSubmit, className, autoFocus = false }: SearchBarP
                   onMouseDown={(event) => event.preventDefault()}
                   onClick={() => selectSuggestion(suggestion)}
                 >
-                  <SmartImage
-                    id={suggestion.product.imageId}
-                    alt=""
-                    width={56}
-                    height={56}
-                    wrapperClassName="h-11 w-11 shrink-0 rounded-xl"
-                    sizes="44px"
-                  />
+                  {suggestion.product.image ? (
+                    <img
+                      src={suggestion.product.image}
+                      alt=""
+                      className="ring-ink-900/[0.06] h-11 w-11 shrink-0 rounded-xl bg-white object-contain p-1 ring-1"
+                    />
+                  ) : (
+                    <span className="bg-ink-100 text-ink-500 grid h-11 w-11 shrink-0 place-items-center rounded-xl">
+                      <Search className="h-4 w-4" aria-hidden="true" />
+                    </span>
+                  )}
                   <span className="min-w-0 flex-1">
                     <span className="text-ink-900 block truncate text-sm font-medium">
                       {suggestion.product.name}
                     </span>
-                    <span className="text-ink-500 block truncate text-xs">
-                      {suggestion.brandName} · {suggestion.product.presentation}
-                    </span>
-                  </span>
-                  <span className="font-display text-ink-900 shrink-0 text-sm font-semibold tabular-nums">
-                    {formatPrice(suggestion.product.price.wholesale)}
+                    <span className="text-ink-500 block truncate text-xs">{suggestion.detail}</span>
                   </span>
                 </li>
               );

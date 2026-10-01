@@ -1,0 +1,3894 @@
+{
+  "source": {
+    "lastMovementAt": "2026-09-24 17:59:00"
+  },
+  "brands": [
+    {
+      "id": "nutrapel",
+      "name": "Nutrapel"
+    },
+    {
+      "id": "nefertiti",
+      "name": "Nefertiti"
+    },
+    {
+      "id": "voglia",
+      "name": "Voglia"
+    },
+    {
+      "id": "kuul",
+      "name": "Kuul"
+    },
+    {
+      "id": "vittale",
+      "name": "Vittale"
+    },
+    {
+      "id": "ouro",
+      "name": "Ouro"
+    }
+  ],
+  "products": [
+    {
+      "id": "7503013561900",
+      "name": "BELCAPEL COLAGENO+QUERATINA",
+      "categorySlug": "capilar",
+      "firstSeen": "2020-08-11",
+      "salesRank": 8,
+      "tags": [
+        "bestseller"
+      ]
+    },
+    {
+      "id": "7503013561924",
+      "name": "BELCAPEL COLAGENO+QUERATINA MATIZ",
+      "categorySlug": "capilar",
+      "firstSeen": "2020-08-06",
+      "salesRank": 4,
+      "tags": [
+        "bestseller"
+      ]
+    },
+    {
+      "id": "PHG",
+      "name": "HIDROGEL EYE PATCH",
+      "categorySlug": "cosmeticos",
+      "firstSeen": "2024-08-20"
+    },
+    {
+      "id": "PH",
+      "name": "HIDROGEL EYE PATCH 10PZA",
+      "categorySlug": "cosmeticos",
+      "firstSeen": "2022-05-16"
+    },
+    {
+      "id": "5609",
+      "name": "KUUL ACEITE DE ARGAN",
+      "brandId": "kuul",
+      "categorySlug": "capilar",
+      "firstSeen": "2022-09-14",
+      "image": "/products/98e2bb6295a7.webp"
+    },
+    {
+      "id": "7501438363215",
+      "name": "KUUL ALACIADOR TEMPORAL EN CREMA",
+      "brandId": "kuul",
+      "categorySlug": "capilar",
+      "firstSeen": "2022-01-11",
+      "image": "/products/e1c56469b19c.webp"
+    },
+    {
+      "id": "7501438366438",
+      "name": "KUUL BIFASICO 300 ML",
+      "brandId": "kuul",
+      "categorySlug": "capilar",
+      "firstSeen": "2024-11-21"
+    },
+    {
+      "id": "7501438363321",
+      "name": "KUUL CERA ELASTICA PARA EL CABELLO 100G",
+      "brandId": "kuul",
+      "categorySlug": "capilar",
+      "firstSeen": "2020-07-20"
+    },
+    {
+      "id": "G406",
+      "name": "KUUL CERA GEL ASPECTO NATURAL 270G",
+      "brandId": "kuul",
+      "categorySlug": "capilar",
+      "firstSeen": "2021-11-16",
+      "image": "/products/39c206c65fa3.webp"
+    },
+    {
+      "id": "7501438366445",
+      "name": "KUUL CURE ME TRAT AGUACATE 1KG",
+      "brandId": "kuul",
+      "categorySlug": "capilar",
+      "firstSeen": "2024-01-31"
+    },
+    {
+      "id": "7501438360894",
+      "name": "Kuul Cure Me Tratamiento Leave In",
+      "brandId": "kuul",
+      "categorySlug": "capilar",
+      "firstSeen": "2023-09-20",
+      "image": "/products/050400315d54.webp"
+    },
+    {
+      "id": "7501438363253",
+      "name": "KUUL CURE ME TRATAMIENTO RECONSTRUCTOR SIN ENJUAR",
+      "brandId": "kuul",
+      "categorySlug": "capilar",
+      "firstSeen": "2020-10-24"
+    },
+    {
+      "id": "7501438363185",
+      "name": "KUUL CURL ME GEL RIZOS",
+      "brandId": "kuul",
+      "categorySlug": "capilar",
+      "firstSeen": "2022-06-27",
+      "image": "/products/8a82dabff399.webp"
+    },
+    {
+      "id": "7501438363178",
+      "name": "KUUL CURL ME SHAMPOO RIZOS",
+      "brandId": "kuul",
+      "categorySlug": "capilar",
+      "firstSeen": "2022-02-05",
+      "image": "/products/6e43d6618ced.webp"
+    },
+    {
+      "id": "7501438363093",
+      "name": "KUUL DECOLORANTE 350 GRS CON PEROX 30V",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2020-07-18"
+    },
+    {
+      "id": "7501438363086",
+      "name": "KUUL DECOLORANTE 45 GR",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2020-07-27",
+      "salesRank": 9,
+      "tags": [
+        "bestseller"
+      ]
+    },
+    {
+      "id": "7501438305932",
+      "name": "KUUL DECOLORANTE 9 NIV",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2026-08-19",
+      "tags": [
+        "new"
+      ]
+    },
+    {
+      "id": "7501438306069",
+      "name": "KUUL DECOLORANTE SOBRE45GR",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2026-09-23",
+      "image": "/products/e3e226a8bd2e.webp",
+      "tags": [
+        "new"
+      ]
+    },
+    {
+      "id": "7501438363376",
+      "name": "KUUL FIX ME ALACIANTE TEMP BOTELLA NEGRA",
+      "brandId": "kuul",
+      "categorySlug": "capilar",
+      "firstSeen": "2022-02-05"
+    },
+    {
+      "id": "G684",
+      "name": "KUUL FIX ME CERA ELASTICA",
+      "brandId": "kuul",
+      "categorySlug": "capilar",
+      "firstSeen": "2022-03-27"
+    },
+    {
+      "id": "7501438363338",
+      "name": "KUUL FIX ME FROST WAX CERA 100 G",
+      "brandId": "kuul",
+      "categorySlug": "capilar",
+      "firstSeen": "2020-07-20",
+      "image": "/products/425dc3cf0a30.webp"
+    },
+    {
+      "id": "7501438368586",
+      "name": "Kuul Fix Me Stay Spray",
+      "brandId": "kuul",
+      "categorySlug": "capilar",
+      "firstSeen": "2023-12-26",
+      "image": "/products/82477123ae55.webp"
+    },
+    {
+      "id": "7501438363307",
+      "name": "KUUL FIX WAX CERA GEL ASP HUMEDO",
+      "brandId": "kuul",
+      "categorySlug": "capilar",
+      "firstSeen": "2020-08-08"
+    },
+    {
+      "id": "7501438363291",
+      "name": "KUUL FIX WAX GEL ASPEC NATURAL",
+      "brandId": "kuul",
+      "categorySlug": "capilar",
+      "firstSeen": "2020-08-08"
+    },
+    {
+      "id": "7501438300227",
+      "name": "Kuul Funny Verde Pera",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2026-01-13"
+    },
+    {
+      "id": "7501438363352",
+      "name": "KUUL GEL CURL ME",
+      "brandId": "kuul",
+      "categorySlug": "capilar",
+      "firstSeen": "2020-07-28",
+      "image": "/products/d986b56fede9.webp"
+    },
+    {
+      "id": "7501438363628",
+      "name": "KUUL GEL DE FIJACION MEDIA CON ASPECTO NATURAL 100G",
+      "brandId": "kuul",
+      "categorySlug": "capilar",
+      "firstSeen": "2021-11-24"
+    },
+    {
+      "id": "7501438363369",
+      "name": "KUUL KIT ONDULANTE DE LT",
+      "brandId": "kuul",
+      "categorySlug": "capilar",
+      "firstSeen": "2020-12-04"
+    },
+    {
+      "id": "7501438301934",
+      "name": "KUUL MASCARILLA RESCUE Cabello Muy Maltratado",
+      "brandId": "kuul",
+      "categorySlug": "capilar",
+      "firstSeen": "2024-11-06"
+    },
+    {
+      "id": "7501438366452",
+      "name": "KUUL ME CREAM GEL",
+      "brandId": "kuul",
+      "categorySlug": "capilar",
+      "firstSeen": "2025-06-26"
+    },
+    {
+      "id": "7501438363000",
+      "name": "KUUL PEROX 10V 135ML",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2020-07-20",
+      "image": "/products/93224249f92f.webp"
+    },
+    {
+      "id": "7501438302498",
+      "name": "KUUL PEROX 10V LT",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2024-12-19",
+      "image": "/products/93224249f92f.webp"
+    },
+    {
+      "id": "7501438363024",
+      "name": "KUUL PEROX 20V 135ML",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2020-08-25",
+      "image": "/products/93224249f92f.webp"
+    },
+    {
+      "id": "7501438302535",
+      "name": "KUUL PEROX 20V Lt",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2024-12-19",
+      "image": "/products/93224249f92f.webp"
+    },
+    {
+      "id": "7501438363048",
+      "name": "KUUL PEROX 30V 135ML",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2020-07-23",
+      "image": "/products/93224249f92f.webp"
+    },
+    {
+      "id": "7501438302443",
+      "name": "KUUL PEROX 30V LT",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-04-02",
+      "image": "/products/93224249f92f.webp"
+    },
+    {
+      "id": "7501438363062",
+      "name": "KUUL PEROX 40V 135 ML",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2020-07-20",
+      "image": "/products/93224249f92f.webp"
+    },
+    {
+      "id": "7501438302573",
+      "name": "KUUL PEROX 40V LT",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-03-13",
+      "image": "/products/93224249f92f.webp"
+    },
+    {
+      "id": "7501438363956",
+      "name": "KUUL PLEX SOBRE",
+      "brandId": "kuul",
+      "categorySlug": "capilar",
+      "firstSeen": "2022-08-04",
+      "salesRank": 5,
+      "tags": [
+        "bestseller"
+      ]
+    },
+    {
+      "id": "7501438366469",
+      "name": "KUUL REPAIR LEAV-IN CREMA",
+      "brandId": "kuul",
+      "categorySlug": "capilar",
+      "firstSeen": "2025-04-21"
+    },
+    {
+      "id": "7501438363987",
+      "name": "KUUL RESCUE ME TRATAMIENTO PROFUNDO SIN ENJUAGUE",
+      "brandId": "kuul",
+      "categorySlug": "capilar",
+      "firstSeen": "2023-01-26"
+    },
+    {
+      "id": "7501438363130",
+      "name": "KUUL SHAMPOO CABELLO TEÑIDO",
+      "brandId": "kuul",
+      "categorySlug": "capilar",
+      "firstSeen": "2024-10-16",
+      "image": "/products/b5e49e2ced0a.webp"
+    },
+    {
+      "id": "7501438364991",
+      "name": "KUUL SHAMPOO CLEAN ME",
+      "brandId": "kuul",
+      "categorySlug": "capilar",
+      "firstSeen": "2022-12-20",
+      "image": "/products/3ce10a6ff82e.webp"
+    },
+    {
+      "id": "7501438363222",
+      "name": "KUUL SHAMPOO CURE ME",
+      "brandId": "kuul",
+      "categorySlug": "capilar",
+      "firstSeen": "2020-07-28",
+      "image": "/products/be2255bc637d.webp"
+    },
+    {
+      "id": "7501438363284",
+      "name": "KUUL SHAMPOO MATIZADOR 300ML.FC",
+      "brandId": "kuul",
+      "categorySlug": "capilar",
+      "firstSeen": "2021-02-15"
+    },
+    {
+      "id": "7501438363406",
+      "name": "KUUL SHAMPOO MATIZANTE 1000ML.",
+      "brandId": "kuul",
+      "categorySlug": "capilar",
+      "firstSeen": "2020-09-16",
+      "image": "/products/5e4e7c337bbf.webp"
+    },
+    {
+      "id": "7501438363123",
+      "name": "KUUL SHAMPOO PARA CABELLO TEÑIDO Y NATURAL SOBRE 10ML",
+      "brandId": "kuul",
+      "categorySlug": "capilar",
+      "firstSeen": "2021-10-05"
+    },
+    {
+      "id": "7501438363239",
+      "name": "KUUL SHAMPOO RECONSTRUCTOR 300ML",
+      "brandId": "kuul",
+      "categorySlug": "capilar",
+      "firstSeen": "2020-10-12",
+      "image": "/products/16913cad8378.webp"
+    },
+    {
+      "id": "7501438301927",
+      "name": "KUUL SHAMPOO RESCUE Cabello Muy Maltratado",
+      "brandId": "kuul",
+      "categorySlug": "capilar",
+      "firstSeen": "2024-11-07"
+    },
+    {
+      "id": "7501438368548",
+      "name": "KUUL SILICA CABELLO",
+      "brandId": "kuul",
+      "categorySlug": "capilar",
+      "firstSeen": "2024-11-21"
+    },
+    {
+      "id": "7501438363208",
+      "name": "KUUL STRAIGHT ME SHAMPOO ANTI FRIZZ",
+      "brandId": "kuul",
+      "categorySlug": "capilar",
+      "firstSeen": "2022-02-18"
+    },
+    {
+      "id": "7501438366483",
+      "name": "KUUL TRATAMIENTO DE AGUACATE 245 GR...Fc",
+      "brandId": "kuul",
+      "categorySlug": "capilar",
+      "firstSeen": "2021-05-29"
+    },
+    {
+      "id": "601800000",
+      "name": "MINT COLECTION ADORNO PELO CONCHAS Y NEFERTITI",
+      "brandId": "nefertiti",
+      "categorySlug": "accesorios",
+      "firstSeen": "2022-09-08"
+    },
+    {
+      "id": "7502238706011",
+      "name": "NEFERTITI 2 FASES LIBRE DE SALES",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2025-10-03"
+    },
+    {
+      "id": "7502238705953",
+      "name": "NEFERTITI ACIDO HIALURONICO SPRAY",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2025-08-05"
+    },
+    {
+      "id": "7502238701276",
+      "name": "NEFERTITI ACLARANT",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2023-12-06"
+    },
+    {
+      "id": "7502238705182",
+      "name": "NEFERTITI ACOND ALMENDRAS",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2023-12-05",
+      "image": "/products/0d1c7746f6a4.webp"
+    },
+    {
+      "id": "7502238700859",
+      "name": "NEFERTITI ACOND ALMENDRAS 1LT",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2025-05-03",
+      "image": "/products/0d1c7746f6a4.webp"
+    },
+    {
+      "id": "7502238700835",
+      "name": "NEFERTITI ACOND EXTRACTO DE HIERBAS",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2025-05-05",
+      "image": "/products/ae228c18b87e.webp"
+    },
+    {
+      "id": "7502238705212",
+      "name": "NEFERTITI ACOND EXTRACTO DE HIERBAS",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2023-12-05",
+      "image": "/products/ae228c18b87e.webp"
+    },
+    {
+      "id": "7502238702648",
+      "name": "NEFERTITI ACTIPREVENT SHAMPOO",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2026-04-09",
+      "image": "/products/c776ff586e9c.webp"
+    },
+    {
+      "id": "7502238702662",
+      "name": "NEFERTITI ACTIPREVENT TONICO CAPILAR",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2026-04-09",
+      "image": "/products/50cd26a62de5.webp"
+    },
+    {
+      "id": "7502238705960",
+      "name": "NEFERTITI ALACIA T",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2024-08-13",
+      "image": "/products/f856ab57a268.webp"
+    },
+    {
+      "id": "7502238703607",
+      "name": "NEFERTITI AMP CAJA ANTICAIDA",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2026-04-10"
+    },
+    {
+      "id": "7502238706158",
+      "name": "NEFERTITI AMP. ACIDO HIALURONICO",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2026-04-10",
+      "image": "/products/160a9cb77451.webp"
+    },
+    {
+      "id": "NACO",
+      "name": "NEFERTITI AMP. CAJA COCO CAJA CON 10",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2024-03-08",
+      "image": "/products/c8e9e653276c.webp"
+    },
+    {
+      "id": "NATC",
+      "name": "NEFERTITI AMP. CAJA JALEA REAL CAJA CON 10",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2024-03-08",
+      "image": "/products/1ffd4145d830.webp"
+    },
+    {
+      "id": "NASP",
+      "name": "NEFERTITI AMP. CAJA SERUM PROTECTOR CAJA CON 10",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2024-03-08",
+      "image": "/products/ff4e498d7e0a.webp"
+    },
+    {
+      "id": "7502238705052",
+      "name": "NEFERTITI AMP. COCO TRAT. CABELLO TEÑIDO",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2023-12-06",
+      "image": "/products/c8e9e653276c.webp"
+    },
+    {
+      "id": "NIG",
+      "name": "NEFERTITI AMP. JALEA INTENSIVO",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2023-07-27"
+    },
+    {
+      "id": "7502238705557",
+      "name": "NEFERTITI AMP. SERUM PROTECTOR",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2022-12-16",
+      "image": "/products/ff4e498d7e0a.webp"
+    },
+    {
+      "id": "7502238701177",
+      "name": "NEFERTITI ANTIOXID 1LT",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2022-03-27",
+      "image": "/products/0fc436a66882.webp"
+    },
+    {
+      "id": "7502238705229",
+      "name": "NEFERTITI ANTIOXID 300ML",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2021-09-22",
+      "image": "/products/0fc436a66882.webp",
+      "salesRank": 6,
+      "tags": [
+        "bestseller"
+      ]
+    },
+    {
+      "id": "NE",
+      "name": "NEFERTITI ANTIOXID SOBRE 20G",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2025-08-11",
+      "salesRank": 1,
+      "tags": [
+        "bestseller"
+      ]
+    },
+    {
+      "id": "7502238705328",
+      "name": "NEFERTITI AZOREE ANTI BAC Desinfectante",
+      "brandId": "nefertiti",
+      "categorySlug": "otros",
+      "firstSeen": "2024-08-13",
+      "image": "/products/117887b3468e.webp"
+    },
+    {
+      "id": "7502238706028",
+      "name": "NEFERTITI AZOREE DECOLORANTE EN BOTE 600G",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2024-10-18"
+    },
+    {
+      "id": "7502238701351",
+      "name": "NEFERTITI AZOREE TERMO PROTECTOR",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2023-03-01"
+    },
+    {
+      "id": "7502238702495",
+      "name": "NEFERTITI BIFASICO FUSSION CARE",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2023-12-05",
+      "image": "/products/4c354c50cfd4.webp"
+    },
+    {
+      "id": "7502238704703",
+      "name": "NEFERTITI BIOELIXIR COCO",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2025-08-05"
+    },
+    {
+      "id": "7502238704666",
+      "name": "NEFERTITI BIOELIXIR REPAIR",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2025-03-04"
+    },
+    {
+      "id": "7502238704680",
+      "name": "NEFERTITI BIOELIXIR REPAIR ARGAN",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2024-02-29",
+      "image": "/products/cdf41c01ef32.webp"
+    },
+    {
+      "id": "7502238704673",
+      "name": "NEFERTITI BIOELIXIR REPAIR AZZORE",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2025-03-04",
+      "image": "/products/2eaa7d9f6cca.webp"
+    },
+    {
+      "id": "NCERA",
+      "name": "NEFERTITI CERA 3 EN 1",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2026-08-08",
+      "tags": [
+        "new"
+      ]
+    },
+    {
+      "id": "7502238702594",
+      "name": "NEFERTITI CERA MODELADORA",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2023-12-05",
+      "image": "/products/803e2fd6d5f8.webp"
+    },
+    {
+      "id": "7502238704772",
+      "name": "NEFERTITI CERA TELARAÑA",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2023-12-05",
+      "image": "/products/ef1100365210.webp"
+    },
+    {
+      "id": "7502238702365",
+      "name": "NEFERTITI CHOCOLA-T MAX CREMA PARA PEINAR 300ML",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2023-11-17",
+      "image": "/products/9bd70b49a377.webp"
+    },
+    {
+      "id": "7502238702372",
+      "name": "NEFERTITI CHOCOLA-T MAX MASCARILLA 350G",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2021-09-03",
+      "image": "/products/3b98b10f6891.webp"
+    },
+    {
+      "id": "7502238702358",
+      "name": "NEFERTITI CHOCOLA-T MAX SHAMPOO 300ML",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2023-11-17",
+      "image": "/products/609017d63272.webp"
+    },
+    {
+      "id": "7502238705625",
+      "name": "NEFERTITI COLA DE CABALLO MASCARILLA",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2026-01-09",
+      "image": "/products/5128bfa09de9.webp"
+    },
+    {
+      "id": "7502238703775",
+      "name": "NEFERTITI COLA DE CABALLO SH 300ML",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2024-10-09",
+      "image": "/products/7bd7eab4e0cc.webp"
+    },
+    {
+      "id": "7502238702716",
+      "name": "NEFERTITI COLOR OFF CREMA DESM TIN",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2026-04-10"
+    },
+    {
+      "id": "7502238706066",
+      "name": "NEFERTITI COLOR OFF LOCION DESM",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-03-06",
+      "image": "/products/d14533c4c2d3.webp"
+    },
+    {
+      "id": "7502238704734",
+      "name": "NEFERTITI CREMA ARGAN P/PEINAR",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2024-10-09",
+      "image": "/products/b9b1696dc372.webp"
+    },
+    {
+      "id": "7502238704758",
+      "name": "NEFERTITI CREMA COCO P/PÉINAR 300ML",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2023-12-05",
+      "image": "/products/1a6d014d63a3.webp"
+    },
+    {
+      "id": "7502238701269",
+      "name": "NEFERTITI CREMA DEPILATORIA",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2025-08-05",
+      "image": "/products/f55bbbdf9e3a.webp"
+    },
+    {
+      "id": "7502238701078",
+      "name": "NEFERTITI CREMA PARA PEINAR LISO",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2025-03-04",
+      "image": "/products/130890a0b30d.webp"
+    },
+    {
+      "id": "7502238705618",
+      "name": "NEFERTITI CREMA PEINAR COLA CABALLA",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2026-01-12",
+      "image": "/products/bd82ecf36d51.webp"
+    },
+    {
+      "id": "7502238701061",
+      "name": "NEFERTITI CREMA PEINAR RIZOS",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2025-03-04",
+      "image": "/products/c3a606d4ac3d.webp"
+    },
+    {
+      "id": "7502238704345",
+      "name": "NEFERTITI CREMA REPARADOREA PIE",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2023-04-03",
+      "image": "/products/39005bb0f927.webp"
+    },
+    {
+      "id": "7502238706264",
+      "name": "NEFERTITI CURL CREMA PARA PEINAR",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2026-08-08",
+      "image": "/products/0506dd80815a.webp",
+      "tags": [
+        "new"
+      ]
+    },
+    {
+      "id": "7502238706271",
+      "name": "NEFERTITI CURL MASCARILLA",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2026-08-08",
+      "image": "/products/b330e921d8f2.webp",
+      "tags": [
+        "new"
+      ]
+    },
+    {
+      "id": "7502238706257",
+      "name": "NEFERTITI CURL SHAMPOO",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2026-08-08",
+      "image": "/products/cac7a0e727da.webp",
+      "tags": [
+        "new"
+      ]
+    },
+    {
+      "id": "7502238706141",
+      "name": "NEFERTITI DECOLORANTE AZZORE SOBRE",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-06"
+    },
+    {
+      "id": "7502238705274",
+      "name": "NEFERTITI DUO BLUE MATIZADOR",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2023-12-05"
+    },
+    {
+      "id": "7502238705441",
+      "name": "NEFERTITI DUO MATIZADOR CASTAÑO",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2024-08-13"
+    },
+    {
+      "id": "7502238705243",
+      "name": "NEFERTITI DUO ROJOS",
+      "brandId": "nefertiti",
+      "categorySlug": "otros",
+      "firstSeen": "2024-10-09"
+    },
+    {
+      "id": "7502238704130",
+      "name": "NEFERTITI GEL",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2025-10-06"
+    },
+    {
+      "id": "7502238704338",
+      "name": "NEFERTITI GEL EXFOLIANTE PIES",
+      "brandId": "nefertiti",
+      "categorySlug": "otros",
+      "firstSeen": "2023-04-03",
+      "image": "/products/83e36711c28e.webp"
+    },
+    {
+      "id": "7502238702631",
+      "name": "NEFERTITI GEL MATIZADOR MISTER COLOR",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2024-11-29",
+      "image": "/products/edb9895a5f40.webp"
+    },
+    {
+      "id": "7502238705236",
+      "name": "NEFERTITI INSTANT TRAT. HIDRATACION",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2023-04-18",
+      "image": "/products/48d60077e681.webp"
+    },
+    {
+      "id": "NKA",
+      "name": "NEFERTITI KIT ARGAN",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2024-12-03"
+    },
+    {
+      "id": "NKC",
+      "name": "NEFERTITI KIT CHOCOLATE",
+      "brandId": "nefertiti",
+      "categorySlug": "otros",
+      "firstSeen": "2024-12-03"
+    },
+    {
+      "id": "KBP",
+      "name": "NEFERTITI KIT PIES",
+      "brandId": "nefertiti",
+      "categorySlug": "otros",
+      "firstSeen": "2024-10-09"
+    },
+    {
+      "id": "7502238705045",
+      "name": "NEFERTITI KIT PIOJOS",
+      "brandId": "nefertiti",
+      "categorySlug": "otros",
+      "firstSeen": "2025-06-17"
+    },
+    {
+      "id": "7502238700712",
+      "name": "NEFERTITI LOCION ONDULANTE DUO",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2023-05-22"
+    },
+    {
+      "id": "7502238700729",
+      "name": "NEFERTITI LOCION ONDULANTE FLER",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2023-06-05"
+    },
+    {
+      "id": "7502238705946",
+      "name": "NEFERTITI MASCARILLA ACIDO HIALURONICO",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2023-12-05",
+      "image": "/products/c14febc44eaf.webp"
+    },
+    {
+      "id": "7502238704963",
+      "name": "NEFERTITI MASCARILLA ARGAN",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2024-10-09",
+      "image": "/products/887317e4f8fb.webp"
+    },
+    {
+      "id": "7502238704765",
+      "name": "NEFERTITI MASCARILLA COCO",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2023-12-05",
+      "image": "/products/74a3afa0d5b0.webp"
+    },
+    {
+      "id": "7502238701979",
+      "name": "NEFERTITI MASCARILLA REVITALIZANTE ROSA",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2023-12-05",
+      "image": "/products/4d9bdd8c7dae.webp"
+    },
+    {
+      "id": "7502238705151",
+      "name": "NEFERTITI MASCARILLA SULFATE FREE CABELLO ESTRESADO",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2021-09-22",
+      "image": "/products/5f66a8d6441c.webp"
+    },
+    {
+      "id": "7502238705137",
+      "name": "NEFERTITI MASCARILLA SULFATE FREE TEÑIDO",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2023-09-12",
+      "image": "/products/7995ea2b9269.webp"
+    },
+    {
+      "id": "7502238705830",
+      "name": "NEFERTITI MASCARILLA VEGANA",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2025-03-05",
+      "image": "/products/cb7591c222fc.webp"
+    },
+    {
+      "id": "7502238701245",
+      "name": "NEFERTITI MISTER COLOR CASTAÑO OBSCURO",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2023-04-04",
+      "image": "/products/33358356a8fc.webp"
+    },
+    {
+      "id": "7502238701238",
+      "name": "NEFERTITI MISTER COLOR NEGRO",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2023-12-05",
+      "image": "/products/1ddc0e1a8d01.webp"
+    },
+    {
+      "id": "7502238704567",
+      "name": "NEFERTITI MISTER COLOR SHAMPOO MATIZADOR CANAS 300ML",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-01-23",
+      "image": "/products/3356d3f62617.webp"
+    },
+    {
+      "id": "7502238701207",
+      "name": "NEFERTITI MOUSE EXTRA FIJACION",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2024-10-09",
+      "image": "/products/812f43cbb216.webp"
+    },
+    {
+      "id": "7502238706301",
+      "name": "NEFERTITI PEROXIDO 10v 135ML",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2026-08-09",
+      "image": "/products/67eea394faa6.webp",
+      "tags": [
+        "new"
+      ]
+    },
+    {
+      "id": "7502238700583",
+      "name": "NEFERTITI PEROXIDO 10V 1LT",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2024-08-13",
+      "image": "/products/67eea394faa6.webp"
+    },
+    {
+      "id": "7502238702723",
+      "name": "NEFERTITI PEROXIDO 20v 135 ML",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2024-08-14",
+      "image": "/products/737004957efd.webp"
+    },
+    {
+      "id": "7502238700613",
+      "name": "NEFERTITI PEROXIDO 20V 1LT",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2024-08-13",
+      "image": "/products/737004957efd.webp"
+    },
+    {
+      "id": "7502238702068",
+      "name": "NEFERTITI PEROXIDO 20V 3.8L",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2026-01-09",
+      "image": "/products/737004957efd.webp"
+    },
+    {
+      "id": "7502238702730",
+      "name": "NEFERTITI PEROXIDO 30v 135 ML",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2023-12-06",
+      "image": "/products/5c06856729f4.webp"
+    },
+    {
+      "id": "7502238706219",
+      "name": "NEFERTITI PEROXIDO 30v 135 ML",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2026-04-09",
+      "image": "/products/5c06856729f4.webp"
+    },
+    {
+      "id": "7502238700637",
+      "name": "NEFERTITI PEROXIDO 30V 1LT",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-03-06",
+      "image": "/products/5c06856729f4.webp"
+    },
+    {
+      "id": "7502238701290",
+      "name": "NEFERTITI PEROXIDO 30V 1LT",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2024-10-18",
+      "image": "/products/5c06856729f4.webp"
+    },
+    {
+      "id": "7502238702082",
+      "name": "NEFERTITI PEROXIDO 30V GALON",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-11-12",
+      "image": "/products/5c06856729f4.webp"
+    },
+    {
+      "id": "7502238702747",
+      "name": "NEFERTITI PEROXIDO 40v 135 ML",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2024-08-14",
+      "image": "/products/de72122514d9.webp"
+    },
+    {
+      "id": "7502238700651",
+      "name": "NEFERTITI PEROXIDO 40V 1LT.",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2023-12-06",
+      "image": "/products/de72122514d9.webp"
+    },
+    {
+      "id": "7502238702525",
+      "name": "NEFERTITI PIELISSEE CREMA POSTD",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2026-08-08",
+      "image": "/products/3dae810f867f.webp",
+      "tags": [
+        "new"
+      ]
+    },
+    {
+      "id": "7502238704062",
+      "name": "NEFERTITI PIELISSEE MIEL DEPI",
+      "brandId": "nefertiti",
+      "categorySlug": "otros",
+      "firstSeen": "2026-08-08",
+      "image": "/products/cadca7f4d1d1.webp",
+      "tags": [
+        "new"
+      ]
+    },
+    {
+      "id": "7502238702709",
+      "name": "NEFERTITI RETOCADOR CANA CASTAÑO",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2023-12-05",
+      "image": "/products/a8b49b562f09.webp"
+    },
+    {
+      "id": "7502238702679",
+      "name": "NEFERTITI RETOCADOR CANA NEGRO",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2023-12-05",
+      "image": "/products/abd7d151f1d4.webp"
+    },
+    {
+      "id": "7502238702693",
+      "name": "NEFERTITI RETOCADOR CANA RUBIO",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2023-12-05",
+      "image": "/products/b85cd44453bf.webp"
+    },
+    {
+      "id": "7502238701214",
+      "name": "NEFERTITI RIZOFLEX Locion Ondulante",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2024-08-13",
+      "image": "/products/e9a821aebd93.webp"
+    },
+    {
+      "id": "7502238706073",
+      "name": "NEFERTITI RIZOFLEX LOCION ONDULANTE",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2025-01-23",
+      "image": "/products/e9a821aebd93.webp"
+    },
+    {
+      "id": "7502238704321",
+      "name": "NEFERTITI SALES PIE",
+      "brandId": "nefertiti",
+      "categorySlug": "otros",
+      "firstSeen": "2023-04-03"
+    },
+    {
+      "id": "7502238705939",
+      "name": "NEFERTITI SHAMPOO ACIDO HIALURONICO",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2023-12-05",
+      "image": "/products/a44dd03ef221.webp"
+    },
+    {
+      "id": "7502238705175",
+      "name": "NEFERTITI SHAMPOO ALMENDRA PROTEIN 300ML",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2023-03-16",
+      "image": "/products/09085d5ce73f.webp"
+    },
+    {
+      "id": "7502238704628",
+      "name": "NEFERTITI SHAMPOO ARGAN",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2024-02-29",
+      "image": "/products/8a9a20db1626.webp"
+    },
+    {
+      "id": "7502238703546",
+      "name": "NEFERTITI SHAMPOO CHOCOLAT MAX 1 LT",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2024-08-13",
+      "image": "/products/f83ea56bf7da.webp"
+    },
+    {
+      "id": "7502238704741",
+      "name": "NEFERTITI SHAMPOO COCO PROTEC HAIR",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2023-12-05",
+      "image": "/products/620f75580215.webp"
+    },
+    {
+      "id": "7502238703768",
+      "name": "NEFERTITI SHAMPOO COLA DE CABALLO",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2025-05-05",
+      "image": "/products/7bd7eab4e0cc.webp"
+    },
+    {
+      "id": "7502238705090",
+      "name": "NEFERTITI SHAMPOO CONTROL CASPA",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2025-03-04",
+      "image": "/products/2411ae94407a.webp"
+    },
+    {
+      "id": "7502238705205",
+      "name": "NEFERTITI SHAMPOO DE HIERBAS",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2023-03-16",
+      "image": "/products/3d4fd4a4796f.webp"
+    },
+    {
+      "id": "7502238700774",
+      "name": "NEFERTITI SHAMPOO EXTRACTO DE HIERBAS 1 LT",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2024-02-29",
+      "image": "/products/d1cb54de6319.webp"
+    },
+    {
+      "id": "7502238705168",
+      "name": "NEFERTITI SHAMPOO MATIZADOR BLEU",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2024-02-29",
+      "image": "/products/be0959787fc4.webp"
+    },
+    {
+      "id": "7502238700910",
+      "name": "NEFERTITI SHAMPOO MATIZADOR BLUE",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2025-06-17"
+    },
+    {
+      "id": "7502238702273",
+      "name": "NEFERTITI SHAMPOO MATIZADOR BLUE 3.8",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2025-10-03"
+    },
+    {
+      "id": "7502238705281",
+      "name": "NEFERTITI SHAMPOO MATIZADOR VIOLETA",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2024-10-09"
+    },
+    {
+      "id": "7502238703539",
+      "name": "NEFERTITI SHAMPOO NEUTRO 1 LT",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2024-08-13",
+      "image": "/products/c063db5816da.webp"
+    },
+    {
+      "id": "7502238703621",
+      "name": "NEFERTITI SHAMPOO NEUTRO 3.8LT",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2024-08-13",
+      "image": "/products/c063db5816da.webp"
+    },
+    {
+      "id": "7502238705311",
+      "name": "NEFERTITI SHAMPOO NEUTRO 300ML",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2023-05-22",
+      "image": "/products/c063db5816da.webp"
+    },
+    {
+      "id": "7502238700804",
+      "name": "NEFERTITI SHAMPOO PROTEINA DE ALM",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2025-05-05"
+    },
+    {
+      "id": "7502238700811",
+      "name": "NEFERTITI SHAMPOO PROTEINAS ALM 3.8L",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2025-08-05"
+    },
+    {
+      "id": "7502238705144",
+      "name": "NEFERTITI SHAMPOO SULFATE FREE CABELLO ESTRESADO 250ML",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2021-12-30",
+      "image": "/products/2440403bc47c.webp"
+    },
+    {
+      "id": "7502238705120",
+      "name": "NEFERTITI SHAMPOO SULFATE FREE CABELLO TEÑIDO",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2021-08-28",
+      "image": "/products/20d6c674bdbb.webp"
+    },
+    {
+      "id": "NMAR",
+      "name": "NEFERTITI SOBRE MASCARILLA ARGAN",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2023-12-06"
+    },
+    {
+      "id": "NSCHO",
+      "name": "NEFERTITI SOBRE SHAMPOO CHOCOLATE",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2023-12-06"
+    },
+    {
+      "id": "NSCOC",
+      "name": "NEFERTITI SOBRE SHAMPOO COLA DE CABALLO",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2023-12-06"
+    },
+    {
+      "id": "NSCC",
+      "name": "NEFERTITI SOBRE SHAMPOO CONTROL CASPA",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2023-12-06"
+    },
+    {
+      "id": "7502238701191",
+      "name": "NEFERTITI SPRAY EXTRAFIJACION",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2022-12-20",
+      "image": "/products/50a0e714d001.webp"
+    },
+    {
+      "id": "7502238702518",
+      "name": "NEFERTITI TELA PARA DEPILAR",
+      "brandId": "nefertiti",
+      "categorySlug": "otros",
+      "firstSeen": "2025-08-05",
+      "image": "/products/e0952a6a9331.webp"
+    },
+    {
+      "id": "7502238705526",
+      "name": "NEFERTITI TRAT MATIZ ROSA",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2023-12-05"
+    },
+    {
+      "id": "7502238705533",
+      "name": "NEFERTITI TRAT MATIZ SAPHIR",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2024-02-29"
+    },
+    {
+      "id": "7502238705540",
+      "name": "NEFERTITI TRAT MATIZ VERT",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2024-02-29"
+    },
+    {
+      "id": "7502238705304",
+      "name": "NEFERTITI TRAT MATIZ VIOLET",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2025-09-25"
+    },
+    {
+      "id": "NMA",
+      "name": "NEFERTITI TRATAM. MATIZADOR BLUE",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2026-01-12"
+    },
+    {
+      "id": "7502238705823",
+      "name": "NEFERTITI VEGAN ACONDICIONADOR",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2025-03-04",
+      "image": "/products/76af2eff4287.webp"
+    },
+    {
+      "id": "7502238705847",
+      "name": "NEFERTITI VEGAN LEAVE IN",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2026-01-10",
+      "image": "/products/af80a537dad2.webp"
+    },
+    {
+      "id": "7502238705816",
+      "name": "NEFERTITI VEGAN SHAMPOO",
+      "brandId": "nefertiti",
+      "categorySlug": "capilar",
+      "firstSeen": "2025-03-04",
+      "image": "/products/ae27bb318652.webp"
+    },
+    {
+      "id": "7501502300207",
+      "name": "NNUTRAPEL INSTAFREEZE FIJADOR NO AEROSOL",
+      "brandId": "nutrapel",
+      "categorySlug": "capilar",
+      "firstSeen": "2022-01-11",
+      "image": "/products/09d45e011fac.webp"
+    },
+    {
+      "id": "7501502363127",
+      "name": "NUTRAPEL ADITIVO PARA CANA BOTE 30ML.",
+      "brandId": "nutrapel",
+      "categorySlug": "capilar",
+      "firstSeen": "2020-10-19"
+    },
+    {
+      "id": "7501502363134",
+      "name": "NUTRAPEL ADITIVO PARA CANA SOBRE",
+      "brandId": "nutrapel",
+      "categorySlug": "capilar",
+      "firstSeen": "2020-07-27",
+      "salesRank": 2,
+      "tags": [
+        "bestseller"
+      ]
+    },
+    {
+      "id": "7501502326092",
+      "name": "NUTRAPEL ALL IN ONE PUNTAS 144 ML",
+      "brandId": "nutrapel",
+      "categorySlug": "capilar",
+      "firstSeen": "2020-08-06",
+      "image": "/products/cb515cbdad28.webp"
+    },
+    {
+      "id": "7501502312064",
+      "name": "NUTRAPEL AMP CHOCOLATE LASSIO",
+      "brandId": "nutrapel",
+      "categorySlug": "capilar",
+      "firstSeen": "2020-11-19",
+      "image": "/products/f6444150f522.webp"
+    },
+    {
+      "id": "7501502310206",
+      "name": "NUTRAPEL AMP HYALUSILK Acido Hialuronico",
+      "brandId": "nutrapel",
+      "categorySlug": "capilar",
+      "firstSeen": "2025-08-17",
+      "image": "/products/fc21d8f7b737.webp"
+    },
+    {
+      "id": "7501502326160",
+      "name": "NUTRAPEL AMP KERACTIVE PURE",
+      "brandId": "nutrapel",
+      "categorySlug": "capilar",
+      "firstSeen": "2022-08-04",
+      "image": "/products/d4dd811e3323.webp"
+    },
+    {
+      "id": "7501502326061",
+      "name": "NUTRAPEL AMP KERATIVE 911",
+      "brandId": "nutrapel",
+      "categorySlug": "capilar",
+      "firstSeen": "2020-08-22",
+      "image": "/products/b110db13d2c9.webp"
+    },
+    {
+      "id": "7501502373065",
+      "name": "NUTRAPEL AMP KERATIVE NUTRITIVE BAMBOO",
+      "brandId": "nutrapel",
+      "categorySlug": "capilar",
+      "firstSeen": "2022-08-04"
+    },
+    {
+      "id": "A911",
+      "name": "NUTRAPEL AMPOLLETA 911 CAJA",
+      "brandId": "nutrapel",
+      "categorySlug": "capilar",
+      "firstSeen": "2025-03-31"
+    },
+    {
+      "id": "NAH",
+      "name": "NUTRAPEL AMPOLLETA CAJA HYALUSILK",
+      "brandId": "nutrapel",
+      "categorySlug": "capilar",
+      "firstSeen": "2025-11-26",
+      "image": "/products/f831e84ef092.webp"
+    },
+    {
+      "id": "7501502308821",
+      "name": "NUTRAPEL DEC PLATINOXIDE ULTRA SILK",
+      "brandId": "nutrapel",
+      "categorySlug": "tintes",
+      "firstSeen": "2021-04-24",
+      "image": "/products/71e4dca12c72.webp"
+    },
+    {
+      "id": "7501502311166",
+      "name": "NUTRAPEL HIDRO-ACTIVE KERATIN",
+      "brandId": "nutrapel",
+      "categorySlug": "capilar",
+      "firstSeen": "2022-03-03"
+    },
+    {
+      "id": "7501502301501",
+      "name": "NUTRAPEL HIDRO-ACTIVE SOBRE",
+      "brandId": "nutrapel",
+      "categorySlug": "capilar",
+      "firstSeen": "2022-03-03"
+    },
+    {
+      "id": "7501502310145",
+      "name": "NUTRAPEL HYALUSILK MASCARILLA TARRO 360G",
+      "brandId": "nutrapel",
+      "categorySlug": "capilar",
+      "firstSeen": "2026-07-18",
+      "tags": [
+        "new"
+      ]
+    },
+    {
+      "id": "7501502310183",
+      "name": "NUTRAPEL HYALUSILK MASK SOBRE",
+      "brandId": "nutrapel",
+      "categorySlug": "capilar",
+      "firstSeen": "2026-03-05"
+    },
+    {
+      "id": "7501502310190",
+      "name": "NUTRAPEL HYALUSILK SERUM",
+      "brandId": "nutrapel",
+      "categorySlug": "capilar",
+      "firstSeen": "2026-07-18",
+      "tags": [
+        "new"
+      ]
+    },
+    {
+      "id": "7501502310138",
+      "name": "NUTRAPEL HYALUSILK SHAMPOO",
+      "brandId": "nutrapel",
+      "categorySlug": "capilar",
+      "firstSeen": "2026-01-26",
+      "image": "/products/5c5e4a979363.webp"
+    },
+    {
+      "id": "7501502305059",
+      "name": "NUTRAPEL INSTA FREEZE FIJADOR EN SPRAY 300ML",
+      "brandId": "nutrapel",
+      "categorySlug": "capilar",
+      "firstSeen": "2023-04-27",
+      "image": "/products/b09a274bc134.webp"
+    },
+    {
+      "id": "7501502310053",
+      "name": "NUTRAPEL INSTA PERM ONDULANTE DUO",
+      "brandId": "nutrapel",
+      "categorySlug": "capilar",
+      "firstSeen": "2024-02-17"
+    },
+    {
+      "id": "7501502326375",
+      "name": "NUTRAPEL KERACTIVE ARGAN OIL",
+      "brandId": "nutrapel",
+      "categorySlug": "capilar",
+      "firstSeen": "2022-09-27",
+      "image": "/products/0055a44727bd.webp"
+    },
+    {
+      "id": "7501502326382",
+      "name": "NUTRAPEL KERACTIVE MOROCAN MASC",
+      "brandId": "nutrapel",
+      "categorySlug": "capilar",
+      "firstSeen": "2026-03-05",
+      "image": "/products/4e625cec898c.webp"
+    },
+    {
+      "id": "7501502326108",
+      "name": "NUTRAPEL KERACTIVE PROTEC 144 ML",
+      "brandId": "nutrapel",
+      "categorySlug": "capilar",
+      "firstSeen": "2020-07-18",
+      "image": "/products/6f434d85bd8a.webp"
+    },
+    {
+      "id": "7501502326078",
+      "name": "NUTRAPEL KERATIVE 911",
+      "brandId": "nutrapel",
+      "categorySlug": "capilar",
+      "firstSeen": "2020-08-19",
+      "image": "/products/efb5aa8e3dae.webp"
+    },
+    {
+      "id": "NKE",
+      "name": "NUTRAPEL KERATIVE 911 CAJA AMPOLLETA",
+      "brandId": "nutrapel",
+      "categorySlug": "capilar",
+      "firstSeen": "2024-10-21",
+      "image": "/products/b110db13d2c9.webp"
+    },
+    {
+      "id": "7501502326146",
+      "name": "NUTRAPEL KERATIVE CURLY RIZADOR TEMPORAL",
+      "brandId": "nutrapel",
+      "categorySlug": "capilar",
+      "firstSeen": "2022-02-11",
+      "image": "/products/db389d8321e2.webp"
+    },
+    {
+      "id": "7501502326153",
+      "name": "NUTRAPEL KERATIVE CURLY TRATAMIENTO",
+      "brandId": "nutrapel",
+      "categorySlug": "capilar",
+      "firstSeen": "2024-01-16",
+      "image": "/products/37d8da3d45ed.webp"
+    },
+    {
+      "id": "7501502312101",
+      "name": "NUTRAPEL LASSIO 4EVER CHOCOLATE",
+      "brandId": "nutrapel",
+      "categorySlug": "capilar",
+      "firstSeen": "2020-07-20"
+    },
+    {
+      "id": "L4",
+      "name": "NUTRAPEL LASSIO 4EVER CHOCOLATE",
+      "brandId": "nutrapel",
+      "categorySlug": "capilar",
+      "firstSeen": "2023-12-12"
+    },
+    {
+      "id": "7501502312057",
+      "name": "NUTRAPEL LASSIO CARE TRAT CHOCO",
+      "brandId": "nutrapel",
+      "categorySlug": "capilar",
+      "firstSeen": "2020-07-23",
+      "image": "/products/1d87f7e2280b.webp"
+    },
+    {
+      "id": "CH",
+      "name": "NUTRAPEL LASSIO CARE TRAT CHOCO",
+      "brandId": "nutrapel",
+      "categorySlug": "capilar",
+      "firstSeen": "2023-12-12",
+      "image": "/products/1d87f7e2280b.webp"
+    },
+    {
+      "id": "7501502357058",
+      "name": "NUTRAPEL LASSIO STYLE ALACIADOR TEMP 300ML",
+      "brandId": "nutrapel",
+      "categorySlug": "capilar",
+      "firstSeen": "2020-07-23",
+      "image": "/products/56a1467b6dbf.webp",
+      "salesRank": 12,
+      "tags": [
+        "bestseller"
+      ]
+    },
+    {
+      "id": "7501502308067",
+      "name": "NUTRAPEL MOUSSE INSTA FREEZE 300G",
+      "brandId": "nutrapel",
+      "categorySlug": "capilar",
+      "firstSeen": "2021-07-12",
+      "image": "/products/1735ef693c68.webp"
+    },
+    {
+      "id": "7501502311227",
+      "name": "NUTRAPEL PEROXIDO PLATINOXIDE DE 20 VOL 135ML.",
+      "brandId": "nutrapel",
+      "categorySlug": "tintes",
+      "firstSeen": "2020-10-17",
+      "image": "/products/f1016ce7181d.webp"
+    },
+    {
+      "id": "7501502392905",
+      "name": "NUTRAPEL PLATINOXIDE 10 VOL. 135ML",
+      "brandId": "nutrapel",
+      "categorySlug": "tintes",
+      "firstSeen": "2026-07-18",
+      "tags": [
+        "new"
+      ]
+    },
+    {
+      "id": "G430",
+      "name": "NUTRAPEL PLATINOXIDE PEROX 20V 1000ML",
+      "brandId": "nutrapel",
+      "categorySlug": "tintes",
+      "firstSeen": "2021-12-16",
+      "image": "/products/f1016ce7181d.webp"
+    },
+    {
+      "id": "7501502326085",
+      "name": "NUTRAPEL PURIFIANT SHAMPOO DE LIMPIEZA PROFUNDA 300ML",
+      "brandId": "nutrapel",
+      "categorySlug": "capilar",
+      "firstSeen": "2022-01-11",
+      "image": "/products/4f2c4cd90ca0.webp"
+    },
+    {
+      "id": "7501502380315",
+      "name": "NUTRAPEL REMOVEDOR De Tinte",
+      "brandId": "nutrapel",
+      "categorySlug": "tintes",
+      "firstSeen": "2022-08-21"
+    },
+    {
+      "id": "7501502312019",
+      "name": "NUTRAPEL Shampoo CHOCOLATE 1 L",
+      "brandId": "nutrapel",
+      "categorySlug": "capilar",
+      "firstSeen": "2022-03-24"
+    },
+    {
+      "id": "7501502326139",
+      "name": "NUTRAPEL SHAMPOO CURLY",
+      "brandId": "nutrapel",
+      "categorySlug": "capilar",
+      "firstSeen": "2021-12-17"
+    },
+    {
+      "id": "7501502312026",
+      "name": "NUTRAPEL SHAMPOO DE CHOCOLATE Lassio Care 300 ML",
+      "brandId": "nutrapel",
+      "categorySlug": "capilar",
+      "firstSeen": "2020-07-22",
+      "image": "/products/d9855a4a05b9.webp"
+    },
+    {
+      "id": "7501502373010",
+      "name": "NUTRAPEL SHAMPOO NUTRITIVE",
+      "brandId": "nutrapel",
+      "categorySlug": "capilar",
+      "firstSeen": "2022-12-09",
+      "image": "/products/4cc8fc426820.webp"
+    },
+    {
+      "id": "7501502300405",
+      "name": "NUTRAPEL SOAVENCE GEL",
+      "brandId": "nutrapel",
+      "categorySlug": "capilar",
+      "firstSeen": "2025-10-11",
+      "image": "/products/9df922df6aca.webp"
+    },
+    {
+      "id": "7501502300306",
+      "name": "NUTRAPEL SOAVENCE GEL 12OZ",
+      "brandId": "nutrapel",
+      "categorySlug": "capilar",
+      "firstSeen": "2020-11-26",
+      "image": "/products/9df922df6aca.webp"
+    },
+    {
+      "id": "7501502317052",
+      "name": "NUTRAPEL TRAT KERATIVE 911",
+      "brandId": "nutrapel",
+      "categorySlug": "capilar",
+      "firstSeen": "2020-09-16",
+      "image": "/products/59de38271374.webp"
+    },
+    {
+      "id": "7502270290042",
+      "name": "OURO ARGAN SILICA",
+      "brandId": "ouro",
+      "categorySlug": "capilar",
+      "firstSeen": "2020-07-30",
+      "image": "/products/8342921e759c.webp"
+    },
+    {
+      "id": "7502270290288",
+      "name": "OURO BIFASICO",
+      "brandId": "ouro",
+      "categorySlug": "capilar",
+      "firstSeen": "2025-11-19"
+    },
+    {
+      "id": "7502270290271",
+      "name": "OURO BISAFICO KIDS",
+      "brandId": "ouro",
+      "categorySlug": "capilar",
+      "firstSeen": "2025-11-19"
+    },
+    {
+      "id": "7502270290004",
+      "name": "OURO SEDA ALOE 150ML.",
+      "brandId": "ouro",
+      "categorySlug": "capilar",
+      "firstSeen": "2020-11-05",
+      "image": "/products/e2402a9fd94d.webp"
+    },
+    {
+      "id": "7502270290028",
+      "name": "OURO SEDA ALOE 75 ML",
+      "brandId": "ouro",
+      "categorySlug": "capilar",
+      "firstSeen": "2022-02-17",
+      "image": "/products/e2402a9fd94d.webp"
+    },
+    {
+      "id": "7500326094293",
+      "name": "OURO SEDA DE LINO",
+      "brandId": "ouro",
+      "categorySlug": "capilar",
+      "firstSeen": "2020-08-08",
+      "image": "/products/bcf8b00b4e4d.webp"
+    },
+    {
+      "id": "7500326094309",
+      "name": "OURO SEDA DE LINO 20ML",
+      "brandId": "ouro",
+      "categorySlug": "capilar",
+      "firstSeen": "2021-08-12",
+      "image": "/products/bcf8b00b4e4d.webp"
+    },
+    {
+      "id": "7500326094279",
+      "name": "OURO SEDA DE UVA 20ML",
+      "brandId": "ouro",
+      "categorySlug": "capilar",
+      "firstSeen": "2020-10-16",
+      "image": "/products/bf2f74464de9.webp"
+    },
+    {
+      "id": "7502270290035",
+      "name": "OURO SEDA UVA 125 ML MED",
+      "brandId": "ouro",
+      "categorySlug": "capilar",
+      "firstSeen": "2020-08-06"
+    },
+    {
+      "id": "7500326094255",
+      "name": "OURO SEDA UVA 150ML GDE",
+      "brandId": "ouro",
+      "categorySlug": "capilar",
+      "firstSeen": "2020-07-18"
+    },
+    {
+      "id": "7500326094262",
+      "name": "OURO SEDA UVA 75ML CHICA",
+      "brandId": "ouro",
+      "categorySlug": "capilar",
+      "firstSeen": "2020-08-06"
+    },
+    {
+      "id": "7502270290189",
+      "name": "OURO SHAMPOO MAT. ROJO",
+      "brandId": "ouro",
+      "categorySlug": "capilar",
+      "firstSeen": "2020-07-18",
+      "image": "/products/743178e7dc37.webp"
+    },
+    {
+      "id": "7502270290301",
+      "name": "OURO SHAMPOO MATIZADOR 1LT.",
+      "brandId": "ouro",
+      "categorySlug": "capilar",
+      "firstSeen": "2020-12-31"
+    },
+    {
+      "id": "75502270290417",
+      "name": "OURO SHAMPOO MATIZADOR NEGRO",
+      "brandId": "ouro",
+      "categorySlug": "capilar",
+      "firstSeen": "2026-03-11",
+      "image": "/products/67e4ff036c30.webp"
+    },
+    {
+      "id": "7500326094316",
+      "name": "OURO SHAMPOO MATIZADOR PLATINADO 250 ML.",
+      "brandId": "ouro",
+      "categorySlug": "capilar",
+      "firstSeen": "2020-07-18",
+      "image": "/products/5b996ee8f819.webp"
+    },
+    {
+      "id": "158938",
+      "name": "OURO SHAMPOO MATIZADOR ROJO",
+      "brandId": "ouro",
+      "categorySlug": "capilar",
+      "firstSeen": "2025-10-31",
+      "image": "/products/743178e7dc37.webp"
+    },
+    {
+      "id": "7502270290134",
+      "name": "OURO SHAMPOO PURIFYING",
+      "brandId": "ouro",
+      "categorySlug": "capilar",
+      "firstSeen": "2020-08-22",
+      "image": "/products/6a8cf341f630.webp"
+    },
+    {
+      "id": "7502270290233",
+      "name": "OURO SRAY FIJADOR CON ACEITE MACADAMIA",
+      "brandId": "ouro",
+      "categorySlug": "capilar",
+      "firstSeen": "2022-09-01"
+    },
+    {
+      "id": "7503013561726",
+      "name": "SENZARE HIDRO-NUTRITIVE BI-FASE 300ML",
+      "categorySlug": "capilar",
+      "firstSeen": "2021-09-16"
+    },
+    {
+      "id": "7503031561726",
+      "name": "SENZARE HIDRONUTRITIVE TRAT NUTRIT",
+      "categorySlug": "capilar",
+      "firstSeen": "2022-05-04"
+    },
+    {
+      "id": "2725",
+      "name": "TIJERA KUUL METAL GRIS",
+      "brandId": "kuul",
+      "categorySlug": "accesorios",
+      "firstSeen": "2026-04-28"
+    },
+    {
+      "id": "7501438365387",
+      "name": "TINTE KUUL 000",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/2a05725b7054.webp"
+    },
+    {
+      "id": "7501438365011",
+      "name": "TINTE KUUL 1",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/567382f80387.webp"
+    },
+    {
+      "id": "7501438365097",
+      "name": "TINTE KUUL 10",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/08ff6d56c838.webp"
+    },
+    {
+      "id": "7501438365257",
+      "name": "TINTE KUUL 10.1",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/309e5a774698.webp"
+    },
+    {
+      "id": "7501438366957",
+      "name": "TINTE KUUL 10.11",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/55bd305444ed.webp"
+    },
+    {
+      "id": "7501438365264",
+      "name": "TINTE KUUL 10.22",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/9f3369b79992.webp"
+    },
+    {
+      "id": "7501438365240",
+      "name": "TINTE KUUL 10.31",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/c970abff6de1.webp"
+    },
+    {
+      "id": "7501438365004",
+      "name": "TINTE KUUL 1A",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/43c481f60b03.webp"
+    },
+    {
+      "id": "7501438361198",
+      "name": "TINTE KUUL 1V",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2026-06-09",
+      "image": "/products/4d43fbb4b4b7.webp"
+    },
+    {
+      "id": "7501438363581",
+      "name": "TINTE KUUL 2",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/9dd81ea4df69.webp"
+    },
+    {
+      "id": "7501438365028",
+      "name": "TINTE KUUL 3",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-08-01",
+      "image": "/products/fb47532ba360.webp"
+    },
+    {
+      "id": "7501438365035",
+      "name": "TINTE KUUL 4",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/46f3ab138055.webp"
+    },
+    {
+      "id": "7501438365271",
+      "name": "TINTE KUUL 4.52",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/e215630c2aed.webp"
+    },
+    {
+      "id": "7501438365288",
+      "name": "TINTE KUUL 4.65",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/1ce5063e1ebf.webp"
+    },
+    {
+      "id": "7501438365042",
+      "name": "TINTE KUUL 5",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/a9d1f60652a9.webp"
+    },
+    {
+      "id": "7501438363758",
+      "name": "TINTE KUUL 5.1",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/5cd77c1fe12e.webp"
+    },
+    {
+      "id": "7501438365165",
+      "name": "TINTE KUUL 5.31",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/60250b8adc88.webp"
+    },
+    {
+      "id": "7501438365172",
+      "name": "TINTE KUUL 5.45",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/8ec97fbc9342.webp"
+    },
+    {
+      "id": "7501438365189",
+      "name": "TINTE KUUL 5.5",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/73577ed4b70f.webp"
+    },
+    {
+      "id": "7501438365059",
+      "name": "TINTE KUUL 6",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/7cfb652ebb39.webp"
+    },
+    {
+      "id": "7501438365622",
+      "name": "TINTE KUUL 6.1",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/d2361807a107.webp"
+    },
+    {
+      "id": "7501438366940",
+      "name": "TINTE KUUL 6.11",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/94a179b25745.webp"
+    },
+    {
+      "id": "7501438365653",
+      "name": "TINTE KUUL 6.12",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/3c4c93058019.webp"
+    },
+    {
+      "id": "7501438365462",
+      "name": "TINTE KUUL 6.22",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/fc55bf3dd9af.webp"
+    },
+    {
+      "id": "7501438365684",
+      "name": "TINTE KUUL 6.23",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/ceb1f60938fb.webp"
+    },
+    {
+      "id": "7501438363772",
+      "name": "TINTE KUUL 6.32",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/970ae7634b32.webp"
+    },
+    {
+      "id": "7501438365196",
+      "name": "TINTE KUUL 6.34",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/48dfd2a475ed.webp"
+    },
+    {
+      "id": "7501438365295",
+      "name": "TINTE KUUL 6.66",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/5cc6e25b6ffa.webp"
+    },
+    {
+      "id": "7501438365066",
+      "name": "TINTE KUUL 7",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/20803dab7c11.webp"
+    },
+    {
+      "id": "7501438365639",
+      "name": "TINTE KUUL 7.1",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/b6cca6a64e6e.webp"
+    },
+    {
+      "id": "7501438365103",
+      "name": "TINTE KUUL 7.11",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/7e3fac75547b.webp"
+    },
+    {
+      "id": "7501438365660",
+      "name": "TINTE KUUL 7.12",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/b77d527c5765.webp"
+    },
+    {
+      "id": "7501438366964",
+      "name": "TINTE KUUL 7.22",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/001bf5e2524f.webp"
+    },
+    {
+      "id": "7501438363765",
+      "name": "TINTE KUUL 7.24",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/415499273f44.webp"
+    },
+    {
+      "id": "7501438365110",
+      "name": "TINTE KUUL 7.3",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-08-14",
+      "image": "/products/4ab73ae75834.webp"
+    },
+    {
+      "id": "7501438365202",
+      "name": "TINTE KUUL 7.31",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/c8d3a6b33bbe.webp"
+    },
+    {
+      "id": "7501438365219",
+      "name": "TINTE KUUL 7.35",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-08-20",
+      "image": "/products/985015cd902e.webp"
+    },
+    {
+      "id": "7501438365301",
+      "name": "TINTE KUUL 7.44",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/8acf9a61bfd0.webp"
+    },
+    {
+      "id": "7501438365226",
+      "name": "TINTE KUUL 7.5",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/b1dd150021cf.webp"
+    },
+    {
+      "id": "7501438365233",
+      "name": "TINTE KUUL 7.52",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/8ae667a65dad.webp"
+    },
+    {
+      "id": "7501438365318",
+      "name": "TINTE KUUL 7.62",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/99277fc6f671.webp"
+    },
+    {
+      "id": "7501438365325",
+      "name": "TINTE KUUL 7.64",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/b362b6154441.webp"
+    },
+    {
+      "id": "7501438365332",
+      "name": "TINTE KUUL 7.66",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/02ac126bfbf1.webp"
+    },
+    {
+      "id": "7501438365073",
+      "name": "TINTE KUUL 8",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/d8fdd954ccf8.webp"
+    },
+    {
+      "id": "7501438365646",
+      "name": "TINTE KUUL 8.1",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/9163c0032119.webp"
+    },
+    {
+      "id": "7501438365127",
+      "name": "TINTE KUUL 8.11",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/9d6e9afde427.webp"
+    },
+    {
+      "id": "7501438365479",
+      "name": "TINTE KUUL 8.22",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/fd4e98743484.webp"
+    },
+    {
+      "id": "7501438365134",
+      "name": "TINTE KUUL 8.3",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/7aadb0324fb9.webp"
+    },
+    {
+      "id": "7501438365349",
+      "name": "TINTE KUUL 8.62",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/3c1029300cda.webp"
+    },
+    {
+      "id": "7501438365356",
+      "name": "TINTE KUUL 8.66",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-13",
+      "image": "/products/8212152bb5f4.webp"
+    },
+    {
+      "id": "7501438365080",
+      "name": "TINTE KUUL 9",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/ff57d8655653.webp"
+    },
+    {
+      "id": "7501438363741",
+      "name": "TINTE KUUL 9.1",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/247dd2cb329a.webp"
+    },
+    {
+      "id": "7501438365141",
+      "name": "TINTE KUUL 9.11",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/ca8ab7c8d447.webp"
+    },
+    {
+      "id": "7501438365677",
+      "name": "TINTE KUUL 9.12",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-11-17",
+      "image": "/products/7b4abd9df3a4.webp"
+    },
+    {
+      "id": "7501438366971",
+      "name": "TINTE KUUL 9.22",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-12-04",
+      "image": "/products/88d733475682.webp"
+    },
+    {
+      "id": "7501438365158",
+      "name": "TINTE KUUL 9.33",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/80a5eefa4801.webp"
+    },
+    {
+      "id": "7501438365363",
+      "name": "TINTE KUUL 9.66",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/7e5142a80df5.webp"
+    },
+    {
+      "id": "7501438365691",
+      "name": "TINTE KUUL 9.9",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/ee15a3d19fd4.webp"
+    },
+    {
+      "id": "7501438365370",
+      "name": "TINTE KUUL 902",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/db13c6dbab5e.webp"
+    },
+    {
+      "id": "7501438300166",
+      "name": "TINTE KUUL AZUL CELESTE",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-12-05"
+    },
+    {
+      "id": "7501438300210",
+      "name": "TINTE KUUL AZUL JEANS",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2026-04-01"
+    },
+    {
+      "id": "7501438363604",
+      "name": "TINTE KUUL AZUL METALICO",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/1521458b9c40.webp"
+    },
+    {
+      "id": "7501438300197",
+      "name": "TINTE KUUL AZUL OCEANO",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-11-22"
+    },
+    {
+      "id": "7501438361174",
+      "name": "TINTE KUUL BLANCO",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2026-04-01"
+    },
+    {
+      "id": "7501438361167",
+      "name": "TINTE KUUL CROMO GRAFITO",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-12-05"
+    },
+    {
+      "id": "7501438365394",
+      "name": "TINTE KUUL CROMO ROJO",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/aa4cb06a2a2c.webp"
+    },
+    {
+      "id": "7501438365523",
+      "name": "TINTE KUUL F AMARILLO",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27"
+    },
+    {
+      "id": "7501438366575",
+      "name": "TINTE KUUL F AZUL",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/013fab266d43.webp"
+    },
+    {
+      "id": "7501438361938",
+      "name": "TINTE KUUL F AZUL NEON",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/81cb2afab6bc.webp"
+    },
+    {
+      "id": "7501438300142",
+      "name": "TINTE KUUL F BLANCO TITANIO",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/b86ff94fd140.webp"
+    },
+    {
+      "id": "7501438300173",
+      "name": "TINTE KUUL F BUGAMBILIA",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/a357128290cf.webp"
+    },
+    {
+      "id": "7501438300180",
+      "name": "TINTE KUUL F CORAL",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/d4a777e9370c.webp"
+    },
+    {
+      "id": "7501438366629",
+      "name": "TINTE KUUL F NARANJA",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/c35e7999a396.webp"
+    },
+    {
+      "id": "7501438361921",
+      "name": "TINTE KUUL F NEON AMARILLO",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/d2a3c03bb99c.webp"
+    },
+    {
+      "id": "7501438366582",
+      "name": "TINTE KUUL F PLATA",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/957fe3d28798.webp"
+    },
+    {
+      "id": "7501438366605",
+      "name": "TINTE KUUL F ROJO",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/cabca60f621b.webp"
+    },
+    {
+      "id": "7501438361952",
+      "name": "TINTE KUUL F VERDE NEON",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/a1da3e145bbf.webp"
+    },
+    {
+      "id": "7501438300272",
+      "name": "TINTE KUUL F VIOLETA NEON",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-11-05",
+      "image": "/products/b270d672eab1.webp"
+    },
+    {
+      "id": "7501438366599",
+      "name": "TINTE KUUL MAGENTA",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27"
+    },
+    {
+      "id": "7501438363666",
+      "name": "TINTE KUUL MORADO METALICO",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/a79d795f155c.webp"
+    },
+    {
+      "id": "7501438363673",
+      "name": "TINTE KUUL ORO METALICO",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/6451894267cc.webp"
+    },
+    {
+      "id": "7501438363611",
+      "name": "TINTE KUUL PLATINADO METALICO",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/2b3b74ab5b87.webp"
+    },
+    {
+      "id": "7501438365509",
+      "name": "TINTE KUUL REF COBRE",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/6ba955c83440.webp"
+    },
+    {
+      "id": "7501438365516",
+      "name": "TINTE KUUL REF DORADO COBRIZO",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/89d4b6940b16.webp"
+    },
+    {
+      "id": "7501438366414",
+      "name": "TINTE KUUL REF MORADO",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27"
+    },
+    {
+      "id": "7501438365486",
+      "name": "TINTE KUUL REF ROJO",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/3aed8cf4730a.webp"
+    },
+    {
+      "id": "7501438303679",
+      "name": "TINTE KUUL REFLECT COBRE",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-13",
+      "image": "/products/6ba955c83440.webp"
+    },
+    {
+      "id": "7501438303686",
+      "name": "TINTE KUUL REFLECT DORADO COBRIZO",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-13",
+      "image": "/products/89d4b6940b16.webp"
+    },
+    {
+      "id": "7501438303709",
+      "name": "TINTE KUUL REFLECT ROJO VIOLETA",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-13",
+      "image": "/products/93aa5bad780d.webp"
+    },
+    {
+      "id": "7501438303693",
+      "name": "TINTE KUUL REFLECTS ROJO",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-08-11",
+      "image": "/products/3aed8cf4730a.webp"
+    },
+    {
+      "id": "7501438303716",
+      "name": "TINTE KUUL REFLECTS VIOLETA",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-12-12",
+      "image": "/products/a0369869cd2c.webp"
+    },
+    {
+      "id": "7501438300234",
+      "name": "TINTE KUUL ROJO ROSADO",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2026-06-09"
+    },
+    {
+      "id": "7501438300241",
+      "name": "TINTE KUUL ROJO VIOLETA",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-12-15",
+      "image": "/products/ff2cac2493b1.webp"
+    },
+    {
+      "id": "7501438366988",
+      "name": "TINTE KUUL ROSA",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-12-05"
+    },
+    {
+      "id": "7501438363598",
+      "name": "TINTE KUUL ROSA METALICO",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27",
+      "image": "/products/3bdd17a6649f.webp"
+    },
+    {
+      "id": "7501438300258",
+      "name": "TINTE KUUL ROSA NEON",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-12-05"
+    },
+    {
+      "id": "7501438366612",
+      "name": "TINTE KUUL VERDE",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27"
+    },
+    {
+      "id": "7501438366568",
+      "name": "TINTE KUUL VIOLETA",
+      "brandId": "kuul",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-27"
+    },
+    {
+      "id": "7502238702754",
+      "name": "TINTE NEFERTITI 1",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-13",
+      "image": "/products/9a8a47045eac.webp"
+    },
+    {
+      "id": "7502238704222",
+      "name": "TINTE NEFERTITI 10.1",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-13",
+      "image": "/products/5dcd745506c5.webp"
+    },
+    {
+      "id": "7502238704246",
+      "name": "TINTE NEFERTITI 10.11",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-13",
+      "image": "/products/f553c38152a4.webp"
+    },
+    {
+      "id": "7502238703249",
+      "name": "TINTE NEFERTITI 10.3",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-13",
+      "image": "/products/2cb4a11fc72a.webp"
+    },
+    {
+      "id": "7502238702761",
+      "name": "TINTE NEFERTITI 1A",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2026-09-02",
+      "image": "/products/507af404447f.webp",
+      "tags": [
+        "new"
+      ]
+    },
+    {
+      "id": "7502238702778",
+      "name": "TINTE NEFERTITI 3",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-13",
+      "image": "/products/626d9643ae28.webp"
+    },
+    {
+      "id": "7502238702792",
+      "name": "TINTE NEFERTITI 4",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-13",
+      "image": "/products/cd5d815ffacc.webp"
+    },
+    {
+      "id": "7502238702822",
+      "name": "TINTE NEFERTITI 5",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-13",
+      "image": "/products/d7d1b83104fc.webp"
+    },
+    {
+      "id": "7502238702891",
+      "name": "TINTE NEFERTITI 5.22",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-13",
+      "image": "/products/1f81c3def160.webp"
+    },
+    {
+      "id": "7502238702884",
+      "name": "TINTE NEFERTITI 5.26",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-13",
+      "image": "/products/fdca3b9d649b.webp"
+    },
+    {
+      "id": "7502238702853",
+      "name": "TINTE NEFERTITI 5.5",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-13",
+      "image": "/products/d47949b848f4.webp"
+    },
+    {
+      "id": "7502238702914",
+      "name": "TINTE NEFERTITI 6",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-13",
+      "image": "/products/ceffa4d4a0fa.webp"
+    },
+    {
+      "id": "7502238702938",
+      "name": "TINTE NEFERTITI 6.07",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-13",
+      "image": "/products/3e6343fcbfd1.webp"
+    },
+    {
+      "id": "7502238703003",
+      "name": "TINTE NEFERTITI 6.22",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-13",
+      "image": "/products/41d9734a06ec.webp"
+    },
+    {
+      "id": "7502238702990",
+      "name": "TINTE NEFERTITI 6.26",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-13",
+      "image": "/products/f6d267203492.webp"
+    },
+    {
+      "id": "7502238702945",
+      "name": "TINTE NEFERTITI 6.3",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-13",
+      "image": "/products/01e3a4da5c01.webp"
+    },
+    {
+      "id": "7502238702983",
+      "name": "TINTE NEFERTITI 6.5",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-13",
+      "image": "/products/049461bf27db.webp"
+    },
+    {
+      "id": "7502238702969",
+      "name": "TINTE NEFERTITI 6.66",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-13",
+      "image": "/products/6a8aaa393f05.webp"
+    },
+    {
+      "id": "7502238703010",
+      "name": "TINTE NEFERTITI 6.8",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-13",
+      "image": "/products/68ec2398976c.webp"
+    },
+    {
+      "id": "7502238703027",
+      "name": "TINTE NEFERTITI 6.88",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-13",
+      "image": "/products/a638473ec203.webp"
+    },
+    {
+      "id": "7502238703034",
+      "name": "TINTE NEFERTITI 7",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-13",
+      "image": "/products/82785a10d50f.webp"
+    },
+    {
+      "id": "7502238705380",
+      "name": "TINTE NEFERTITI 7.02",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-13",
+      "image": "/products/8ff90c3f49ae.webp"
+    },
+    {
+      "id": "7502238703041",
+      "name": "TINTE NEFERTITI 7.1",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-13",
+      "image": "/products/2d50c274c866.webp"
+    },
+    {
+      "id": "7502238703058",
+      "name": "TINTE NEFERTITI 7.3",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-13",
+      "image": "/products/eecd4bf82c50.webp"
+    },
+    {
+      "id": "7502238703065",
+      "name": "TINTE NEFERTITI 7.31",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-13",
+      "image": "/products/a6eb1bf5585c.webp"
+    },
+    {
+      "id": "7502238704192",
+      "name": "TINTE NEFERTITI 7.36",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-13",
+      "image": "/products/0c81f30285d9.webp"
+    },
+    {
+      "id": "7502238703102",
+      "name": "TINTE NEFERTITI 7.5",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-13",
+      "image": "/products/2c14945a7024.webp"
+    },
+    {
+      "id": "7502238703089",
+      "name": "TINTE NEFERTITI 7.63",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-13",
+      "image": "/products/23041f8533bd.webp"
+    },
+    {
+      "id": "7502238703096",
+      "name": "TINTE NEFERTITI 7.66",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-13",
+      "image": "/products/0cc04ba1e431.webp"
+    },
+    {
+      "id": "7502238703119",
+      "name": "TINTE NEFERTITI 7.8",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-13",
+      "image": "/products/b81675f079fb.webp"
+    },
+    {
+      "id": "7502238704208",
+      "name": "TINTE NEFERTITI 7.81",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-13",
+      "image": "/products/92f3cc69fb0f.webp"
+    },
+    {
+      "id": "7502238704215",
+      "name": "TINTE NEFERTITI 7.83",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-13",
+      "image": "/products/1cf2cb163309.webp"
+    },
+    {
+      "id": "7502238703126",
+      "name": "TINTE NEFERTITI 8",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-13",
+      "image": "/products/360c24b7d395.webp"
+    },
+    {
+      "id": "7502238703133",
+      "name": "TINTE NEFERTITI 8.1",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-13",
+      "image": "/products/a75003cfc5dd.webp"
+    },
+    {
+      "id": "7502238703171",
+      "name": "TINTE NEFERTITI 8.11",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-13",
+      "image": "/products/ea8d10c83360.webp"
+    },
+    {
+      "id": "7502238703140",
+      "name": "TINTE NEFERTITI 8.3",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-13",
+      "image": "/products/ae3850fb4e75.webp"
+    },
+    {
+      "id": "7502238703157",
+      "name": "TINTE NEFERTITI 8.33",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-13",
+      "image": "/products/3aa923e952d1.webp"
+    },
+    {
+      "id": "7502238703164",
+      "name": "TINTE NEFERTITI 8.6",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-13",
+      "image": "/products/faccb05724a3.webp"
+    },
+    {
+      "id": "7502238703188",
+      "name": "TINTE NEFERTITI 9",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-13",
+      "image": "/products/f188abeea679.webp"
+    },
+    {
+      "id": "7502238703201",
+      "name": "TINTE NEFERTITI 9.07",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-13",
+      "image": "/products/336cb3c20195.webp"
+    },
+    {
+      "id": "7502238703195",
+      "name": "TINTE NEFERTITI 9.1",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-13",
+      "image": "/products/82032ffc62b1.webp"
+    },
+    {
+      "id": "7502238703218",
+      "name": "TINTE NEFERTITI 9.3",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-13",
+      "image": "/products/369aa1d1f436.webp"
+    },
+    {
+      "id": "7502238703225",
+      "name": "TINTE NEFERTITI 9.31",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-13",
+      "image": "/products/8b8dd163c685.webp"
+    },
+    {
+      "id": "7502238705410",
+      "name": "TINTE NEFERTITI AZUL METALICO",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-13",
+      "image": "/products/cd2b8f7215b1.webp"
+    },
+    {
+      "id": "7502238704444",
+      "name": "TINTE NEFERTITI AZUL SEDUCTOR",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-13",
+      "image": "/products/256ea53dcf16.webp"
+    },
+    {
+      "id": "7502238705427",
+      "name": "TINTE NEFERTITI LILA METALICO",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-13",
+      "image": "/products/21176717f39e.webp"
+    },
+    {
+      "id": "7502238704437",
+      "name": "TINTE NEFERTITI MORADO VIBRANTE",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-13",
+      "image": "/products/f7d41306f7ef.webp"
+    },
+    {
+      "id": "7502238704420",
+      "name": "TINTE NEFERTITI ROJO PASION",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-13",
+      "image": "/products/9598ac27b20d.webp"
+    },
+    {
+      "id": "7502238704451",
+      "name": "TINTE NEFERTITI ROSA GLAMOUR",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-13",
+      "image": "/products/02dc68fd2e8a.webp"
+    },
+    {
+      "id": "7502238705403",
+      "name": "TINTE NEFERTITI ROSA METALICO",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-13",
+      "image": "/products/ac19ed3a3479.webp"
+    },
+    {
+      "id": "7502238704413",
+      "name": "TINTE NEFERTITI VERDE MAGICO",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-13",
+      "image": "/products/ccf97e84ef3a.webp"
+    },
+    {
+      "id": "6953176649679",
+      "name": "TINTE UHD NUTRAPEL",
+      "brandId": "nutrapel",
+      "categorySlug": "tintes",
+      "firstSeen": "2020-11-07",
+      "image": "/products/05e38e1fa2fa.webp"
+    },
+    {
+      "id": "7501633786871",
+      "name": "TINTE VOGLIA 0-RA",
+      "brandId": "voglia",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-06-02",
+      "image": "/products/a9352f733ac9.webp"
+    },
+    {
+      "id": "7501633786017",
+      "name": "TINTE VOGLIA 1",
+      "brandId": "voglia",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-06-02",
+      "image": "/products/7c561a6e38a5.webp"
+    },
+    {
+      "id": "7501633786123",
+      "name": "TINTE VOGLIA 1.70",
+      "brandId": "voglia",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-06-02",
+      "image": "/products/843b97a67571.webp"
+    },
+    {
+      "id": "7501633786734",
+      "name": "TINTE VOGLIA 10.10",
+      "brandId": "voglia",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-06-02",
+      "image": "/products/a91bcbd1ad04.webp"
+    },
+    {
+      "id": "7501633786741",
+      "name": "TINTE VOGLIA 10.21",
+      "brandId": "voglia",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-06-02",
+      "image": "/products/ef0d46eb7585.webp"
+    },
+    {
+      "id": "7501633786604",
+      "name": "TINTE VOGLIA 1000",
+      "brandId": "voglia",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-06-02",
+      "image": "/products/3e887eef84bd.webp"
+    },
+    {
+      "id": "7501633786802",
+      "name": "TINTE VOGLIA 11.11",
+      "brandId": "voglia",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-06-02",
+      "image": "/products/9771c5dc9570.webp"
+    },
+    {
+      "id": "7501633786819",
+      "name": "TINTE VOGLIA 11.20",
+      "brandId": "voglia",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-06-02",
+      "image": "/products/0d9b4cbeaf74.webp"
+    },
+    {
+      "id": "7501633786611",
+      "name": "TINTE VOGLIA 2000",
+      "brandId": "voglia",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-06-02",
+      "image": "/products/2383f71e8abd.webp"
+    },
+    {
+      "id": "7501633786031",
+      "name": "TINTE VOGLIA 3",
+      "brandId": "voglia",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-06-02",
+      "image": "/products/6cd633ef0d98.webp"
+    },
+    {
+      "id": "7501633786048",
+      "name": "TINTE VOGLIA 4",
+      "brandId": "voglia",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-06-02",
+      "image": "/products/ada0fcb0f2f0.webp"
+    },
+    {
+      "id": "7501633786130",
+      "name": "TINTE VOGLIA 4.10",
+      "brandId": "voglia",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-06-02",
+      "image": "/products/8954fd12217b.webp"
+    },
+    {
+      "id": "7501633786857",
+      "name": "TINTE VOGLIA 4.26",
+      "brandId": "voglia",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-06-02",
+      "image": "/products/613838b5f6a6.webp"
+    },
+    {
+      "id": "7501633786659",
+      "name": "TINTE VOGLIA 4CC",
+      "brandId": "voglia",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-06-02"
+    },
+    {
+      "id": "7501633786055",
+      "name": "TINTE VOGLIA 5",
+      "brandId": "voglia",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-06-02",
+      "image": "/products/cc6937cf6330.webp"
+    },
+    {
+      "id": "7501633786185",
+      "name": "TINTE VOGLIA 5.10",
+      "brandId": "voglia",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-06-02",
+      "image": "/products/f79cc6adf814.webp"
+    },
+    {
+      "id": "7501633786208",
+      "name": "TINTE VOGLIA 5.35",
+      "brandId": "voglia",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-06-02",
+      "image": "/products/e0044af53fbe.webp"
+    },
+    {
+      "id": "7501633786260",
+      "name": "TINTE VOGLIA 5.65",
+      "brandId": "voglia",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-06-02",
+      "image": "/products/e20d8d694014.webp"
+    },
+    {
+      "id": "7501633786666",
+      "name": "TINTE VOGLIA 5CC",
+      "brandId": "voglia",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-06-02"
+    },
+    {
+      "id": "7501633786062",
+      "name": "TINTE VOGLIA 6",
+      "brandId": "voglia",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-06-02",
+      "image": "/products/ae6ec3b8c97e.webp"
+    },
+    {
+      "id": "7501633786291",
+      "name": "TINTE VOGLIA 6.10",
+      "brandId": "voglia",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-17",
+      "image": "/products/319ab0723a84.webp"
+    },
+    {
+      "id": "7501633786314",
+      "name": "TINTE VOGLIA 6.35",
+      "brandId": "voglia",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-06-02",
+      "image": "/products/0b0757ff4e2f.webp"
+    },
+    {
+      "id": "7501633786116",
+      "name": "TINTE VOGLIA 6.622",
+      "brandId": "voglia",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-11-25",
+      "image": "/products/642f8e37fedb.webp"
+    },
+    {
+      "id": "7501633786376",
+      "name": "TINTE VOGLIA 6.66",
+      "brandId": "voglia",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-06-02",
+      "image": "/products/307be825d876.webp"
+    },
+    {
+      "id": "7501633786628",
+      "name": "TINTE VOGLIA 6000",
+      "brandId": "voglia",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-06-02",
+      "image": "/products/7a060841ab61.webp"
+    },
+    {
+      "id": "7501633786673",
+      "name": "TINTE VOGLIA 6CC",
+      "brandId": "voglia",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-06-02"
+    },
+    {
+      "id": "7501633786970",
+      "name": "TINTE VOGLIA 6RI",
+      "brandId": "voglia",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-06-02"
+    },
+    {
+      "id": "7501633786079",
+      "name": "TINTE VOGLIA 7",
+      "brandId": "voglia",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-06-02",
+      "image": "/products/45e70fd1678a.webp"
+    },
+    {
+      "id": "7501633786390",
+      "name": "TINTE VOGLIA 7.10",
+      "brandId": "voglia",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-06-02",
+      "image": "/products/c9bb582eba8e.webp"
+    },
+    {
+      "id": "7501633786949",
+      "name": "TINTE VOGLIA 7.13",
+      "brandId": "voglia",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-06-02",
+      "image": "/products/6cbbe0c80fc8.webp"
+    },
+    {
+      "id": "7501633786413",
+      "name": "TINTE VOGLIA 7.32",
+      "brandId": "voglia",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-06-02",
+      "image": "/products/17fb4b232bf1.webp"
+    },
+    {
+      "id": "7501633786420",
+      "name": "TINTE VOGLIA 7.35",
+      "brandId": "voglia",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-06-02",
+      "image": "/products/42b12db07c9c.webp"
+    },
+    {
+      "id": "7501633786109",
+      "name": "TINTE VOGLIA 7.62",
+      "brandId": "voglia",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-06-02",
+      "image": "/products/72c30e1a6366.webp"
+    },
+    {
+      "id": "7501633786635",
+      "name": "TINTE VOGLIA 7000",
+      "brandId": "voglia",
+      "categorySlug": "tintes",
+      "firstSeen": "2026-03-24",
+      "image": "/products/c4c41eea4889.webp"
+    },
+    {
+      "id": "7501633786680",
+      "name": "TINTE VOGLIA 7CC",
+      "brandId": "voglia",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-06-02",
+      "salesRank": 11,
+      "tags": [
+        "bestseller"
+      ]
+    },
+    {
+      "id": "7501633786932",
+      "name": "TINTE VOGLIA 7CI",
+      "brandId": "voglia",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-06-02"
+    },
+    {
+      "id": "7501633786499",
+      "name": "TINTE VOGLIA 8.10",
+      "brandId": "voglia",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-06-02",
+      "image": "/products/2bb3b39cb9ac.webp"
+    },
+    {
+      "id": "7501633786987",
+      "name": "TINTE VOGLIA 8.22",
+      "brandId": "voglia",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-06-02",
+      "image": "/products/bd70b1c72e5d.webp"
+    },
+    {
+      "id": "7501633786512",
+      "name": "TINTE VOGLIA 8.31",
+      "brandId": "voglia",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-06-02",
+      "image": "/products/e040e4a4d542.webp"
+    },
+    {
+      "id": "7501633786697",
+      "name": "TINTE VOGLIA 8CC",
+      "brandId": "voglia",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-07-28",
+      "salesRank": 10,
+      "tags": [
+        "bestseller"
+      ]
+    },
+    {
+      "id": "7501633786567",
+      "name": "TINTE VOGLIA 9.01",
+      "brandId": "voglia",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-06-02",
+      "image": "/products/37d41e35954f.webp"
+    },
+    {
+      "id": "7501633786574",
+      "name": "TINTE VOGLIA 9.10",
+      "brandId": "voglia",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-06-02",
+      "image": "/products/801a8527a3ae.webp"
+    },
+    {
+      "id": "7501633786963",
+      "name": "TINTE VOGLIA 9.22",
+      "brandId": "voglia",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-06-02",
+      "image": "/products/10232f5a2441.webp"
+    },
+    {
+      "id": "7501633786895",
+      "name": "TINTE VOGLIA 9.91",
+      "brandId": "voglia",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-06-02",
+      "image": "/products/045ecff51d31.webp"
+    },
+    {
+      "id": "7501633786703",
+      "name": "TINTE VOGLIA 9CC",
+      "brandId": "voglia",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-06-02"
+    },
+    {
+      "id": "7501633719312",
+      "name": "TINTE VOGLIA FANTASIA ARGENTO GRIS",
+      "brandId": "voglia",
+      "categorySlug": "tintes",
+      "firstSeen": "2020-08-05"
+    },
+    {
+      "id": "7501633719367",
+      "name": "TINTE VOGLIA FANTASIA AZUL",
+      "brandId": "voglia",
+      "categorySlug": "tintes",
+      "firstSeen": "2022-01-25",
+      "image": "/products/231b2e2e66b6.webp"
+    },
+    {
+      "id": "7501633719336",
+      "name": "TINTE VOGLIA FANTASIA ROJO",
+      "brandId": "voglia",
+      "categorySlug": "tintes",
+      "firstSeen": "2022-01-25",
+      "image": "/products/291d52013e3e.webp"
+    },
+    {
+      "id": "7501633719343",
+      "name": "TINTE VOGLIA FANTASIA VIOLA",
+      "brandId": "voglia",
+      "categorySlug": "tintes",
+      "firstSeen": "2020-08-05",
+      "image": "/products/bb06f45b1c94.webp"
+    },
+    {
+      "id": "7502238704239",
+      "name": "TNTE NEFERTITI 10.02",
+      "brandId": "nefertiti",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-10-13",
+      "image": "/products/9fa034ace6bc.webp"
+    },
+    {
+      "id": "7503013561047",
+      "name": "VITTALE ACEITE ARGAN 125 ML",
+      "brandId": "vittale",
+      "categorySlug": "capilar",
+      "firstSeen": "2023-11-28",
+      "image": "/products/8b01ed2a7bf0.webp"
+    },
+    {
+      "id": "7502269120350",
+      "name": "VITTALE ACEITE ARGAN 60 ML",
+      "brandId": "vittale",
+      "categorySlug": "capilar",
+      "firstSeen": "2023-03-03",
+      "image": "/products/8b01ed2a7bf0.webp"
+    },
+    {
+      "id": "7502269121050",
+      "name": "VITTALE ALACIANTE TERMOPRO FC",
+      "brandId": "vittale",
+      "categorySlug": "capilar",
+      "firstSeen": "2026-04-15",
+      "image": "/products/fe26c5ca5821.webp"
+    },
+    {
+      "id": "7503013561245",
+      "name": "VITTALE BIFASE PRO",
+      "brandId": "vittale",
+      "categorySlug": "capilar",
+      "firstSeen": "2024-10-22",
+      "image": "/products/c1d99f8bacab.webp"
+    },
+    {
+      "id": "7503013561108",
+      "name": "VITTALE COLAGENO",
+      "brandId": "vittale",
+      "categorySlug": "otros",
+      "firstSeen": "2023-04-24",
+      "image": "/products/2cdd8215342c.webp"
+    },
+    {
+      "id": "7503013561436",
+      "name": "VITTALE KERATINA",
+      "brandId": "vittale",
+      "categorySlug": "capilar",
+      "firstSeen": "2025-09-11",
+      "image": "/products/e5068cb143c9.webp"
+    },
+    {
+      "id": "7503013561283",
+      "name": "VITTALE SEDA CAPILAR 60 ML",
+      "brandId": "vittale",
+      "categorySlug": "capilar",
+      "firstSeen": "2023-10-05",
+      "image": "/products/974c19d2aca2.webp"
+    },
+    {
+      "id": "7503013561443",
+      "name": "VITTALE SH MATIZADOR VIOLETA",
+      "brandId": "vittale",
+      "categorySlug": "capilar",
+      "firstSeen": "2022-09-27",
+      "image": "/products/bcb6b8950032.webp"
+    },
+    {
+      "id": "7503013561139",
+      "name": "VITTALE SHAMPOO BIOHIDRATANTE 1 LT",
+      "brandId": "vittale",
+      "categorySlug": "capilar",
+      "firstSeen": "2023-12-22",
+      "image": "/products/5112f9eb5df7.webp",
+      "salesRank": 7,
+      "tags": [
+        "bestseller"
+      ]
+    },
+    {
+      "id": "7503013561382",
+      "name": "VITTALE SHAMPOO BIOHIDRATANTE 320ml",
+      "brandId": "vittale",
+      "categorySlug": "capilar",
+      "firstSeen": "2022-09-12",
+      "image": "/products/5112f9eb5df7.webp",
+      "salesRank": 3,
+      "tags": [
+        "bestseller"
+      ]
+    },
+    {
+      "id": "7503013561184",
+      "name": "VITTALE SHAMPOO INTENSIFICADOR ROJO",
+      "brandId": "vittale",
+      "categorySlug": "capilar",
+      "firstSeen": "2021-03-09",
+      "image": "/products/c1e821e72618.webp"
+    },
+    {
+      "id": "7503013561160",
+      "name": "VITTALE SHAMPOO MATIZADOR VIOLETA 320ml",
+      "brandId": "vittale",
+      "categorySlug": "capilar",
+      "firstSeen": "2022-05-11",
+      "image": "/products/bcb6b8950032.webp"
+    },
+    {
+      "id": "7502269120640",
+      "name": "VITTALE SHAMPOO PROTECTOR DE COLOR",
+      "brandId": "vittale",
+      "categorySlug": "capilar",
+      "firstSeen": "2022-09-12",
+      "image": "/products/c028c41b9464.webp"
+    },
+    {
+      "id": "7501633716021",
+      "name": "VOGLIA AFTHER SHAVE",
+      "brandId": "voglia",
+      "categorySlug": "barberia",
+      "firstSeen": "2023-09-25"
+    },
+    {
+      "id": "7501633712023",
+      "name": "VOGLIA ALL IN ONE Termoprotector KERATIN",
+      "brandId": "voglia",
+      "categorySlug": "capilar",
+      "firstSeen": "2023-02-05",
+      "image": "/products/d35eef8a06a2.webp"
+    },
+    {
+      "id": "7501633711163",
+      "name": "VOGLIA ANTI FRIZZ AQUA-OIL 250ML",
+      "brandId": "voglia",
+      "categorySlug": "capilar",
+      "firstSeen": "2025-02-28",
+      "image": "/products/600d27dc9dc2.webp"
+    },
+    {
+      "id": "7501633712856",
+      "name": "VOGLIA ANTI FRIZZ CREAM SOBRE",
+      "brandId": "voglia",
+      "categorySlug": "capilar",
+      "firstSeen": "2024-09-26"
+    },
+    {
+      "id": "7501633712009",
+      "name": "VOGLIA ANTI FRIZZ CREMA",
+      "brandId": "voglia",
+      "categorySlug": "capilar",
+      "firstSeen": "2025-02-28",
+      "image": "/products/953f13b65327.webp"
+    },
+    {
+      "id": "7501633716069",
+      "name": "VOGLIA BARBA Y CABELLO MATTE",
+      "brandId": "voglia",
+      "categorySlug": "barberia",
+      "firstSeen": "2025-07-27",
+      "image": "/products/822f9527cfac.webp"
+    },
+    {
+      "id": "7501633716106",
+      "name": "VOGLIA BARBA Y CABELLO SHINER",
+      "brandId": "voglia",
+      "categorySlug": "barberia",
+      "firstSeen": "2024-09-28",
+      "image": "/products/c26cc0f07826.webp"
+    },
+    {
+      "id": "7501633716137",
+      "name": "VOGLIA BEARD & HAIR SHAMPOO BARBA Y CABELLO",
+      "brandId": "voglia",
+      "categorySlug": "barberia",
+      "firstSeen": "2025-09-25",
+      "image": "/products/ad58fbfd50ee.webp"
+    },
+    {
+      "id": "7501633712894",
+      "name": "VOGLIA BOND REPAIR TR 240ML",
+      "brandId": "voglia",
+      "categorySlug": "capilar",
+      "firstSeen": "2025-11-25",
+      "image": "/products/cde63222c3bf.webp"
+    },
+    {
+      "id": "7501633716113",
+      "name": "VOGLIA CERA MATTE",
+      "brandId": "voglia",
+      "categorySlug": "capilar",
+      "firstSeen": "2024-09-28"
+    },
+    {
+      "id": "1798",
+      "name": "VOGLIA CERA PARA PEINAR",
+      "brandId": "voglia",
+      "categorySlug": "capilar",
+      "firstSeen": "2022-07-25",
+      "image": "/products/f961cc1a964c.webp"
+    },
+    {
+      "id": "7501633798287",
+      "name": "VOGLIA FANTASY AZUL 20ML",
+      "brandId": "voglia",
+      "categorySlug": "tintes",
+      "firstSeen": "2024-09-26"
+    },
+    {
+      "id": "7501633712085",
+      "name": "VOGLIA MOLDING WAX CERA PARA PEINAR",
+      "brandId": "voglia",
+      "categorySlug": "capilar",
+      "firstSeen": "2024-03-05",
+      "image": "/products/f961cc1a964c.webp"
+    },
+    {
+      "id": "7501633710364",
+      "name": "VOGLIA PEROX 20V 140ML",
+      "brandId": "voglia",
+      "categorySlug": "tintes",
+      "firstSeen": "2020-11-11",
+      "image": "/products/c404499910aa.webp"
+    },
+    {
+      "id": "7501633713273",
+      "name": "VOGLIA PLEX DEC 100GR",
+      "brandId": "voglia",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-07-26",
+      "image": "/products/c00f9766dcc4.webp"
+    },
+    {
+      "id": "7501633713259",
+      "name": "VOGLIA PLEX DECOLORANTE 350 GR",
+      "brandId": "voglia",
+      "categorySlug": "tintes",
+      "firstSeen": "2025-05-01",
+      "image": "/products/c00f9766dcc4.webp"
+    },
+    {
+      "id": "7501633716007",
+      "name": "VOGLIA POMADA BARBA Y CABELLO",
+      "brandId": "voglia",
+      "categorySlug": "barberia",
+      "firstSeen": "2023-09-25",
+      "image": "/products/3dd36a0dec69.webp"
+    },
+    {
+      "id": "7501633710425",
+      "name": "VOGLIA SHAMPOO Anti Frizz ARGAN 250ML.",
+      "brandId": "voglia",
+      "categorySlug": "capilar",
+      "firstSeen": "2020-12-24",
+      "image": "/products/ab1c46e0ed17.webp"
+    },
+    {
+      "id": "7501633719152",
+      "name": "VOGLIA SHAMPOO MATIZADOR ROJO",
+      "brandId": "voglia",
+      "categorySlug": "capilar",
+      "firstSeen": "2023-09-19"
+    },
+    {
+      "id": "7501633719114",
+      "name": "VOGLIA SHAMPOO MATIZADOR SILVER BOOSTER",
+      "brandId": "voglia",
+      "categorySlug": "capilar",
+      "firstSeen": "2021-01-28",
+      "image": "/products/7d02b2e00f18.webp"
+    },
+    {
+      "id": "7501633716151",
+      "name": "VOGLIA SHAVING GEL PARA AFEITAR",
+      "brandId": "voglia",
+      "categorySlug": "barberia",
+      "firstSeen": "2025-09-25",
+      "image": "/products/6da9c0cf9863.webp"
+    },
+    {
+      "id": "7501633712863",
+      "name": "VOGLIA SOBRE ALL IN ONE TERMOPROT",
+      "brandId": "voglia",
+      "categorySlug": "capilar",
+      "firstSeen": "2024-09-26"
+    },
+    {
+      "id": "7501633712849",
+      "name": "VOGLIA SOBRE ANTI FRIZZ SH ARGAN",
+      "brandId": "voglia",
+      "categorySlug": "capilar",
+      "firstSeen": "2024-09-26"
+    },
+    {
+      "id": "7501633716168",
+      "name": "VOGLIA THE FIXXER GEL CABELLO",
+      "brandId": "voglia",
+      "categorySlug": "capilar",
+      "firstSeen": "2025-07-26",
+      "image": "/products/a81aa168be2e.webp"
+    },
+    {
+      "id": "7501633711996",
+      "name": "VOGLIA TOTAL REPAIR",
+      "brandId": "voglia",
+      "categorySlug": "capilar",
+      "firstSeen": "2023-03-22",
+      "image": "/products/340b6f6a875c.webp"
+    },
+    {
+      "id": "7501633712887",
+      "name": "VOGLIA TOTAL REPAIR MASK 450 GR",
+      "brandId": "voglia",
+      "categorySlug": "capilar",
+      "firstSeen": "2026-02-09",
+      "image": "/products/e45fa643f4bb.webp"
+    },
+    {
+      "id": "7501633711026",
+      "name": "VOGLIA TRATAMIENTO INTENSIVO CABELLO TEÑIDO 140ML.",
+      "brandId": "voglia",
+      "categorySlug": "capilar",
+      "firstSeen": "2020-11-30",
+      "image": "/products/b3e9446ddf56.webp"
+    },
+    {
+      "id": "7501633712412",
+      "name": "VOGLIA XTRONG SPRAY",
+      "brandId": "voglia",
+      "categorySlug": "capilar",
+      "firstSeen": "2024-07-27"
+    }
+  ]
+}

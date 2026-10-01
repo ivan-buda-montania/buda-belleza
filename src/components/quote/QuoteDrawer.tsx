@@ -1,13 +1,14 @@
-import { Check, FileText, Minus, Plus, Trash2, X } from 'lucide-react';
+import { FileText, Minus, Plus, Trash2, X } from 'lucide-react';
 import { useEffect, useId, useMemo, useRef, useState } from 'react';
 import { QUOTE_MINIMUM_MXN, useQuote, type QuoteLine } from '../../context/quote-store';
 import { getBrandById } from '../../data/brands';
+import { getCategoryBySlug } from '../../data/categories';
 import { socialLinks } from '../../data/social-links';
 import { cn } from '../../lib/cn';
 import { formatInteger, formatPrice } from '../../lib/format';
+import { categoryIconMap } from '../icons/categoryIconMap';
 import { WhatsAppIcon } from '../icons/SocialIcons';
 import { ButtonAnchor, ButtonLink } from '../ui/Button';
-import { SmartImage } from '../ui/SmartImage';
 
 const FOCUSABLE =
   'a[href], button:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])';
@@ -15,13 +16,11 @@ const FOCUSABLE =
 const whatsappBase =
   socialLinks.find((link) => link.id === 'whatsapp')?.href ?? 'https://wa.me/525543218800';
 
-function buildWhatsappHref(lines: QuoteLine[], subtotal: number) {
+function buildWhatsappHref(lines: QuoteLine[]) {
   const body = [
     'Hola Buda Belleza, quiero cotizar el siguiente pedido mayorista:',
     '',
     ...lines.map((line) => `• ${line.product.sku} × ${line.quantity} pzas — ${line.product.name}`),
-    '',
-    `Subtotal estimado: ${formatPrice(subtotal)} (sin IVA ni envío)`,
   ].join('\n');
 
   return `${whatsappBase}?text=${encodeURIComponent(body)}`;
@@ -33,13 +32,13 @@ interface QuantityStepperProps {
 }
 
 /**
- * Wholesale lines move in case multiples and can never fall below the order minimum.
- * The minus button disables itself once it reaches that floor, so it hands focus to
- * the plus button rather than dropping it on `<body>` inside a modal.
+ * Lines move one piece at a time and never fall below one (the POS has no case sizes).
+ * The minus button disables itself at that floor, so it hands focus to the plus button
+ * rather than dropping it on `<body>` inside a modal.
  */
 function QuantityStepper({ line, onChange }: QuantityStepperProps) {
   const { product, quantity } = line;
-  const step = product.price.minWholesaleQty ?? 6;
+  const step = 1;
   const plusRef = useRef<HTMLButtonElement>(null);
   const [draft, setDraft] = useState<string | null>(null);
   const atMinimum = quantity <= step;
@@ -63,7 +62,7 @@ function QuantityStepper({ line, onChange }: QuantityStepperProps) {
         type="button"
         onClick={decrement}
         disabled={atMinimum}
-        aria-label={`Quitar ${step} piezas de ${product.name}`}
+        aria-label={`Quitar una pieza de ${product.name}`}
         className="text-ink-600 hover:text-brand-600 flex h-11 w-9 items-center justify-center rounded-l-full transition-colors duration-250 disabled:opacity-30"
       >
         <Minus className="h-4 w-4" aria-hidden="true" />
@@ -89,7 +88,7 @@ function QuantityStepper({ line, onChange }: QuantityStepperProps) {
         ref={plusRef}
         type="button"
         onClick={() => onChange(quantity + step)}
-        aria-label={`Agregar ${step} piezas de ${product.name}`}
+        aria-label={`Agregar una pieza de ${product.name}`}
         className="text-ink-600 hover:text-brand-600 flex h-11 w-9 items-center justify-center rounded-r-full transition-colors duration-250"
       >
         <Plus className="h-4 w-4" aria-hidden="true" />
@@ -99,18 +98,7 @@ function QuantityStepper({ line, onChange }: QuantityStepperProps) {
 }
 
 export function QuoteDrawer() {
-  const {
-    lines,
-    itemCount,
-    totalUnits,
-    subtotal,
-    savings,
-    isOpen,
-    remove,
-    setQuantity,
-    clear,
-    close,
-  } = useQuote();
+  const { lines, itemCount, totalUnits, isOpen, remove, setQuantity, clear, close } = useQuote();
 
   const titleId = useId();
   const panelRef = useRef<HTMLDivElement>(null);
@@ -166,11 +154,7 @@ export function QuoteDrawer() {
     };
   }, [isOpen, close]);
 
-  const whatsappHref = useMemo(() => buildWhatsappHref(lines, subtotal), [lines, subtotal]);
-
-  const missing = Math.max(0, QUOTE_MINIMUM_MXN - subtotal);
-  const progress = Math.min(1, subtotal / QUOTE_MINIMUM_MXN);
-  const minimumReached = missing === 0 && subtotal > 0;
+  const whatsappHref = useMemo(() => buildWhatsappHref(lines), [lines]);
 
   return (
     <>
@@ -237,28 +221,39 @@ export function QuoteDrawer() {
         ) : (
           <ul className="divide-line flex-1 divide-y overflow-y-auto px-5 sm:px-6">
             {lines.map((line) => {
-              const { product, quantity } = line;
+              const { product } = line;
               const brand = getBrandById(product.brandId);
+              const category = getCategoryBySlug(product.categorySlug);
+              const Icon = category
+                ? categoryIconMap[category.icon as keyof typeof categoryIconMap]
+                : undefined;
 
               return (
                 <li key={product.id} className="flex gap-4 py-4">
-                  <SmartImage
-                    id={product.imageId}
-                    alt={product.name}
-                    width={72}
-                    height={72}
-                    sizes="72px"
-                    wrapperClassName="h-18 w-18 shrink-0 rounded-[0.875rem]"
-                  />
+                  {product.image ? (
+                    <img
+                      src={product.image}
+                      alt=""
+                      loading="lazy"
+                      className="ring-ink-900/[0.06] h-18 w-18 shrink-0 rounded-[0.875rem] bg-white object-contain p-1.5 ring-1"
+                    />
+                  ) : (
+                    <span
+                      aria-hidden="true"
+                      className="from-brand-50 to-gold-50 text-brand-600 grid h-18 w-18 shrink-0 place-items-center rounded-[0.875rem] bg-gradient-to-br"
+                    >
+                      {Icon && <Icon className="h-6 w-6" />}
+                    </span>
+                  )}
 
                   <div className="flex min-w-0 flex-1 flex-col gap-2">
                     <div className="min-w-0">
-                      <span className="eyebrow text-ink-400 block">{brand?.name}</span>
+                      {brand && <span className="eyebrow text-ink-400 block">{brand.name}</span>}
                       <p className="text-ink-900 mt-1 line-clamp-2 text-sm leading-snug font-semibold">
                         {product.name}
                       </p>
-                      <p className="text-ink-400 mt-0.5 text-xs">
-                        {product.presentation} · {formatPrice(product.price.wholesale)} por pieza
+                      <p className="text-ink-400 mt-0.5 text-xs tabular-nums">
+                        Clave {product.sku}
                       </p>
                     </div>
 
@@ -269,9 +264,6 @@ export function QuoteDrawer() {
                       />
 
                       <div className="flex items-center gap-0.5">
-                        <span className="font-display text-ink-900 text-sm leading-none font-semibold tabular-nums">
-                          {formatPrice(product.price.wholesale * quantity)}
-                        </span>
                         <button
                           type="button"
                           onClick={() => {
@@ -294,49 +286,9 @@ export function QuoteDrawer() {
 
         {lines.length > 0 && (
           <footer className="border-line bg-surface border-t px-5 py-5 sm:px-6">
-            <div className="flex flex-col gap-2">
-              <div
-                role="progressbar"
-                aria-label="Avance hacia el pedido mínimo"
-                aria-valuemin={0}
-                aria-valuemax={QUOTE_MINIMUM_MXN}
-                aria-valuenow={Math.round(Math.min(subtotal, QUOTE_MINIMUM_MXN))}
-                className="bg-ink-100 h-1.5 w-full overflow-hidden rounded-full"
-              >
-                <div
-                  className="from-brand-600 to-gold-400 h-full origin-left rounded-full bg-gradient-to-r transition-transform duration-500 ease-[var(--ease-out-quint)]"
-                  style={{ transform: `scaleX(${progress})` }}
-                />
-              </div>
-              <p
-                className={cn(
-                  'flex items-center gap-1.5 text-xs font-medium',
-                  minimumReached ? 'text-success-700' : 'text-ink-500',
-                )}
-              >
-                {minimumReached && <Check className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />}
-                {minimumReached
-                  ? 'Pedido mínimo alcanzado'
-                  : `Te faltan ${formatPrice(missing)} para alcanzar el pedido mínimo`}
-              </p>
-            </div>
-
-            <div className="border-line mt-4 flex items-baseline justify-between gap-3 border-t pt-4">
-              <span className="eyebrow text-ink-400">Subtotal</span>
-              <span className="font-display text-ink-900 text-2xl leading-none font-semibold tabular-nums">
-                {formatPrice(subtotal)}
-              </span>
-            </div>
-
-            {savings > 0 && (
-              <p className="text-success-700 mt-1.5 text-right text-xs font-semibold tabular-nums">
-                Ahorras {formatPrice(savings)} contra precio de lista
-              </p>
-            )}
-
-            <p className="text-ink-400 mt-3 text-[0.6875rem] leading-relaxed">
-              Los precios no incluyen IVA ni envío. Confirmamos existencias y flete al responder tu
-              cotización.
+            <p className="text-ink-500 text-xs leading-relaxed">
+              Te respondemos con precios, existencias y flete el mismo día hábil. Pedido mínimo de{' '}
+              {formatPrice(QUOTE_MINIMUM_MXN)} por orden.
             </p>
 
             <ButtonAnchor

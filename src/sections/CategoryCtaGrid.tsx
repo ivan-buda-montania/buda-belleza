@@ -7,7 +7,7 @@ import { Section } from '../components/ui/Section';
 import { SectionHeading } from '../components/ui/SectionHeading';
 import { SmartImage } from '../components/ui/SmartImage';
 import { cn } from '../lib/cn';
-import { formatInteger } from '../lib/format';
+import { formatReferences } from '../lib/format';
 import type { Category } from '../types/category';
 
 interface CategoryCtaGridProps {
@@ -59,7 +59,7 @@ function CategoryTile({ category, size }: CategoryTileProps) {
           {category.tagline}
         </p>
         <div className="mt-3 flex items-center justify-between gap-3">
-          <Badge tone="glass">{formatInteger(category.skuCount)} SKUs</Badge>
+          <Badge tone="glass">{formatReferences(category.productCount)}</Badge>
           <span
             aria-hidden="true"
             className="group-hover:text-ink-900 group-focus-visible:text-ink-900 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/25 bg-white/12 text-white backdrop-blur-md transition-[transform,translate,scale,rotate,background-color,color] duration-300 ease-[var(--ease-out-quint)] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:bg-white group-focus-visible:translate-x-0.5 group-focus-visible:-translate-y-0.5 group-focus-visible:bg-white"
@@ -95,7 +95,7 @@ export function CategoryCtaGrid({ categories }: CategoryCtaGridProps) {
         id="categorias-title"
         eyebrow="Catálogo por especialidad"
         title="Todo lo que tu cabina consume, en un solo proveedor"
-        description="Seis especialidades con inventario propio en México y reposición constante, para que nunca canceles un servicio por falta de producto."
+        description="Las especialidades que surtimos, con reposición constante para que nunca canceles un servicio por falta de producto."
         action={
           <ButtonLink to="/catalogo" variant="outline">
             Ver catálogo completo

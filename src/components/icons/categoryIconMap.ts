@@ -1,4 +1,4 @@
-import { Droplets, Palette, Scissors, ShoppingBag, Sparkle, Sparkles } from 'lucide-react';
+import { Droplets, Package, Palette, Scissors, ShoppingBag, Sparkle, Sparkles } from 'lucide-react';
 
 export const categoryIconMap = {
   Palette,
@@ -7,4 +7,5 @@ export const categoryIconMap = {
   Sparkles,
   ShoppingBag,
   Sparkle,
+  Package,
 } as const;

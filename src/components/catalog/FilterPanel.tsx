@@ -1,11 +1,11 @@
 import { Check, ChevronDown } from 'lucide-react';
-import { useEffect, useId, useMemo, useRef, useState, type ReactNode } from 'react';
+import { useMemo, useRef, type ReactNode } from 'react';
 import { brands } from '../../data/brands';
 import { categories } from '../../data/categories';
 import { products } from '../../data/products';
 import { cn } from '../../lib/cn';
 import { normalizeText, productMatches } from '../../lib/text';
-import { formatInteger, formatPrice } from '../../lib/format';
+import { formatInteger } from '../../lib/format';
 import type { CategorySlug } from '../../types/category';
 import type { Product, ProductTag } from '../../types/product';
 import { Button } from '../ui/Button';
@@ -13,23 +13,22 @@ import { Button } from '../ui/Button';
 export const TAG_LABELS: Record<ProductTag, string> = {
   bestseller: 'Más vendidos',
   new: 'Novedades',
-  'volume-offer': 'Oferta por volumen',
 };
 
-const TAG_ORDER: ProductTag[] = ['bestseller', 'new', 'volume-offer'];
+const TAG_ORDER: ProductTag[] = ['bestseller', 'new'];
 
-/** Facet counts ignore the category axis so a category never hides its own tally. */
-function matchesOtherFacets(
-  product: Product,
-  brandIds: string[],
-  tags: ProductTag[],
-  inStockOnly: boolean,
-  maxPrice: number,
-) {
-  if (brandIds.length > 0 && !brandIds.includes(product.brandId)) return false;
-  if (tags.length > 0 && !tags.some((tag) => product.tags?.includes(tag))) return false;
-  if (inStockOnly && product.stock !== 'in-stock') return false;
-  return product.price.wholesale <= maxPrice;
+function matchesTags(product: Product, tags: ProductTag[]) {
+  return tags.length === 0 || tags.some((tag) => product.tags?.includes(tag));
+}
+
+function countBy<K>(key: (product: Product) => K | undefined, keep: (product: Product) => boolean) {
+  const counts = new Map<K, number>();
+  for (const product of products) {
+    const value = key(product);
+    if (value === undefined || !keep(product)) continue;
+    counts.set(value, (counts.get(value) ?? 0) + 1);
+  }
+  return counts;
 }
 
 interface FilterGroupProps {
@@ -110,11 +109,6 @@ export interface FilterPanelProps {
   onToggleBrand: (id: string) => void;
   selectedTags: ProductTag[];
   onToggleTag: (tag: ProductTag) => void;
-  inStockOnly: boolean;
-  onToggleInStock: () => void;
-  maxPrice: number;
-  priceCeiling: number;
-  onPriceChange: (value: number) => void;
   onClear: () => void;
   resultCount: number;
   /** Active text query — facet counts must reflect it too. */
@@ -129,52 +123,40 @@ export function FilterPanel({
   onToggleBrand,
   selectedTags,
   onToggleTag,
-  inStockOnly,
-  onToggleInStock,
-  maxPrice,
-  priceCeiling,
-  onPriceChange,
   onClear,
   resultCount,
   searchTerm = '',
   className,
 }: FilterPanelProps) {
   const headingRef = useRef<HTMLHeadingElement>(null);
-  const [priceDraft, setPriceDraft] = useState(maxPrice);
-  const commitTimer = useRef<number | undefined>(undefined);
+  // Each axis's counts ignore that axis, so a selected option never hides its siblings' tallies.
+  const term = normalizeText(searchTerm.trim());
+  const categoryCounts = useMemo(
+    () =>
+      countBy(
+        (product) => product.categorySlug,
+        (product) =>
+          productMatches(product, term) &&
+          (selectedBrands.length === 0 ||
+            (product.brandId !== undefined && selectedBrands.includes(product.brandId))) &&
+          matchesTags(product, selectedTags),
+      ),
+    [term, selectedBrands, selectedTags],
+  );
+  const brandCounts = useMemo(
+    () =>
+      countBy(
+        (product) => product.brandId,
+        (product) =>
+          productMatches(product, term) &&
+          (selectedCategories.length === 0 || selectedCategories.includes(product.categorySlug)) &&
+          matchesTags(product, selectedTags),
+      ),
+    [term, selectedCategories, selectedTags],
+  );
 
-  useEffect(() => setPriceDraft(maxPrice), [maxPrice]);
-  useEffect(() => () => window.clearTimeout(commitTimer.current), []);
-
-  const handlePriceInput = (value: number) => {
-    setPriceDraft(value);
-    window.clearTimeout(commitTimer.current);
-    commitTimer.current = window.setTimeout(() => onPriceChange(value), 180);
-  };
-
-  const priceId = useId();
-  const stockHintId = useId();
-
-  const categoryCounts = useMemo(() => {
-    const term = normalizeText(searchTerm.trim());
-    const counts = new Map<CategorySlug, number>();
-    for (const product of products) {
-      if (!productMatches(product, term)) continue;
-      if (!matchesOtherFacets(product, selectedBrands, selectedTags, inStockOnly, maxPrice)) {
-        continue;
-      }
-      counts.set(product.categorySlug, (counts.get(product.categorySlug) ?? 0) + 1);
-    }
-    return counts;
-  }, [searchTerm, selectedBrands, selectedTags, inStockOnly, maxPrice]);
-
-  const priceActive = maxPrice < priceCeiling;
   const hasActiveFilters =
-    selectedCategories.length > 0 ||
-    selectedBrands.length > 0 ||
-    selectedTags.length > 0 ||
-    inStockOnly ||
-    priceActive;
+    selectedCategories.length > 0 || selectedBrands.length > 0 || selectedTags.length > 0;
 
   return (
     <div className={cn('flex flex-col', className)}>
@@ -226,25 +208,26 @@ export function FilterPanel({
 
       <FilterGroup label="Marca" defaultOpen activeCount={selectedBrands.length}>
         <div className="no-scrollbar -mr-1 max-h-[22rem] overflow-y-auto pr-1">
-          {brands.map((brand) => (
-            <CheckboxRow
-              key={brand.id}
-              checked={selectedBrands.includes(brand.id)}
-              onChange={() => onToggleBrand(brand.id)}
-              label={brand.name}
-              trailing={
-                brand.exclusive ? (
-                  <>
-                    <span
-                      aria-hidden="true"
-                      className="bg-gold-400 ring-gold-100 h-1.5 w-1.5 shrink-0 rounded-full ring-2"
-                    />
-                    <span className="sr-only">Marca exclusiva</span>
-                  </>
-                ) : undefined
-              }
-            />
-          ))}
+          {brands.map((brand) => {
+            const count = brandCounts.get(brand.id) ?? 0;
+            const checked = selectedBrands.includes(brand.id);
+
+            return (
+              <CheckboxRow
+                key={brand.id}
+                checked={checked}
+                onChange={() => onToggleBrand(brand.id)}
+                label={brand.name}
+                dimmed={count === 0 && !checked}
+                trailing={
+                  <span className="text-ink-400 shrink-0 text-xs tabular-nums">
+                    {formatInteger(count)}
+                    <span className="sr-only"> referencias</span>
+                  </span>
+                }
+              />
+            );
+          })}
         </div>
       </FilterGroup>
 
@@ -271,68 +254,6 @@ export function FilterPanel({
             );
           })}
         </div>
-      </FilterGroup>
-
-      <FilterGroup label="Precio mayorista" activeCount={priceActive ? 1 : 0}>
-        <div className="flex flex-col gap-1">
-          <label htmlFor={priceId} className="sr-only">
-            Precio mayorista máximo por pieza
-          </label>
-          <span className="font-display text-ink-900 text-lg leading-none font-semibold tabular-nums">
-            Hasta {formatPrice(priceDraft)}
-          </span>
-          <input
-            id={priceId}
-            type="range"
-            min={0}
-            max={priceCeiling}
-            step={10}
-            value={priceDraft}
-            onChange={(event) => handlePriceInput(Number(event.target.value))}
-            aria-valuetext={`Hasta ${formatPrice(priceDraft)} por pieza`}
-            className="h-11 w-full cursor-pointer accent-[var(--color-brand-600)]"
-          />
-          <div className="text-ink-400 flex items-center justify-between text-[0.6875rem] tabular-nums">
-            <span>{formatPrice(0)}</span>
-            <span>{formatPrice(priceCeiling)}</span>
-          </div>
-          <p className="text-ink-400 mt-1 text-xs leading-snug">
-            Precio por pieza con tu cuenta mayorista activa.
-          </p>
-        </div>
-      </FilterGroup>
-
-      <FilterGroup label="Disponibilidad" activeCount={inStockOnly ? 1 : 0}>
-        <button
-          type="button"
-          role="switch"
-          aria-checked={inStockOnly}
-          aria-label="Solo en existencia"
-          aria-describedby={stockHintId}
-          onClick={onToggleInStock}
-          className="hover:bg-ink-50 -mx-2 flex min-h-11 w-full cursor-pointer items-center justify-between gap-4 rounded-xl px-2 text-left transition-colors duration-200 ease-[var(--ease-out-quint)]"
-        >
-          <span className="flex flex-col gap-0.5">
-            <span className="text-ink-800 text-sm font-medium">Solo en existencia</span>
-            <span id={stockHintId} className="text-ink-400 text-xs leading-snug">
-              Oculta las claves con últimas piezas o bajo pedido
-            </span>
-          </span>
-          <span
-            aria-hidden="true"
-            className={cn(
-              'relative h-6 w-11 shrink-0 rounded-full transition-colors duration-250 ease-[var(--ease-out-quint)]',
-              inStockOnly ? 'bg-brand-600' : 'bg-ink-200',
-            )}
-          >
-            <span
-              className={cn(
-                'absolute top-0.5 left-0.5 h-5 w-5 rounded-full bg-white shadow-[var(--shadow-e1)] transition-transform duration-250 ease-[var(--ease-out-quint)]',
-                inStockOnly && 'translate-x-5',
-              )}
-            />
-          </span>
-        </button>
       </FilterGroup>
 
       <p className="border-line text-ink-500 border-t pt-4 text-xs">

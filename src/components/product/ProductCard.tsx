@@ -2,33 +2,32 @@ import { Check, Plus } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useQuote } from '../../context/quote-store';
 import { getBrandById } from '../../data/brands';
+import { getCategoryBySlug } from '../../data/categories';
 import { cn } from '../../lib/cn';
 import type { Product, ProductTag } from '../../types/product';
+import { categoryIconMap } from '../icons/categoryIconMap';
 import { Badge, type BadgeTone } from '../ui/Badge';
 import { Button } from '../ui/Button';
-import { PriceTag } from '../ui/PriceTag';
-import { SmartImage } from '../ui/SmartImage';
-import { StockPill } from './StockPill';
 
 interface ProductCardProps {
   product: Product;
   className?: string;
-  /** Eager-load the image — only for cards above the fold. */
-  priority?: boolean;
 }
 
 const tagStyles: Record<ProductTag, { label: string; tone: BadgeTone }> = {
   bestseller: { label: 'Más vendido', tone: 'brand' },
   new: { label: 'Nuevo', tone: 'gold' },
-  'volume-offer': { label: 'Oferta por volumen', tone: 'ink' },
 };
 
-export function ProductCard({ product, className, priority = false }: ProductCardProps) {
+export function ProductCard({ product, className }: ProductCardProps) {
   const { add, lastAddedId } = useQuote();
   const brand = getBrandById(product.brandId);
+  const category = getCategoryBySlug(product.categorySlug);
+  const CategoryIcon = category
+    ? categoryIconMap[category.icon as keyof typeof categoryIconMap]
+    : undefined;
   const justAdded = lastAddedId === product.id;
-  const minQty = product.price.minWholesaleQty ?? 6;
-  const tags = product.tags?.slice(0, 2) ?? [];
+  const tags = product.tags ?? [];
 
   return (
     <article
@@ -41,20 +40,28 @@ export function ProductCard({ product, className, priority = false }: ProductCar
       )}
     >
       <div className="rounded-t-card relative overflow-hidden">
-        <SmartImage
-          id={product.imageId}
-          alt={`${product.name} — ${brand?.name ?? 'Buda Belleza'}, presentación de ${product.presentation}`}
-          width={480}
-          height={480}
-          priority={priority}
-          sizes="(min-width:1024px) 25vw, (min-width:640px) 33vw, 50vw"
-          wrapperClassName="aspect-square transition-transform duration-500 ease-[var(--ease-out-quint)] group-hover:scale-[1.05]"
-        />
-
-        <div
-          aria-hidden="true"
-          className="from-ink-950/20 absolute inset-x-0 top-0 h-24 bg-gradient-to-b to-transparent"
-        />
+        {product.image ? (
+          <div className="flex aspect-[4/3] items-center justify-center bg-white p-4">
+            <img
+              src={product.image}
+              alt={product.name}
+              loading="lazy"
+              decoding="async"
+              className="h-full w-full object-contain transition-transform duration-500 ease-[var(--ease-out-quint)] group-hover:scale-[1.04]"
+            />
+          </div>
+        ) : (
+          // Products without an official photo show their category instead of a stock image.
+          <div
+            aria-hidden="true"
+            className="from-brand-50 to-gold-50 flex aspect-[4/3] flex-col items-center justify-center gap-2.5 bg-gradient-to-br"
+          >
+            <span className="bg-surface/80 text-brand-600 grid h-14 w-14 place-items-center rounded-full shadow-[var(--shadow-e1)] transition-transform duration-500 ease-[var(--ease-out-quint)] group-hover:scale-110">
+              {CategoryIcon && <CategoryIcon className="h-6 w-6" />}
+            </span>
+            <span className="eyebrow text-ink-500">{category?.name}</span>
+          </div>
+        )}
 
         {tags.length > 0 && (
           <div className="absolute top-3 left-3 flex flex-col items-start gap-1.5">
@@ -94,7 +101,7 @@ export function ProductCard({ product, className, priority = false }: ProductCar
       </div>
 
       <div className="flex flex-1 flex-col gap-2 p-4">
-        <span className="eyebrow text-ink-400">{brand?.name}</span>
+        {brand && <span className="eyebrow text-ink-400">{brand.name}</span>}
 
         {/* The clamp lives on the inner span so its overflow can't crop the full-card overlay. */}
         <h3 className="text-ink-900 text-sm leading-snug font-semibold">
@@ -106,20 +113,12 @@ export function ProductCard({ product, className, priority = false }: ProductCar
           </Link>
         </h3>
 
-        <p className="text-ink-400 text-xs">
-          {product.presentation} · Caja con {product.unitsPerCase}
-        </p>
-
-        <span className="sr-only">SKU {product.sku}</span>
-
-        <div className="mt-auto pt-1">
-          <StockPill stock={product.stock} />
-        </div>
+        <p className="text-ink-400 mt-auto pt-1 text-xs tabular-nums">Clave {product.sku}</p>
       </div>
 
       <div className="border-line border-t px-4 pt-3 pb-4">
         <div className="flex flex-wrap items-end justify-between gap-x-3 gap-y-3 @max-[11rem]:flex-col @max-[11rem]:items-stretch">
-          <PriceTag price={product.price} size="sm" className="min-w-0 flex-1" />
+          <p className="text-ink-500 min-w-0 flex-1 text-xs leading-snug">Precio en cotización</p>
           <Button
             size="sm"
             variant={justAdded ? 'subtle' : 'primary'}
@@ -144,7 +143,6 @@ export function ProductCard({ product, className, priority = false }: ProductCar
             )}
           </Button>
         </div>
-        <p className="text-ink-400 mt-2 text-[0.6875rem]">Desde {minQty} pzas</p>
       </div>
     </article>
   );

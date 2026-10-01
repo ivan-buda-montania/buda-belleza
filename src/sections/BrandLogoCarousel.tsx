@@ -20,21 +20,16 @@ const guarantees = [
 function BrandRow({ brands }: BrandLogoCarouselProps) {
   return (
     <ul className="flex items-center gap-4 py-2 pr-4">
-      {brands.map((brand) => (
+      {brands.map((brand, index) => (
         <li
-          key={brand.id}
+          // Rows repeat the list, so the id alone is not unique.
+          key={`${brand.id}-${index}`}
           className="group/chip bg-surface ring-ink-900/[0.06] hover:ring-brand-200 inline-flex items-center gap-3 rounded-full px-7 py-4 shadow-[var(--shadow-e1)] ring-1 transition-[box-shadow] duration-300 ease-[var(--ease-out-quint)] hover:shadow-[var(--shadow-e2)]"
         >
           <BrandWordmark
             brand={brand}
             className="text-ink-700 group-hover/chip:text-ink-900 transition-colors duration-300 ease-[var(--ease-out-quint)]"
           />
-          {brand.exclusive && (
-            <span className="eyebrow text-gold-600 inline-flex items-center gap-1.5">
-              <span aria-hidden="true" className="bg-gold-400 h-1.5 w-1.5 rounded-full" />
-              Exclusiva
-            </span>
-          )}
         </li>
       ))}
     </ul>
@@ -42,18 +37,19 @@ function BrandRow({ brands }: BrandLogoCarouselProps) {
 }
 
 export function BrandLogoCarousel({ brands }: BrandLogoCarouselProps) {
-  // Each row carries the full portfolio (the second one reversed) so the track always
-  // overflows the container — half a portfolio leaves a visible gap on wide screens.
-  const topRow = brands;
-  const bottomRow = [...brands].reverse();
+  // The track must overflow the container or the loop shows a gap on wide screens, so a
+  // short portfolio is repeated until each row has at least 12 chips.
+  const repeats = Math.max(1, Math.ceil(12 / Math.max(brands.length, 1)));
+  const topRow = Array.from({ length: repeats }, () => brands).flat();
+  const bottomRow = [...topRow].reverse();
 
   return (
     <Section tone="canvas" padding="lg" aria-labelledby="marcas-title">
       <SectionHeading
         id="marcas-title"
         eyebrow="Portafolio"
-        title="82 marcas nacionales e importadas"
-        description="Seis distribuciones exclusivas para México, capacitación técnica con los educadores de cada casa y reposición garantizada de las líneas de mayor rotación."
+        title="Las marcas de nuestro catálogo"
+        description="Líneas profesionales de color y cuidado capilar que surtimos para salones y barberías."
         action={
           <ButtonLink to="/marcas" variant="outline">
             Conocer el portafolio

@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Local POS data (costs, users, IPs). The repo is public: never commit it.
+db/*.sqlite
+db/*.sqlite.partial
+*.fdb

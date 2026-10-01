@@ -14,18 +14,17 @@ import { QUOTE_MINIMUM_MXN } from '../context/quote-store';
 import { categories, getCategoryBySlug } from '../data/categories';
 import { getProductsByCategory } from '../data/products';
 import { socialLinks } from '../data/social-links';
-import { formatInteger, formatPrice } from '../lib/format';
+import { formatInteger, formatPrice, formatReferences } from '../lib/format';
 import type { Category } from '../types/category';
 import type { Product } from '../types/product';
 
-type SortKey = 'relevancia' | 'precio-asc' | 'precio-desc' | 'nombre' | 'novedades';
+type SortKey = 'relevancia' | 'mas-vendidos' | 'novedades' | 'nombre';
 
 const SORT_OPTIONS: { value: SortKey; label: string }[] = [
   { value: 'relevancia', label: 'Relevancia' },
-  { value: 'precio-asc', label: 'Precio: menor a mayor' },
-  { value: 'precio-desc', label: 'Precio: mayor a menor' },
-  { value: 'nombre', label: 'Nombre A-Z' },
+  { value: 'mas-vendidos', label: 'Más vendidos' },
   { value: 'novedades', label: 'Novedades' },
+  { value: 'nombre', label: 'Nombre A-Z' },
 ];
 
 const whatsappBase =
@@ -37,29 +36,25 @@ const SERVICE_FACTS = [
   'Reposición programada por consumo para que no canceles servicios por falta de producto.',
 ];
 
-function isNew(product: Product) {
-  return product.tags?.includes('new') ?? false;
-}
-
 function relevance(product: Product) {
   let score = 0;
   if (product.tags?.includes('bestseller')) score += 3;
-  if (isNew(product)) score += 1;
-  if (product.stock === 'in-stock') score += 1;
+  if (product.tags?.includes('new')) score += 1;
   return score;
 }
 
 function sortProducts(list: Product[], sort: SortKey) {
   const next = [...list];
   switch (sort) {
-    case 'precio-asc':
-      return next.sort((a, b) => a.price.wholesale - b.price.wholesale);
-    case 'precio-desc':
-      return next.sort((a, b) => b.price.wholesale - a.price.wholesale);
+    case 'mas-vendidos':
+      return next.sort(
+        (a, b) =>
+          (a.salesRank ?? Number.MAX_SAFE_INTEGER) - (b.salesRank ?? Number.MAX_SAFE_INTEGER),
+      );
+    case 'novedades':
+      return next.sort((a, b) => (b.firstSeen ?? '').localeCompare(a.firstSeen ?? ''));
     case 'nombre':
       return next.sort((a, b) => a.name.localeCompare(b.name, 'es-MX'));
-    case 'novedades':
-      return next.sort((a, b) => Number(isNew(b)) - Number(isNew(a)));
     default:
       return next.sort((a, b) => relevance(b) - relevance(a));
   }
@@ -84,7 +79,7 @@ function CategoryLinkCard({ category }: { category: Category }) {
           {category.name}
         </span>
         <span className="text-ink-400 block text-xs tabular-nums">
-          {formatInteger(category.skuCount)} SKUs
+          {formatReferences(category.productCount)}
         </span>
       </span>
       <ArrowUpRight
@@ -108,7 +103,7 @@ function CategoryNotFound() {
         </h1>
         <p className="text-lead text-ink-600 max-w-xl">
           Es probable que el enlace esté incompleto o que hayamos reorganizado la línea. Estas son
-          las seis especialidades que surtimos con inventario propio en México.
+          las especialidades que tenemos publicadas en el catálogo.
         </p>
       </div>
 
@@ -228,7 +223,7 @@ export function CategoryPage() {
                 </Badge>
               ))}
               <Badge tone="gold" className="tabular-nums">
-                {formatInteger(category.skuCount)} SKUs en catálogo
+                {formatReferences(category.productCount)} en catálogo
               </Badge>
             </div>
           </div>
@@ -337,13 +332,12 @@ export function CategoryPage() {
         />
 
         <p className="text-ink-400 mt-8 text-sm leading-relaxed">
-          Mostramos las claves de mayor rotación. La línea completa suma{' '}
-          {formatInteger(category.skuCount)} SKUs:{' '}
+          ¿Necesitas una clave que no aparece?{' '}
           <Link
             to="/contacto"
             className="text-brand-600 decoration-brand-200 hover:decoration-brand-600 font-semibold underline decoration-1 underline-offset-4 transition-colors duration-250 ease-[var(--ease-out-quint)]"
           >
-            pide la lista completa a tu asesor
+            Pídela a tu asesor
           </Link>
           .
         </p>
@@ -379,7 +373,7 @@ export function CategoryPage() {
               id="registro-title"
               className="font-display text-display-md text-ink-900 max-w-xl font-medium"
             >
-              Registra tu negocio y compra al precio que ves en esta página
+              Registra tu negocio y recibe precios de mayoreo
             </h2>
             <p className="text-ink-600 max-w-lg text-sm leading-relaxed">
               Activamos tu cuenta el mismo día hábil con RFC y comprobante de domicilio. Sin cuota

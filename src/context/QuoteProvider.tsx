@@ -52,7 +52,7 @@ export function QuoteProvider({ children }: { children: ReactNode }) {
     return () => window.clearTimeout(timer);
   }, [lastAddedId]);
 
-  const add = useCallback((product: Product, quantity = product.price.minWholesaleQty ?? 6) => {
+  const add = useCallback((product: Product, quantity = 1) => {
     setLines((current) => {
       const existing = current.find((line) => line.product.id === product.id);
       if (existing) {
@@ -83,21 +83,11 @@ export function QuoteProvider({ children }: { children: ReactNode }) {
 
   const value = useMemo(() => {
     const totalUnits = lines.reduce((sum, line) => sum + line.quantity, 0);
-    const subtotal = lines.reduce(
-      (sum, line) => sum + line.product.price.wholesale * line.quantity,
-      0,
-    );
-    const regularTotal = lines.reduce(
-      (sum, line) => sum + line.product.price.regular * line.quantity,
-      0,
-    );
 
     return {
       lines,
       itemCount: lines.length,
       totalUnits,
-      subtotal,
-      savings: regularTotal - subtotal,
       isOpen,
       add,
       remove,

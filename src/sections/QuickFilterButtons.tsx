@@ -9,7 +9,7 @@ import {
 import { cn } from '../lib/cn';
 import { formatInteger } from '../lib/format';
 
-export type QuickFilter = 'bestseller' | 'new' | 'volume-offer';
+export type QuickFilter = 'bestseller' | 'new';
 
 /** The panel this tablist controls — the caller must put this id on its `role="tabpanel"`. */
 export const QUICK_FILTER_PANEL_ID = 'panel-productos';
@@ -27,7 +27,6 @@ interface QuickFilterOption {
 const options: QuickFilterOption[] = [
   { id: 'bestseller', label: 'Más vendidos' },
   { id: 'new', label: 'Nuevos ingresos' },
-  { id: 'volume-offer', label: 'Ofertas por volumen' },
 ];
 
 interface QuickFilterButtonsProps {

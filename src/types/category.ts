@@ -1,4 +1,5 @@
-export type CategorySlug = 'tintes' | 'capilar' | 'barberia' | 'unas' | 'accesorios' | 'cosmeticos';
+export type CategorySlug =
+  'tintes' | 'capilar' | 'barberia' | 'unas' | 'accesorios' | 'cosmeticos' | 'otros';
 
 export interface Category {
   slug: CategorySlug;
@@ -12,5 +13,6 @@ export interface Category {
   imageId: string;
   /** Representative sub-lines shown as chips. */
   highlights: string[];
-  skuCount: number;
+  /** Published products in this category, counted from the catalog. */
+  productCount: number;
 }

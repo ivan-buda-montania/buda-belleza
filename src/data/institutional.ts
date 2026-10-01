@@ -1,4 +1,6 @@
 import { IMG } from '../lib/images';
+import { brands } from './brands';
+import { products } from './products';
 import type { Branch, Faq, ProcessStep, Stat, Testimonial } from '../types/institutional';
 
 export const stats: Stat[] = [
@@ -9,19 +11,18 @@ export const stats: Stat[] = [
     label: 'Años distribuyendo',
     detail: 'Operando de forma ininterrumpida desde 2007.',
   },
+  // Catalog figures are counted from the published POS catalog, never typed in.
   {
     id: 'marcas',
-    value: 82,
-    prefix: '+',
+    value: brands.length,
     label: 'Marcas en catálogo',
-    detail: 'Nacionales e importadas, 6 de ellas en exclusiva.',
+    detail: 'Líneas profesionales de color y cuidado capilar.',
   },
   {
     id: 'skus',
-    value: 4500,
-    prefix: '+',
-    label: 'SKUs en almacén',
-    detail: 'Inventario propio en dos centros de distribución.',
+    value: products.length,
+    label: 'Referencias publicadas',
+    detail: 'Listas para cotizar en línea.',
   },
   {
     id: 'clientes',

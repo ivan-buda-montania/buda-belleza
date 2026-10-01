@@ -4,9 +4,10 @@ import { Link, NavLink, useLocation } from 'react-router-dom';
 import { categoryIconMap } from '../icons/categoryIconMap';
 import { socialIconMap } from '../icons/socialIconMap';
 import { categories } from '../../data/categories';
+import { products } from '../../data/products';
 import { socialLinks } from '../../data/social-links';
 import { cn } from '../../lib/cn';
-import { formatInteger } from '../../lib/format';
+import { formatReferences } from '../../lib/format';
 import { IMG } from '../../lib/images';
 import { ButtonAnchor, ButtonLink } from '../ui/Button';
 import { Eyebrow } from '../ui/Eyebrow';
@@ -331,7 +332,7 @@ export function Navbar() {
                                         {category.tagline}
                                       </span>
                                       <span className="text-ink-500 mt-2 block text-[0.6875rem] font-semibold tracking-[0.04em] tabular-nums">
-                                        {formatInteger(category.skuCount)} SKUs
+                                        {formatReferences(category.productCount)}
                                       </span>
                                     </span>
                                   </Link>
@@ -360,7 +361,7 @@ export function Navbar() {
                             <div className="relative flex h-full flex-col justify-end gap-3.5 p-6">
                               <Eyebrow tone="onDark">Catálogo vigente</Eyebrow>
                               <p className="font-display text-display-sm font-medium text-white">
-                                4,500 SKUs con precio mayorista a la vista
+                                {formatReferences(products.length)} listas para cotizar
                               </p>
                               <ButtonLink
                                 to="/catalogo"

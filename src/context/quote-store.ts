@@ -10,8 +10,6 @@ export interface QuoteState {
   lines: QuoteLine[];
   itemCount: number;
   totalUnits: number;
-  subtotal: number;
-  savings: number;
   isOpen: boolean;
   add: (product: Product, quantity?: number) => void;
   remove: (productId: string) => void;
@@ -33,7 +31,8 @@ export function useQuote(): QuoteState {
   return context;
 }
 
-export const QUOTE_STORAGE_KEY = 'buda-belleza:quote:v1';
+// v2: product ids became POS codes, so v1 lines no longer resolve.
+export const QUOTE_STORAGE_KEY = 'buda-belleza:quote:v2';
 export const QUOTE_MINIMUM_MXN = 3000;
 /** Free-shipping threshold. Single source of truth — it is quoted in several places. */
 export const FREE_SHIPPING_MXN = 6000;

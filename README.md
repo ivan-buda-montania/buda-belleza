@@ -25,7 +25,56 @@ npm run build         # tsc -b && vite build
 npm run preview       # sirve el build de producción
 npm run lint          # oxlint
 npm run format        # prettier --write .
+npm run db:import -- /ruta/Database.fdb   # importa el punto de venta a db/eleventa.sqlite
+npm run db:ui                             # panel y explorador local en http://127.0.0.1:5180
+npm run catalog:images                    # busca fotos oficiales de producto (public/products)
+npm run catalog:build                     # regenera src/data/catalog.json desde la base local
 ```
+
+## Datos del punto de venta (eleventa)
+
+`npm run db:import` copia la base Firebird 2.5 de eleventa (`.fdb`) a SQLite en
+`db/eleventa.sqlite`. Requiere Docker: levanta un contenedor temporal de Firebird sobre una
+copia del archivo, así que el original nunca se abre. Cada ejecución reconstruye el archivo.
+
+- Tablas `raw_*` — espejo de cada tabla de eleventa con sus nombres originales (sin la
+  contraseña de usuarios).
+- Vistas `products`, `inventory_movements`, `departments` — definidas en `db/views.sql`.
+- `import_run` / `import_tables` — archivo de origen, su SHA-256 y filas por tabla.
+
+`npm run db:ui` abre un panel de solo lectura (gráficas por periodo) y un explorador de tablas con
+búsqueda, orden y paginación. Escucha solo en `127.0.0.1`; no lo expongas a la red.
+
+`db/eleventa.sqlite` está en `.gitignore`: contiene costos y datos internos y este repositorio
+es público. No lo subas.
+
+## Catálogo del sitio
+
+El catálogo público sale del punto de venta, no de datos de ejemplo. `npm run catalog:build` lee
+`db/eleventa.sqlite` y escribe `src/data/catalog.json`, que sí se versiona para que Vercel pueda
+construir el sitio sin la base. Solo contiene clave, nombre, marca, categoría y etiquetas: sin
+precios, costos ni volúmenes de venta.
+
+- **Qué se publica, marcas y categorías** — `scripts/catalog/config.ts` (palabras clave en el
+  nombre del producto).
+- **Correcciones de categoría por producto** — `scripts/catalog/category-overrides.json`
+  (`"clave": "categoria"`).
+- **Etiquetas** — "Más vendido": las 12 claves con más salidas en los últimos 12 meses.
+  "Nuevo": primer movimiento en los últimos 90 días. Ambas se cuentan hacia atrás desde el último
+  movimiento de la exportación.
+
+- **Fotos** — `npm run catalog:images` busca fotos primero en los sitios oficiales de cada marca
+  (nefertiti.com.mx, tienda.nutrapel.com, vittale.com, vogliacolor.com, vogliahombre.com,
+  ouro.com.mx, kuulcolor.com.mx) y, para lo que no aparece ahí, en tiendas de belleza mexicanas con
+  catálogo Shopify (lista en `scripts/catalog/images.ts`). Una foto de tienda solo se propone con
+  coincidencia ≥ 0.85, y tonos de tinte y volúmenes de peróxido deben coincidir exactamente. Cada
+  propuesta queda en `scripts/catalog/product-images.json` como `"auto"`; revísala y cámbiala a
+  `"approved"` (se publica), `"rejected"` (esa foto no; se buscará otra) o `"none"` (no volver a
+  buscar). **Solo las aprobadas se publican.** Las fotos se guardan en `public/products/`; un
+  producto sin foto muestra el ícono de su categoría.
+
+Para actualizar: `npm run db:import -- /ruta/Database.fdb`, luego `npm run catalog:images` (si hay
+productos nuevos), `npm run catalog:build`, revisa el diff de `catalog.json` y haz commit.
 
 ## Sistema de diseño — "Editorial Atelier"
 

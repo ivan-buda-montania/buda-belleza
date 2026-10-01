@@ -9,7 +9,11 @@
     "lint": "oxlint",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "db:import": "node --disable-warning=ExperimentalWarning scripts/db/import-eleventa.ts",
+    "db:ui": "node --disable-warning=ExperimentalWarning scripts/db/ui/server.ts",
+    "catalog:build": "node --disable-warning=ExperimentalWarning scripts/catalog/build-catalog.ts",
+    "catalog:images": "node --disable-warning=ExperimentalWarning scripts/catalog/images.ts"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",
@@ -26,9 +30,11 @@
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",
     "@vitejs/plugin-react": "^6.1.0",
+    "node-firebird": "^2.18.2",
     "oxlint": "^1.79.0",
     "prettier": "^3.9.6",
     "prettier-plugin-tailwindcss": "^0.8.1",
+    "sharp": "^0.35.5",
     "typescript": "~6.0.2",
     "vite": "^8.2.2"
   }

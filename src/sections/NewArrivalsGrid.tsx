@@ -38,7 +38,7 @@ export function NewArrivalsGrid() {
         id="nuevos-title"
         eyebrow="Ingresos recientes"
         title="Lo más nuevo en Buda Belleza"
-        description="Resurtimos cada semana. Aquí aparece lo que acaba de llegar a nuestros almacenes, con precio mayorista desde 6 piezas y existencia confirmada."
+        description="Las referencias que se dieron de alta en nuestro punto de venta durante los últimos 90 días."
         action={
           <ButtonLink to="/catalogo" variant="outline" size="sm">
             Ver catálogo por categoría
@@ -60,7 +60,7 @@ export function NewArrivalsGrid() {
         </p>
         <p className="text-ink-500 inline-flex items-center gap-2 text-sm">
           <Clock aria-hidden="true" className="h-4 w-4" />
-          Ordenadas por ingreso más reciente
+          Ordenadas por alta más reciente
         </p>
       </Reveal>
 
@@ -68,7 +68,7 @@ export function NewArrivalsGrid() {
         products={visibleProducts}
         columns={4}
         className="mt-8"
-        emptyMessage="Estamos cargando los ingresos de esta semana."
+        emptyMessage="No hay referencias nuevas en los últimos 90 días."
       />
 
       <p aria-live="polite" className="sr-only">
@@ -89,7 +89,7 @@ export function NewArrivalsGrid() {
           <>
             <span aria-hidden="true" className="rule-fade block w-full max-w-sm" />
             <p ref={closingRef} tabIndex={-1} className="text-ink-500 text-center text-sm">
-              Ya viste las {formatInteger(total)} referencias que ingresaron esta semana.
+              Ya viste las {formatInteger(total)} referencias nuevas.
             </p>
             <ButtonLink to="/catalogo" variant="primary" size="lg">
               Ver el catálogo completo

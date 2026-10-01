@@ -1,0 +1,1243 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Datos eleventa</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --page: #f9f9f7;
+        --surface: #fcfcfb;
+        --ink: #0b0b0b;
+        --ink-2: #52514e;
+        --muted: #898781;
+        --grid: #e1e0d9;
+        --axis: #c3c2b7;
+        --ring: rgba(11, 11, 11, 0.1);
+        --wash: rgba(11, 11, 11, 0.04);
+        --s1: #2a78d6;
+        --s2: #eb6834;
+        --s3: #1baf7a;
+        --s4: #eda100;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root:where(:not([data-theme='light'])) {
+          color-scheme: dark;
+          --page: #0d0d0d;
+          --surface: #1a1a19;
+          --ink: #ffffff;
+          --ink-2: #c3c2b7;
+          --muted: #898781;
+          --grid: #2c2c2a;
+          --axis: #383835;
+          --ring: rgba(255, 255, 255, 0.1);
+          --wash: rgba(255, 255, 255, 0.05);
+          --s1: #3987e5;
+          --s2: #d95926;
+          --s3: #199e70;
+          --s4: #c98500;
+        }
+      }
+      :root[data-theme='dark'] {
+        color-scheme: dark;
+        --page: #0d0d0d;
+        --surface: #1a1a19;
+        --ink: #ffffff;
+        --ink-2: #c3c2b7;
+        --muted: #898781;
+        --grid: #2c2c2a;
+        --axis: #383835;
+        --ring: rgba(255, 255, 255, 0.1);
+        --wash: rgba(255, 255, 255, 0.05);
+        --s1: #3987e5;
+        --s2: #d95926;
+        --s3: #199e70;
+        --s4: #c98500;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--page);
+        color: var(--ink);
+        font:
+          14px/1.45 system-ui,
+          -apple-system,
+          'Segoe UI',
+          sans-serif;
+      }
+      header {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 12px 24px;
+        padding: 16px 24px;
+        border-bottom: 1px solid var(--ring);
+        background: var(--surface);
+      }
+      h1 {
+        margin: 0;
+        font-size: 17px;
+      }
+      .source {
+        color: var(--muted);
+        font-size: 12px;
+      }
+      nav {
+        display: flex;
+        gap: 4px;
+        margin-left: auto;
+      }
+      button,
+      select,
+      input {
+        font: inherit;
+        color: inherit;
+      }
+      .tab,
+      .ghost {
+        border: 1px solid transparent;
+        background: none;
+        padding: 6px 12px;
+        border-radius: 8px;
+        cursor: pointer;
+        color: var(--ink-2);
+      }
+      .tab:hover,
+      .ghost:hover {
+        background: var(--wash);
+      }
+      .tab[aria-selected='true'] {
+        background: var(--wash);
+        border-color: var(--ring);
+        color: var(--ink);
+        font-weight: 600;
+      }
+      main {
+        padding: 20px 24px 48px;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+      .filters {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 16px;
+      }
+      select,
+      input[type='search'] {
+        background: var(--surface);
+        border: 1px solid var(--ring);
+        border-radius: 8px;
+        padding: 6px 10px;
+      }
+      .kpis {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+        gap: 12px;
+        margin-bottom: 16px;
+      }
+      .kpi,
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--ring);
+        border-radius: 12px;
+      }
+      .kpi {
+        padding: 14px 16px;
+      }
+      .kpi .label {
+        color: var(--ink-2);
+        font-size: 12px;
+      }
+      .kpi .value {
+        font-size: 26px;
+        font-weight: 600;
+        margin-top: 2px;
+      }
+      .kpi .note {
+        color: var(--muted);
+        font-size: 12px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      }
+      .span-2 {
+        grid-column: span 2;
+      }
+      @media (max-width: 900px) {
+        .grid {
+          grid-template-columns: minmax(0, 1fr);
+        }
+        .span-2 {
+          grid-column: auto;
+        }
+      }
+      .card {
+        padding: 16px;
+        min-width: 0;
+      }
+      .card-head {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 8px;
+      }
+      .card h2 {
+        margin: 0;
+        font-size: 14px;
+      }
+      .card .sub {
+        color: var(--muted);
+        font-size: 12px;
+      }
+      .card-head .ghost {
+        margin-left: auto;
+        font-size: 12px;
+        white-space: nowrap;
+      }
+      .section-title {
+        margin: 28px 0 10px;
+        font-size: 13px;
+        color: var(--ink-2);
+        font-weight: 600;
+      }
+      .legend {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px 16px;
+        font-size: 12px;
+        color: var(--ink-2);
+        margin-bottom: 4px;
+      }
+      .legend span::before {
+        content: '';
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 3px;
+        margin-right: 6px;
+        vertical-align: -1px;
+        background: var(--c);
+      }
+      svg text {
+        fill: var(--muted);
+        font-size: 11px;
+        font-variant-numeric: tabular-nums;
+      }
+      .chart:focus-visible,
+      .hbar-row:focus-visible {
+        outline: 2px solid var(--s1);
+        outline-offset: 2px;
+        border-radius: 4px;
+      }
+      .hbars {
+        display: grid;
+        gap: 2px;
+      }
+      .hbar-row {
+        display: grid;
+        grid-template-columns: minmax(0, 38%) 1fr 64px;
+        align-items: center;
+        gap: 10px;
+        min-height: 26px;
+        border-radius: 4px;
+        padding: 0 4px;
+      }
+      .hbar-row:hover {
+        background: var(--wash);
+      }
+      .hbar-label {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        color: var(--ink-2);
+        font-size: 12px;
+      }
+      .hbar-bar {
+        height: 12px;
+        background: var(--s1);
+        border-radius: 0 4px 4px 0;
+        min-width: 2px;
+      }
+      .hbar-value {
+        text-align: right;
+        font-variant-numeric: tabular-nums;
+        font-size: 12px;
+      }
+      #tip {
+        position: fixed;
+        pointer-events: none;
+        z-index: 10;
+        background: var(--surface);
+        border: 1px solid var(--ring);
+        border-radius: 8px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+        padding: 8px 10px;
+        font-size: 12px;
+        display: none;
+        max-width: 320px;
+      }
+      #tip .sub {
+        color: var(--muted);
+      }
+      #tip b {
+        display: block;
+        margin-bottom: 2px;
+      }
+      #tip .row {
+        display: flex;
+        gap: 12px;
+        justify-content: space-between;
+        font-variant-numeric: tabular-nums;
+      }
+      .swatch {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border-radius: 2px;
+        margin-right: 6px;
+      }
+      .footnote {
+        color: var(--muted);
+        font-size: 12px;
+        margin-top: 8px;
+      }
+
+      @media (max-width: 600px) {
+        header,
+        main {
+          padding-left: 16px;
+          padding-right: 16px;
+        }
+        nav {
+          margin-left: 0;
+        }
+      }
+
+      /* tables */
+      .table-wrap {
+        overflow: auto;
+        max-height: 70vh;
+        border: 1px solid var(--ring);
+        border-radius: 10px;
+        background: var(--surface);
+      }
+      .card .table-wrap {
+        max-height: 320px;
+        margin-top: 8px;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        font-size: 12px;
+      }
+      th,
+      td {
+        padding: 6px 10px;
+        border-bottom: 1px solid var(--grid);
+        text-align: left;
+        white-space: nowrap;
+        max-width: 360px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      th {
+        position: sticky;
+        top: 0;
+        background: var(--surface);
+        color: var(--ink-2);
+        font-weight: 600;
+        border-bottom-color: var(--axis);
+      }
+      th.sortable {
+        cursor: pointer;
+        user-select: none;
+      }
+      th.sortable:hover {
+        color: var(--ink);
+      }
+      td.num {
+        text-align: right;
+        font-variant-numeric: tabular-nums;
+      }
+      td.null {
+        color: var(--muted);
+      }
+      tbody tr:hover {
+        background: var(--wash);
+      }
+
+      /* explorer */
+      .explorer {
+        display: grid;
+        grid-template-columns: 240px minmax(0, 1fr);
+        gap: 16px;
+      }
+      @media (max-width: 800px) {
+        .explorer {
+          grid-template-columns: minmax(0, 1fr);
+        }
+      }
+      .objects {
+        display: grid;
+        gap: 2px;
+        align-content: start;
+      }
+      .objects h3 {
+        margin: 12px 0 4px;
+        font-size: 11px;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+      .obj {
+        display: flex;
+        justify-content: space-between;
+        gap: 8px;
+        text-align: left;
+        border: none;
+        background: none;
+        padding: 5px 8px;
+        border-radius: 6px;
+        cursor: pointer;
+        color: var(--ink-2);
+        font-size: 13px;
+      }
+      .obj:hover {
+        background: var(--wash);
+      }
+      .obj[aria-current='true'] {
+        background: var(--wash);
+        color: var(--ink);
+        font-weight: 600;
+      }
+      .obj.empty {
+        color: var(--muted);
+      }
+      .obj small {
+        color: var(--muted);
+        font-variant-numeric: tabular-nums;
+        font-weight: 400;
+      }
+      .toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 10px;
+      }
+      .toolbar input {
+        flex: 1;
+        min-width: 200px;
+      }
+      .pager {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--ink-2);
+        font-size: 12px;
+        font-variant-numeric: tabular-nums;
+      }
+      .pager button {
+        border: 1px solid var(--ring);
+        background: var(--surface);
+        border-radius: 6px;
+        padding: 4px 10px;
+        cursor: pointer;
+      }
+      .pager button:disabled {
+        opacity: 0.4;
+        cursor: default;
+      }
+      .loading {
+        opacity: 0.5;
+        transition: opacity 0.15s;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>Datos del punto de venta</h1>
+        <div class="source" id="source"></div>
+      </div>
+      <nav role="tablist">
+        <button class="tab" role="tab" data-view="dashboard" aria-selected="true">Panel</button>
+        <button class="tab" role="tab" data-view="explorer" aria-selected="false">
+          Explorador de tablas
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <section id="dashboard">
+        <div class="filters">
+          <label for="year">Periodo</label>
+          <select id="year">
+            <option value="">Todo el historial</option>
+          </select>
+        </div>
+        <div class="kpis" id="kpis"></div>
+        <div class="grid" id="movement-cards"></div>
+
+        <div class="section-title">Catálogo actual · no depende del periodo</div>
+        <div class="grid" id="catalog-cards"></div>
+        <p class="footnote">
+          Tipos de movimiento: s, a, e, d. Su significado (salida, ajuste, entrada, devolución) es
+          una interpretación probable; eleventa no lo documenta en la base. Las ventas y tickets
+          están vacíos en esta base, así que "salida" es la mejor aproximación a ventas.
+        </p>
+      </section>
+
+      <section id="explorer" hidden>
+        <div class="explorer">
+          <div class="objects" id="objects"></div>
+          <div>
+            <div class="toolbar">
+              <input type="search" id="search" placeholder="Buscar en todas las columnas…" />
+              <div class="pager">
+                <span id="range"></span>
+                <button id="prev" aria-label="Página anterior">‹</button>
+                <button id="next" aria-label="Página siguiente">›</button>
+              </div>
+            </div>
+            <div class="table-wrap" id="grid"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div id="tip" role="status"></div>
+
+    <script>
+      const nf = new Intl.NumberFormat('es-MX');
+      const money = new Intl.NumberFormat('es-MX', {
+        style: 'currency',
+        currency: 'MXN',
+        maximumFractionDigits: 0,
+      });
+      const SVG = 'http://www.w3.org/2000/svg';
+      const TYPES = [
+        { key: 's', name: 's · salida', color: 'var(--s1)' },
+        { key: 'a', name: 'a · ajuste', color: 'var(--s2)' },
+        { key: 'e', name: 'e · entrada', color: 'var(--s3)' },
+        { key: 'd', name: 'd · devolución', color: 'var(--s4)' },
+      ];
+      const PRICE_BANDS = [
+        '< $25',
+        '$25–49',
+        '$50–99',
+        '$100–199',
+        '$200–499',
+        '$500–999',
+        '≥ $1,000',
+      ];
+      const MONTHS = [
+        'ene',
+        'feb',
+        'mar',
+        'abr',
+        'may',
+        'jun',
+        'jul',
+        'ago',
+        'sep',
+        'oct',
+        'nov',
+        'dic',
+      ];
+
+      const $ = (sel) => document.querySelector(sel);
+      const api = (path) =>
+        fetch(path).then(async (r) => {
+          const body = await r.json();
+          if (!r.ok) throw new Error(body.error);
+          return body;
+        });
+      function h(tag, attrs = {}, children = []) {
+        const node = document.createElement(tag);
+        for (const [k, v] of Object.entries(attrs)) {
+          if (k === 'text') node.textContent = v;
+          else if (k.startsWith('on')) node.addEventListener(k.slice(2), v);
+          else node.setAttribute(k, v);
+        }
+        for (const c of [].concat(children)) if (c) node.append(c);
+        return node;
+      }
+      function s(tag, attrs = {}, parent) {
+        const node = document.createElementNS(SVG, tag);
+        for (const [k, v] of Object.entries(attrs)) node.setAttribute(k, v);
+        if (parent) parent.append(node);
+        return node;
+      }
+      const esc = (v) =>
+        String(v).replace(
+          /[&<>"]/g,
+          (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c],
+        );
+      const monthLabel = (ym) => `${MONTHS[Number(ym.slice(5, 7)) - 1]} ${ym.slice(0, 4)}`;
+      /** Every YYYY-MM from `first` to `last`, so months without movements plot as zero, not as a gap. */
+      function monthRange(first, last) {
+        const out = [];
+        for (
+          let [y, m] = first.split('-').map(Number);
+          `${y}-${String(m).padStart(2, '0')}` <= last;
+          m === 12 ? (y++, (m = 1)) : m++
+        )
+          out.push(`${y}-${String(m).padStart(2, '0')}`);
+        return out;
+      }
+      function fillMonths(rows, key, first, last, empty) {
+        const byMonth = new Map(rows.map((r) => [r[key], r]));
+        return monthRange(first, last).map((ym) => byMonth.get(ym) ?? { ...empty, [key]: ym });
+      }
+
+      // ---------- tooltip ----------
+      const tip = $('#tip');
+      function showTip(html, x, y) {
+        tip.innerHTML = html;
+        tip.style.display = 'block';
+        const r = tip.getBoundingClientRect();
+        tip.style.left = Math.min(x + 14, innerWidth - r.width - 8) + 'px';
+        tip.style.top = Math.max(8, y - r.height - 10) + 'px';
+      }
+      const hideTip = () => (tip.style.display = 'none');
+      const tipRow = (label, value, color) =>
+        `<div class="row"><span>${color ? `<i class="swatch" style="background:${color}"></i>` : ''}${esc(label)}</span><span>${esc(value)}</span></div>`;
+
+      // ---------- scales ----------
+      function niceMax(v) {
+        if (v <= 0) return 1;
+        const p = 10 ** Math.floor(Math.log10(v));
+        return [1, 2, 2.5, 5, 10].map((m) => m * p).find((m) => m >= v);
+      }
+      function yAxis(svg, max, x0, x1, y0, y1) {
+        for (let i = 0; i <= 4; i++) {
+          const v = (max / 4) * i;
+          const y = y0 - ((y0 - y1) * i) / 4;
+          s(
+            'line',
+            {
+              x1: x0,
+              x2: x1,
+              y1: y,
+              y2: y,
+              stroke: i === 0 ? 'var(--axis)' : 'var(--grid)',
+              'stroke-width': 1,
+            },
+            svg,
+          );
+          s('text', { x: x0 - 8, y: y + 4, 'text-anchor': 'end' }, svg).textContent = nf.format(v);
+        }
+      }
+      /** X-axis labels: skips empty ones and any closer than 64px to the previous label. */
+      function xLabels(svg, labels, x, y, fmtX) {
+        let lastX = -Infinity;
+        labels.forEach((label, i) => {
+          const text = fmtX(label, true);
+          if (!text || x(i) - lastX < 64) return;
+          lastX = x(i);
+          s('text', { x: x(i), y, 'text-anchor': 'middle' }, svg).textContent = text;
+        });
+      }
+
+      // ---------- line chart (single series, crosshair + tooltip) ----------
+      function lineChart(host, points, fmtX, unit) {
+        host.innerHTML = '';
+        const W = host.clientWidth,
+          H = 240,
+          m = { l: 52, r: 16, t: 10, b: 26 };
+        const svg = s(
+          'svg',
+          {
+            width: W,
+            height: H,
+            class: 'chart',
+            tabindex: 0,
+            role: 'img',
+            'aria-label': 'Gráfica de línea',
+          },
+          host,
+        );
+        if (!points.length) return;
+        const max = niceMax(Math.max(...points.map((p) => p.value)));
+        const x = (i) =>
+          m.l + (points.length === 1 ? 0 : (i * (W - m.l - m.r)) / (points.length - 1));
+        const y = (v) => H - m.b - (v / max) * (H - m.t - m.b);
+        yAxis(svg, max, m.l, W - m.r, H - m.b, m.t);
+        xLabels(
+          svg,
+          points.map((p) => p.label),
+          x,
+          H - 8,
+          fmtX,
+        );
+        s(
+          'path',
+          {
+            d: points.map((p, i) => `${i ? 'L' : 'M'}${x(i)},${y(p.value)}`).join(''),
+            fill: 'none',
+            stroke: 'var(--s1)',
+            'stroke-width': 2,
+            'stroke-linejoin': 'round',
+          },
+          svg,
+        );
+        const cross = s(
+          'line',
+          { y1: m.t, y2: H - m.b, stroke: 'var(--axis)', 'stroke-width': 1, visibility: 'hidden' },
+          svg,
+        );
+        const dot = s(
+          'circle',
+          {
+            r: 4,
+            fill: 'var(--s1)',
+            stroke: 'var(--surface)',
+            'stroke-width': 2,
+            visibility: 'hidden',
+          },
+          svg,
+        );
+        let idx = points.length - 1;
+        const focus = (i, cx, cy) => {
+          idx = Math.max(0, Math.min(points.length - 1, i));
+          const p = points[idx];
+          for (const n of [cross, dot]) n.setAttribute('visibility', 'visible');
+          cross.setAttribute('x1', x(idx));
+          cross.setAttribute('x2', x(idx));
+          dot.setAttribute('cx', x(idx));
+          dot.setAttribute('cy', y(p.value));
+          const box = svg.getBoundingClientRect();
+          showTip(
+            `<b>${esc(fmtX(p.label))}</b>${tipRow(unit, nf.format(p.value))}`,
+            cx ?? box.left + x(idx),
+            cy ?? box.top + y(p.value),
+          );
+        };
+        const hide = () => {
+          for (const n of [cross, dot]) n.setAttribute('visibility', 'hidden');
+          hideTip();
+        };
+        const hit = s(
+          'rect',
+          { x: m.l, y: 0, width: W - m.l - m.r, height: H, fill: 'transparent' },
+          svg,
+        );
+        hit.addEventListener('mousemove', (e) => {
+          const bx = e.clientX - svg.getBoundingClientRect().left;
+          focus(
+            Math.round(((bx - m.l) / (W - m.l - m.r)) * (points.length - 1)),
+            e.clientX,
+            e.clientY,
+          );
+        });
+        hit.addEventListener('mouseleave', hide);
+        svg.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowLeft') focus(idx - 1);
+          if (e.key === 'ArrowRight') focus(idx + 1);
+        });
+        svg.addEventListener('focus', () => focus(idx));
+        svg.addEventListener('blur', hide);
+      }
+
+      // ---------- stacked columns (per-column tooltip, 2px gaps) ----------
+      function topRounded(x, y, w, hgt, r) {
+        r = Math.min(r, w / 2, hgt);
+        return `M${x},${y + hgt}V${y + r}Q${x},${y} ${x + r},${y}H${x + w - r}Q${x + w},${y} ${x + w},${y + r}V${y + hgt}Z`;
+      }
+      function columns(host, rows, series, fmtX) {
+        host.innerHTML = '';
+        if (series.length > 1)
+          host.append(
+            h(
+              'div',
+              { class: 'legend' },
+              series.map((se) => h('span', { style: `--c:${se.color}`, text: se.name })),
+            ),
+          );
+        const W = host.clientWidth,
+          H = 240,
+          m = { l: 52, r: 8, t: 10, b: 26 };
+        const svg = s(
+          'svg',
+          { width: W, height: H, role: 'img', 'aria-label': 'Gráfica de columnas' },
+          host,
+        );
+        if (!rows.length) return;
+        const totals = rows.map((r) => series.reduce((a, se) => a + (r.values[se.key] || 0), 0));
+        const max = niceMax(Math.max(...totals));
+        const plotH = H - m.t - m.b,
+          band = (W - m.l - m.r) / rows.length;
+        const bw = Math.max(2, Math.min(48, band * 0.7));
+        yAxis(svg, max, m.l, W - m.r, H - m.b, m.t);
+        xLabels(
+          svg,
+          rows.map((r) => r.label),
+          (i) => m.l + band * i + band / 2,
+          H - 8,
+          fmtX,
+        );
+        rows.forEach((r, i) => {
+          const cx = m.l + band * i + band / 2;
+          let top = H - m.b;
+          const visible = series.filter((se) => r.values[se.key] > 0);
+          visible.forEach((se, j) => {
+            const hgt = (r.values[se.key] / max) * plotH;
+            const gap = j > 0 ? 2 : 0;
+            const drawn = Math.max(0, hgt - gap);
+            top -= hgt;
+            const isTop = j === visible.length - 1;
+            s(
+              'path',
+              {
+                d: isTop
+                  ? topRounded(cx - bw / 2, top, bw, drawn, 4)
+                  : `M${cx - bw / 2},${top}h${bw}v${drawn}h${-bw}Z`,
+                fill: se.color,
+              },
+              svg,
+            );
+          });
+          const hit = s(
+            'rect',
+            {
+              x: m.l + band * i,
+              y: m.t,
+              width: band,
+              height: plotH,
+              fill: 'transparent',
+              tabindex: 0,
+            },
+            svg,
+          );
+          const show = (x, y) => {
+            const lines = series
+              .map((se) =>
+                tipRow(
+                  se.name,
+                  nf.format(r.values[se.key] || 0),
+                  series.length > 1 ? se.color : null,
+                ),
+              )
+              .join('');
+            showTip(
+              `<b>${esc(fmtX(r.label))}</b>${lines}${series.length > 1 ? tipRow('Total', nf.format(totals[i])) : ''}`,
+              x,
+              y,
+            );
+          };
+          hit.addEventListener('mousemove', (e) => show(e.clientX, e.clientY));
+          hit.addEventListener('mouseleave', hideTip);
+          hit.addEventListener('focus', () => {
+            const b = hit.getBoundingClientRect();
+            show(b.left + b.width / 2, b.top + 40);
+          });
+          hit.addEventListener('blur', hideTip);
+        });
+      }
+
+      // ---------- horizontal bars (HTML) ----------
+      function hbars(host, items, unit) {
+        host.innerHTML = '';
+        const max = Math.max(...items.map((i) => i.value), 1);
+        host.append(
+          h(
+            'div',
+            { class: 'hbars' },
+            items.map((it) => {
+              const row = h('div', { class: 'hbar-row', tabindex: 0 }, [
+                h('div', { class: 'hbar-label', text: it.label }),
+                h(
+                  'div',
+                  {},
+                  h('div', { class: 'hbar-bar', style: `width:${(it.value / max) * 100}%` }),
+                ),
+                h('div', { class: 'hbar-value', text: nf.format(it.value) }),
+              ]);
+              const show = (x, y) =>
+                showTip(
+                  `<b>${esc(it.label)}</b>${it.detail ? `<div class="sub">${esc(it.detail)}</div>` : ''}${tipRow(unit, nf.format(it.value))}`,
+                  x,
+                  y,
+                );
+              row.addEventListener('mousemove', (e) => show(e.clientX, e.clientY));
+              row.addEventListener('mouseleave', hideTip);
+              row.addEventListener('focus', () => {
+                const b = row.getBoundingClientRect();
+                show(b.left + b.width / 2, b.top);
+              });
+              row.addEventListener('blur', hideTip);
+              return row;
+            }),
+          ),
+        );
+      }
+
+      // ---------- table (chart twin + explorer) ----------
+      function dataTable(headers, rows, numeric = []) {
+        return h('table', {}, [
+          h(
+            'thead',
+            {},
+            h(
+              'tr',
+              {},
+              headers.map((t) => h('th', { text: t })),
+            ),
+          ),
+          h(
+            'tbody',
+            {},
+            rows.map((r) =>
+              h(
+                'tr',
+                {},
+                r.map((v, i) =>
+                  h('td', {
+                    class: numeric.includes(i) ? 'num' : '',
+                    text: numeric.includes(i) && typeof v === 'number' ? nf.format(v) : (v ?? ''),
+                  }),
+                ),
+              ),
+            ),
+          ),
+        ]);
+      }
+
+      /** A chart card with a "Ver tabla" twin; `draw` re-runs on resize. */
+      function card(parent, { title, sub, span, draw, table }) {
+        const body = h('div');
+        const tableWrap = h('div', { class: 'table-wrap', hidden: '' });
+        const toggle = h('button', {
+          class: 'ghost',
+          text: 'Ver tabla',
+          'aria-expanded': 'false',
+          onclick: () => {
+            const open = tableWrap.hidden;
+            tableWrap.hidden = !open;
+            body.hidden = open;
+            toggle.textContent = open ? 'Ver gráfica' : 'Ver tabla';
+            toggle.setAttribute('aria-expanded', String(open));
+            if (open && !tableWrap.firstChild) tableWrap.append(table());
+          },
+        });
+        parent.append(
+          h('div', { class: `card${span ? ' span-2' : ''}` }, [
+            h('div', { class: 'card-head' }, [
+              h('div', {}, [
+                h('h2', { text: title }),
+                sub && h('div', { class: 'sub', text: sub }),
+              ]),
+              toggle,
+            ]),
+            body,
+            tableWrap,
+          ]),
+        );
+        charts.push(() => {
+          if (!body.hidden) draw(body);
+        });
+        requestAnimationFrame(() => draw(body));
+      }
+
+      // ---------- dashboard ----------
+      let charts = [];
+      addEventListener('resize', () => charts.forEach((c) => c()));
+
+      // ?year=2025 in the URL preselects the period once the year list has loaded.
+      let pendingYear = new URLSearchParams(location.search).get('year');
+      async function loadDashboard() {
+        const year = $('#year').value || pendingYear || '';
+        $('#dashboard').classList.add('loading');
+        const d = await api(`/api/summary${year ? `?year=${year}` : ''}`);
+        $('#dashboard').classList.remove('loading');
+        if ($('#year').options.length === 1)
+          for (const y of d.years) $('#year').append(h('option', { value: y, text: y }));
+        if (pendingYear) (($('#year').value = pendingYear), (pendingYear = null));
+
+        const k = d.kpis;
+        const period = year || 'todo el historial';
+        const kpi = (label, value, note) =>
+          h('div', { class: 'kpi' }, [
+            h('div', { class: 'label', text: label }),
+            h('div', { class: 'value', text: value }),
+            note && h('div', { class: 'note', text: note }),
+          ]);
+        $('#kpis').replaceChildren(
+          kpi('Movimientos de inventario', nf.format(k.movements), period),
+          kpi('Unidades con salida (s)', nf.format(Math.round(k.units_out)), period),
+          kpi('Productos distintos movidos', nf.format(k.products_moved), period),
+          kpi(
+            'Movimientos de productos eliminados',
+            `${Math.round((k.orphan_movements / Math.max(k.movements, 1)) * 100)} %`,
+            `${nf.format(k.orphan_movements)} sin producto en catálogo`,
+          ),
+          kpi('Productos en catálogo', nf.format(k.products), 'hoy'),
+          kpi('Precio mediano', money.format(k.median_price), 'catálogo actual'),
+          kpi('Productos bajo costo', nf.format(k.below_cost), 'precio < costo'),
+        );
+
+        charts = [];
+        const mv = $('#movement-cards'),
+          cat = $('#catalog-cards');
+        mv.replaceChildren();
+        cat.replaceChildren();
+        // Axis ticks (short): one per January across the full history, every month within a year.
+        const fmtPeriod = (p, short) => {
+          if (p.length !== 7) return p;
+          if (!short) return monthLabel(p);
+          if (year) return MONTHS[Number(p.slice(5, 7)) - 1];
+          return p.endsWith('-01') ? p.slice(0, 4) : '';
+        };
+
+        const first = year ? `${year}-01` : k.first_at.slice(0, 7);
+        const last = year ? k.last_at.slice(0, 7) : k.last_at.slice(0, 7);
+        const monthly = fillMonths(d.monthlyOut, 'month', first, last, { units: 0 }).map((r) => ({
+          label: r.month,
+          value: Math.round(r.units),
+        }));
+        if (year)
+          d.byType = fillMonths(d.byType, 'period', first, last, { s: 0, a: 0, e: 0, d: 0 });
+        card(mv, {
+          title: 'Unidades con salida (tipo s) por mes',
+          sub: `${period} · mejor aproximación a ventas`,
+          span: true,
+          draw: (el) => lineChart(el, monthly, fmtPeriod, 'Unidades'),
+          table: () =>
+            dataTable(
+              ['Mes', 'Unidades'],
+              monthly.map((p) => [monthLabel(p.label), p.value]),
+              [1],
+            ),
+        });
+        const byType = d.byType.map((r) => ({ label: r.period, values: r }));
+        card(mv, {
+          title: 'Movimientos por tipo',
+          sub: year ? `por mes · ${year}` : 'por año',
+          draw: (el) => columns(el, byType, TYPES, fmtPeriod),
+          table: () =>
+            dataTable(
+              ['Periodo', ...TYPES.map((t) => t.name)],
+              d.byType.map((r) => [r.period, ...TYPES.map((t) => r[t.key])]),
+              [1, 2, 3, 4],
+            ),
+        });
+        const top = d.topProducts.map((r) => ({
+          label: r.name,
+          value: Math.round(r.units),
+          detail: `Código ${r.code}`,
+        }));
+        card(mv, {
+          title: 'Top 15 productos por unidades de salida',
+          sub: period,
+          draw: (el) => hbars(el, top, 'Unidades'),
+          table: () =>
+            dataTable(
+              ['Código', 'Producto', 'Unidades'],
+              d.topProducts.map((r) => [r.code, r.name, Math.round(r.units)]),
+              [2],
+            ),
+        });
+
+        card(cat, {
+          title: 'Productos por departamento',
+          sub: 'nombres tal como están en eleventa',
+          draw: (el) =>
+            hbars(
+              el,
+              d.departments.map((r) => ({ label: r.name, value: r.products })),
+              'Productos',
+            ),
+          table: () =>
+            dataTable(
+              ['Departamento', 'Productos'],
+              d.departments.map((r) => [r.name, r.products]),
+              [1],
+            ),
+        });
+        const bands = d.priceBands.map((r) => ({
+          label: PRICE_BANDS[r.band],
+          values: { n: r.products },
+        }));
+        card(cat, {
+          title: 'Productos por rango de precio',
+          sub: 'precio de venta, MXN',
+          draw: (el) =>
+            columns(el, bands, [{ key: 'n', name: 'Productos', color: 'var(--s1)' }], (l) => l),
+          table: () =>
+            dataTable(
+              ['Rango', 'Productos'],
+              bands.map((b) => [b.label, b.values.n]),
+              [1],
+            ),
+        });
+      }
+
+      // ---------- explorer ----------
+      const state = { name: 'products', q: '', sort: null, dir: 'asc', offset: 0, limit: 50 };
+      async function loadObjects() {
+        const objs = await api('/api/objects');
+        const group = (label, list) => [
+          h('h3', { text: label }),
+          ...list.map((o) =>
+            h(
+              'button',
+              {
+                class: `obj${o.rows ? '' : ' empty'}`,
+                'data-name': o.name,
+                'aria-current': String(o.name === state.name),
+                onclick: () => {
+                  Object.assign(state, { name: o.name, q: '', sort: null, offset: 0 });
+                  $('#search').value = '';
+                  markCurrent();
+                  loadRows();
+                },
+              },
+              [h('span', { text: o.name }), h('small', { text: nf.format(o.rows) })],
+            ),
+          ),
+        ];
+        $('#objects').replaceChildren(
+          ...group(
+            'Vistas limpias',
+            objs.filter((o) => o.type === 'view'),
+          ),
+          ...group(
+            'Tablas con datos',
+            objs.filter((o) => o.type === 'table' && o.rows),
+          ),
+          ...group(
+            'Tablas vacías',
+            objs.filter((o) => o.type === 'table' && !o.rows),
+          ),
+        );
+      }
+      const markCurrent = () =>
+        document
+          .querySelectorAll('.obj')
+          .forEach((b) => b.setAttribute('aria-current', String(b.dataset.name === state.name)));
+
+      async function loadRows() {
+        const p = new URLSearchParams({
+          name: state.name,
+          q: state.q,
+          offset: state.offset,
+          limit: state.limit,
+        });
+        if (state.sort) (p.set('sort', state.sort), p.set('dir', state.dir));
+        $('#grid').classList.add('loading');
+        const d = await api(`/api/rows?${p}`);
+        $('#grid').classList.remove('loading');
+        const numeric = d.columns.map(
+          (_, i) =>
+            d.rows.length > 0 && d.rows.every((r) => r[i] === null || typeof r[i] === 'number'),
+        );
+        const table = h('table', {}, [
+          h(
+            'thead',
+            {},
+            h(
+              'tr',
+              {},
+              d.columns.map((c) =>
+                h('th', {
+                  class: 'sortable',
+                  text: c + (state.sort === c ? (state.dir === 'asc' ? ' ↑' : ' ↓') : ''),
+                  onclick: () => {
+                    state.dir = state.sort === c && state.dir === 'asc' ? 'desc' : 'asc';
+                    state.sort = c;
+                    state.offset = 0;
+                    loadRows();
+                  },
+                }),
+              ),
+            ),
+          ),
+          h(
+            'tbody',
+            {},
+            d.rows.map((r) =>
+              h(
+                'tr',
+                {},
+                r.map((v, i) =>
+                  h('td', {
+                    class: v === null ? 'null' : numeric[i] ? 'num' : '',
+                    title: v ?? '',
+                    text: v === null ? 'null' : numeric[i] ? nf.format(v) : v,
+                  }),
+                ),
+              ),
+            ),
+          ),
+        ]);
+        $('#grid').replaceChildren(
+          d.rows.length
+            ? table
+            : h('p', { style: 'padding:16px;color:var(--muted)', text: 'Sin filas.' }),
+        );
+        const from = d.total ? state.offset + 1 : 0;
+        $('#range').textContent =
+          `${nf.format(from)}–${nf.format(Math.min(state.offset + state.limit, d.total))} de ${nf.format(d.total)}`;
+        $('#prev').disabled = state.offset === 0;
+        $('#next').disabled = state.offset + state.limit >= d.total;
+      }
+      $('#prev').onclick = () => {
+        state.offset = Math.max(0, state.offset - state.limit);
+        loadRows();
+      };
+      $('#next').onclick = () => {
+        state.offset += state.limit;
+        loadRows();
+      };
+      let searchTimer;
+      $('#search').addEventListener('input', (e) => {
+        clearTimeout(searchTimer);
+        searchTimer = setTimeout(() => {
+          state.q = e.target.value;
+          state.offset = 0;
+          loadRows();
+        }, 250);
+      });
+
+      // ---------- shell ----------
+      let explorerLoaded = false;
+      function showView(t) {
+        document
+          .querySelectorAll('.tab')
+          .forEach((o) => o.setAttribute('aria-selected', String(o === t)));
+        history.replaceState(null, '', `${location.search}#${t.dataset.view}`);
+        $('#dashboard').hidden = t.dataset.view !== 'dashboard';
+        $('#explorer').hidden = t.dataset.view !== 'explorer';
+        if (t.dataset.view === 'explorer' && !explorerLoaded) {
+          explorerLoaded = true;
+          loadObjects();
+          loadRows();
+        }
+        if (t.dataset.view === 'dashboard') charts.forEach((c) => c());
+      }
+      document
+        .querySelectorAll('.tab')
+        .forEach((t) => t.addEventListener('click', () => showView(t)));
+      $('#year').addEventListener('change', () => {
+        const y = $('#year').value;
+        history.replaceState(null, '', `${y ? `?year=${y}` : location.pathname}${location.hash}`);
+        loadDashboard();
+      });
+      if (location.hash === '#explorer') showView($('.tab[data-view="explorer"]'));
+
+      api('/api/rows?name=import_run').then(({ rows: [r] }) => {
+        if (r)
+          $('#source').textContent =
+            `${r[1]} · importado ${new Date(r[0]).toLocaleString('es-MX')}`;
+      });
+      loadDashboard().catch((e) => ($('#kpis').textContent = e.message));
+    </script>
+  </body>
+</html>

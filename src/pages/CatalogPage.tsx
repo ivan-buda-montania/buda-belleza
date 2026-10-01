@@ -12,30 +12,24 @@ import { categories, getCategoryBySlug } from '../data/categories';
 import { products } from '../data/products';
 import { cn } from '../lib/cn';
 import { normalizeText, productMatches } from '../lib/text';
-import { formatInteger, formatPrice } from '../lib/format';
+import { formatInteger } from '../lib/format';
 import type { CategorySlug } from '../types/category';
 import type { Product, ProductTag } from '../types/product';
 
-type SortKey = 'relevancia' | 'precio-asc' | 'precio-desc' | 'nombre' | 'novedades';
+type SortKey = 'relevancia' | 'mas-vendidos' | 'novedades' | 'nombre';
 
 const PAGE_SIZE = 24;
 
 const SORT_OPTIONS: { value: SortKey; label: string }[] = [
   { value: 'relevancia', label: 'Relevancia' },
-  { value: 'precio-asc', label: 'Precio: menor a mayor' },
-  { value: 'precio-desc', label: 'Precio: mayor a menor' },
-  { value: 'nombre', label: 'Nombre A-Z' },
+  { value: 'mas-vendidos', label: 'Más vendidos' },
   { value: 'novedades', label: 'Novedades' },
+  { value: 'nombre', label: 'Nombre A-Z' },
 ];
 
-const TAG_VALUES: ProductTag[] = ['bestseller', 'new', 'volume-offer'];
+const TAG_VALUES: ProductTag[] = ['bestseller', 'new'];
 const CATEGORY_SLUGS = new Set<string>(categories.map((category) => category.slug));
 const BRAND_IDS = new Set<string>(brands.map((brand) => brand.id));
-
-const PRICE_CEILING =
-  Math.ceil(Math.max(...products.map((product) => product.price.wholesale)) / 50) * 50;
-
-const TOTAL_SKUS = categories.reduce((total, category) => total + category.skuCount, 0);
 
 const FOCUSABLE =
   'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), summary, [tabindex]:not([tabindex="-1"])';
@@ -50,25 +44,22 @@ function relevance(product: Product, term: string) {
   }
   if (product.tags?.includes('bestseller')) score += 2;
   if (product.tags?.includes('new')) score += 1;
-  if (product.stock === 'in-stock') score += 1;
   return score;
-}
-
-function isNew(product: Product) {
-  return product.tags?.includes('new') ?? false;
 }
 
 function sortProducts(list: Product[], sort: SortKey, term: string) {
   const next = [...list];
   switch (sort) {
-    case 'precio-asc':
-      return next.sort((a, b) => a.price.wholesale - b.price.wholesale);
-    case 'precio-desc':
-      return next.sort((a, b) => b.price.wholesale - a.price.wholesale);
+    case 'mas-vendidos':
+      // Unranked products keep their relative order after the ranked ones.
+      return next.sort(
+        (a, b) =>
+          (a.salesRank ?? Number.MAX_SAFE_INTEGER) - (b.salesRank ?? Number.MAX_SAFE_INTEGER),
+      );
+    case 'novedades':
+      return next.sort((a, b) => (b.firstSeen ?? '').localeCompare(a.firstSeen ?? ''));
     case 'nombre':
       return next.sort((a, b) => a.name.localeCompare(b.name, 'es-MX'));
-    case 'novedades':
-      return next.sort((a, b) => Number(isNew(b)) - Number(isNew(a)));
     default:
       return next.sort((a, b) => relevance(b, term) - relevance(a, term));
   }
@@ -107,14 +98,8 @@ export function CatalogPage() {
   const brandParam = searchParams.get('marca');
   const tagParam = searchParams.get('tag');
   const urlQuery = searchParams.get('q') ?? '';
-  const inStockOnly = searchParams.get('stock') === '1';
   const sortParam = searchParams.get('orden');
   const sort: SortKey = isSortKey(sortParam) ? sortParam : 'relevancia';
-
-  const parsedMax = Number.parseInt(searchParams.get('max') ?? '', 10);
-  const maxPrice = Number.isNaN(parsedMax)
-    ? PRICE_CEILING
-    : Math.min(Math.max(parsedMax, 0), PRICE_CEILING);
 
   const selectedCategories = useMemo(
     () => parseList(catParam).filter((slug): slug is CategorySlug => CATEGORY_SLUGS.has(slug)),
@@ -193,33 +178,16 @@ export function CatalogPage() {
   const handleToggleBrand = useCallback((id: string) => toggleValue('marca', id), [toggleValue]);
   const handleToggleTag = useCallback((tag: ProductTag) => toggleValue('tag', tag), [toggleValue]);
 
-  const handleToggleInStock = useCallback(() => {
-    updateParams((next) => {
-      if (next.get('stock') === '1') next.delete('stock');
-      else next.set('stock', '1');
-    });
-  }, [updateParams]);
-
-  const handlePriceChange = useCallback(
-    (value: number) => {
-      updateParams((next) => {
-        if (value >= PRICE_CEILING) next.delete('max');
-        else next.set('max', String(value));
-      });
-    },
-    [updateParams],
-  );
-
   const handleClearFilters = useCallback(() => {
     updateParams((next) => {
-      for (const key of ['cat', 'marca', 'tag', 'stock', 'max']) next.delete(key);
+      for (const key of ['cat', 'marca', 'tag']) next.delete(key);
     });
   }, [updateParams]);
 
   const handleClearAll = useCallback(() => {
     setSearchInput('');
     updateParams((next) => {
-      for (const key of ['cat', 'marca', 'tag', 'stock', 'max', 'q']) next.delete(key);
+      for (const key of ['cat', 'marca', 'tag', 'q']) next.delete(key);
     });
   }, [updateParams]);
 
@@ -231,16 +199,19 @@ export function CatalogPage() {
         if (selectedCategories.length > 0 && !selectedCategories.includes(product.categorySlug)) {
           return false;
         }
-        if (selectedBrands.length > 0 && !selectedBrands.includes(product.brandId)) return false;
+        if (
+          selectedBrands.length > 0 &&
+          (product.brandId === undefined || !selectedBrands.includes(product.brandId))
+        ) {
+          return false;
+        }
         if (selectedTags.length > 0 && !selectedTags.some((tag) => product.tags?.includes(tag))) {
           return false;
         }
-        if (inStockOnly && product.stock !== 'in-stock') return false;
-        if (product.price.wholesale > maxPrice) return false;
         if (!productMatches(product, term)) return false;
         return true;
       }),
-    [selectedCategories, selectedBrands, selectedTags, inStockOnly, maxPrice, term],
+    [selectedCategories, selectedBrands, selectedTags, term],
   );
 
   const sorted = useMemo(() => sortProducts(filtered, sort, term), [filtered, sort, term]);
@@ -255,12 +226,7 @@ export function CatalogPage() {
     endMarkerRef.current?.focus();
   }, [visibleCount]);
 
-  const activeFilterCount =
-    selectedCategories.length +
-    selectedBrands.length +
-    selectedTags.length +
-    (inStockOnly ? 1 : 0) +
-    (maxPrice < PRICE_CEILING ? 1 : 0);
+  const activeFilterCount = selectedCategories.length + selectedBrands.length + selectedTags.length;
 
   const activeChips = useMemo<ActiveChip[]>(() => {
     const chips: ActiveChip[] = [];
@@ -301,36 +267,16 @@ export function CatalogPage() {
       });
     }
 
-    if (inStockOnly) {
-      chips.push({
-        key: 'stock',
-        label: 'Solo en existencia',
-        onRemove: handleToggleInStock,
-      });
-    }
-
-    if (maxPrice < PRICE_CEILING) {
-      chips.push({
-        key: 'max',
-        label: `Hasta ${formatPrice(maxPrice)}`,
-        onRemove: () => handlePriceChange(PRICE_CEILING),
-      });
-    }
-
     return chips;
   }, [
     urlQuery,
     selectedCategories,
     selectedBrands,
     selectedTags,
-    inStockOnly,
-    maxPrice,
     updateParams,
     handleToggleCategory,
     handleToggleBrand,
     handleToggleTag,
-    handleToggleInStock,
-    handlePriceChange,
   ]);
 
   const closeSheet = useCallback(() => setSheetOpen(false), []);
@@ -402,11 +348,6 @@ export function CatalogPage() {
       onToggleBrand={handleToggleBrand}
       selectedTags={selectedTags}
       onToggleTag={handleToggleTag}
-      inStockOnly={inStockOnly}
-      onToggleInStock={handleToggleInStock}
-      maxPrice={maxPrice}
-      priceCeiling={PRICE_CEILING}
-      onPriceChange={handlePriceChange}
       onClear={handleClearFilters}
       resultCount={sorted.length}
       searchTerm={urlQuery}
@@ -414,8 +355,8 @@ export function CatalogPage() {
   );
 
   const facts = [
-    { value: formatInteger(TOTAL_SKUS), label: 'SKUs en almacén' },
-    { value: formatInteger(brands.length), label: 'marcas en línea' },
+    { value: formatInteger(products.length), label: 'referencias publicadas' },
+    { value: formatInteger(brands.length), label: 'marcas' },
     { value: formatInteger(categories.length), label: 'categorías' },
   ];
 
@@ -429,12 +370,12 @@ export function CatalogPage() {
               id="catalogo-title"
               className="font-display text-display-xl max-w-4xl font-medium text-white"
             >
-              Todo el inventario, con precio de mayoreo a la vista
+              Las líneas que surtimos, listas para cotizar
             </h1>
             <p className="text-lead text-ink-300 max-w-2xl">
-              Filtra por especialidad, marca, etiqueta o presupuesto y arma tu pedido en minutos.
-              Publicamos en línea las claves de mayor rotación; si necesitas una referencia que no
-              aparece, tu asesor la cotiza el mismo día hábil.
+              Filtra por especialidad, marca o etiqueta y arma tu cotización en minutos. Te
+              respondemos con precios y existencias el mismo día hábil; si necesitas una referencia
+              que no aparece, tu asesor también la cotiza.
             </p>
           </Reveal>
 
@@ -617,8 +558,8 @@ export function CatalogPage() {
                   </Button>
                 ) : (
                   <p className="text-ink-400 max-w-md text-center text-xs leading-relaxed">
-                    ¿Buscas una clave que no aparece? Manejamos {formatInteger(TOTAL_SKUS)} SKUs en
-                    almacén y conseguimos sobre pedido lo que no está publicado.
+                    ¿Buscas una clave que no aparece? Pídela a tu asesor y la cotizamos sobre
+                    pedido.
                   </p>
                 )}
               </div>

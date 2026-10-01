@@ -19,7 +19,6 @@ for (const product of products) {
     product.sku,
     getBrandById(product.brandId)?.name ?? '',
     getCategoryBySlug(product.categorySlug)?.name ?? '',
-    product.presentation,
   ].join(' ');
   searchIndex.set(product.id, normalizeText(haystack));
 }

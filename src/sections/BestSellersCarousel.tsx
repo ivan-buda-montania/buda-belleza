@@ -5,7 +5,7 @@ import { ButtonLink } from '../components/ui/Button';
 import { Reveal } from '../components/ui/Reveal';
 import { Section } from '../components/ui/Section';
 import { SectionHeading } from '../components/ui/SectionHeading';
-import { getBestSellers, getNewArrivals, getVolumeOffers } from '../data/products';
+import { getBestSellers, getNewArrivals } from '../data/products';
 import {
   QUICK_FILTER_PANEL_ID,
   QuickFilterButtons,
@@ -20,16 +20,12 @@ interface FilterCopy {
 
 const filterCopy: Record<QuickFilter, FilterCopy> = {
   bestseller: {
-    note: 'Los SKUs con mayor reposición en los últimos 90 días.',
+    note: 'Las referencias con más piezas vendidas en los últimos 12 meses, de mayor a menor.',
     carouselLabel: 'Carrusel de productos más vendidos',
   },
   new: {
-    note: 'Referencias que acaban de entrar a piso en CDMX y Monterrey, con inventario reservado para cabina.',
+    note: 'Referencias que se dieron de alta en los últimos 90 días.',
     carouselLabel: 'Carrusel de nuevos ingresos',
-  },
-  'volume-offer': {
-    note: 'Precio escalonado desde 6 piezas por SKU: el descuento se aplica solo al armar tu cotización.',
-    carouselLabel: 'Carrusel de ofertas por volumen',
   },
 };
 
@@ -40,7 +36,6 @@ export function BestSellersCarousel() {
     () => ({
       bestseller: getBestSellers(),
       new: getNewArrivals(),
-      'volume-offer': getVolumeOffers(),
     }),
     [],
   );
@@ -49,7 +44,6 @@ export function BestSellersCarousel() {
     () => ({
       bestseller: collections.bestseller.length,
       new: collections.new.length,
-      'volume-offer': collections['volume-offer'].length,
     }),
     [collections],
   );
@@ -63,7 +57,7 @@ export function BestSellersCarousel() {
         id="destacados-title"
         eyebrow="Selección de temporada"
         title="Lo que más rota en cabina"
-        description="La lectura de nuestros centros de distribución: las líneas que salones, barberías y estudios de uñas vuelven a pedir mes con mes."
+        description="Calculado con las ventas reales de nuestro punto de venta: las referencias que salones y barberías vuelven a pedir."
         action={
           <ButtonLink to="/catalogo" variant="outline" size="sm">
             Ver todo el catálogo

@@ -1,7 +1,8 @@
 import { IMG } from '../lib/images';
 import type { Category } from '../types/category';
+import { getProductsByCategory } from './products';
 
-export const categories: Category[] = [
+const categoryDefinitions: Omit<Category, 'productCount'>[] = [
   {
     slug: 'tintes',
     name: 'Tintes y Color',
@@ -11,7 +12,6 @@ export const categories: Category[] = [
     icon: 'Palette',
     imageId: IMG.catTintes,
     highlights: ['Permanente', 'Decoloración', 'Matizadores', 'Oxidantes'],
-    skuCount: 940,
   },
   {
     slug: 'capilar',
@@ -22,7 +22,6 @@ export const categories: Category[] = [
     icon: 'Droplets',
     imageId: IMG.catCapilar,
     highlights: ['Litro cabina', 'Keratina', 'Botox capilar', 'Anticaída'],
-    skuCount: 810,
   },
   {
     slug: 'barberia',
@@ -33,7 +32,6 @@ export const categories: Category[] = [
     icon: 'Scissors',
     imageId: IMG.catBarberia,
     highlights: ['Máquinas', 'Navajas', 'Barba', 'Mobiliario'],
-    skuCount: 620,
   },
   {
     slug: 'unas',
@@ -44,7 +42,6 @@ export const categories: Category[] = [
     icon: 'Sparkles',
     imageId: IMG.catUnas,
     highlights: ['Gel semipermanente', 'Acrílico', 'Lámparas', 'Consumibles'],
-    skuCount: 1120,
   },
   {
     slug: 'accesorios',
@@ -55,7 +52,6 @@ export const categories: Category[] = [
     icon: 'ShoppingBag',
     imageId: IMG.catAccesorios,
     highlights: ['Herramienta', 'Desechables', 'Mobiliario', 'Textiles'],
-    skuCount: 680,
   },
   {
     slug: 'cosmeticos',
@@ -66,9 +62,23 @@ export const categories: Category[] = [
     icon: 'Sparkle',
     imageId: IMG.catCosmeticos,
     highlights: ['Rostro', 'Ojos', 'Labios', 'Facial'],
-    skuCount: 330,
+  },
+  {
+    slug: 'otros',
+    name: 'Otros productos',
+    tagline: 'Complementos de las líneas que distribuimos',
+    description:
+      'Productos de nuestras marcas que no pertenecen a una especialidad de cabina: cuidado de pies, depilación, desinfección y kits.',
+    icon: 'Package',
+    imageId: IMG.warehouseLineup,
+    highlights: [],
   },
 ];
+
+/** Only categories with published products, counted from the POS catalog. */
+export const categories: Category[] = categoryDefinitions
+  .map((category) => ({ ...category, productCount: getProductsByCategory(category.slug).length }))
+  .filter((category) => category.productCount > 0);
 
 export function getCategoryBySlug(slug: string) {
   return categories.find((category) => category.slug === slug);

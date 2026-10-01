@@ -33,8 +33,8 @@ export function ProductGrid({
           </span>
           <p className="font-display text-display-sm text-ink-900 font-medium">{emptyMessage}</p>
           <p className="text-ink-500 max-w-md text-sm leading-relaxed">
-            Prueba con menos filtros o busca por marca. Manejamos más de 4 500 claves en piso y
-            conseguimos sobre pedido lo que no aparece aquí.
+            Prueba con menos filtros o busca por marca. Si necesitas una clave que no aparece aquí,
+            tu asesor la cotiza sobre pedido.
           </p>
         </div>
       </Reveal>
