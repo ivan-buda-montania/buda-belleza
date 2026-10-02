@@ -3,6 +3,7 @@ import { Eyebrow } from '../components/ui/Eyebrow';
 import { Reveal } from '../components/ui/Reveal';
 import { Section } from '../components/ui/Section';
 import { cn } from '../lib/cn';
+import { socialLinkHref } from '../lib/whatsapp';
 import type { SocialLink, SocialPlatform } from '../types/social';
 
 interface SocialIconsBarProps {
@@ -29,7 +30,7 @@ export function SocialIconsBar({ socialLinks, size = 'lg', title }: SocialIconsB
           return (
             <li key={link.id}>
               <a
-                href={link.href}
+                href={socialLinkHref(link)}
                 target="_blank"
                 rel="noreferrer noopener"
                 aria-label={linkAction[link.id]}
@@ -65,7 +66,7 @@ export function SocialIconsBar({ socialLinks, size = 'lg', title }: SocialIconsB
           return (
             <Reveal as="li" key={link.id} delay={index * 80} y={16}>
               <a
-                href={link.href}
+                href={socialLinkHref(link)}
                 target="_blank"
                 rel="noreferrer noopener"
                 aria-label={`${linkAction[link.id]}, ${link.handle}`}

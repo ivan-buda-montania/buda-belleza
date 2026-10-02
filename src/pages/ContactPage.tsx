@@ -20,9 +20,10 @@ import { SectionHeading } from '../components/ui/SectionHeading';
 import { branches } from '../data/institutional';
 import { socialLinks } from '../data/social-links';
 import { cn } from '../lib/cn';
+import { buildWhatsappHref, whatsappMessages } from '../lib/whatsapp';
 
 const whatsapp = socialLinks.find((link) => link.id === 'whatsapp');
-const whatsappHref = whatsapp?.href ?? 'https://wa.me/525543218800';
+const whatsappHref = buildWhatsappHref(whatsappMessages.contact);
 const whatsappHandle = whatsapp?.handle ?? '+52 55 4321 8800';
 
 const motivos = ['Cotización', 'Alta mayorista', 'Facturación', 'Garantías', 'Otro'];

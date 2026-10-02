@@ -29,8 +29,8 @@ export function NotFoundPage() {
             </h1>
             <p className="text-lead text-ink-600 max-w-xl">
               Es probable que el enlace haya cambiado al reorganizar el catálogo o que la clave que
-              buscabas ya se haya dado de baja. Tu cotización sigue guardada: desde aquí puedes
-              retomarla en el punto donde la dejaste.
+              buscabas ya se haya dado de baja. Tu carrito sigue guardado: desde aquí puedes
+              retomarlo en el punto donde la dejaste.
             </p>
             <div className="mt-3 flex w-full flex-col items-center gap-3 sm:w-auto sm:flex-row">
               <ButtonLink to="/" variant="primary" size="lg" className="w-full sm:w-auto">

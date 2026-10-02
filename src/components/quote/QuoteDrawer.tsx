@@ -1,30 +1,17 @@
-import { FileText, Minus, Plus, Trash2, X } from 'lucide-react';
+import { Minus, Plus, ShoppingCart, Trash2, X } from 'lucide-react';
 import { useEffect, useId, useMemo, useRef, useState } from 'react';
 import { QUOTE_MINIMUM_MXN, useQuote, type QuoteLine } from '../../context/quote-store';
 import { getBrandById } from '../../data/brands';
 import { getCategoryBySlug } from '../../data/categories';
-import { socialLinks } from '../../data/social-links';
 import { cn } from '../../lib/cn';
 import { formatInteger, formatPrice } from '../../lib/format';
+import { buildWhatsappHref, cartWhatsappMessage } from '../../lib/whatsapp';
 import { categoryIconMap } from '../icons/categoryIconMap';
 import { WhatsAppIcon } from '../icons/SocialIcons';
 import { ButtonAnchor, ButtonLink } from '../ui/Button';
 
 const FOCUSABLE =
   'a[href], button:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])';
-
-const whatsappBase =
-  socialLinks.find((link) => link.id === 'whatsapp')?.href ?? 'https://wa.me/525543218800';
-
-function buildWhatsappHref(lines: QuoteLine[]) {
-  const body = [
-    'Hola Buda Belleza, quiero cotizar el siguiente pedido mayorista:',
-    '',
-    ...lines.map((line) => `• ${line.product.sku} × ${line.quantity} pzas — ${line.product.name}`),
-  ].join('\n');
-
-  return `${whatsappBase}?text=${encodeURIComponent(body)}`;
-}
 
 interface QuantityStepperProps {
   line: QuoteLine;
@@ -154,7 +141,7 @@ export function QuoteDrawer() {
     };
   }, [isOpen, close]);
 
-  const whatsappHref = useMemo(() => buildWhatsappHref(lines), [lines]);
+  const whatsappHref = useMemo(() => buildWhatsappHref(cartWhatsappMessage(lines)), [lines]);
 
   return (
     <>
@@ -183,7 +170,7 @@ export function QuoteDrawer() {
         <header className="border-line flex items-start justify-between gap-4 border-b px-5 py-5 sm:px-6">
           <div className="min-w-0">
             <h2 id={titleId} className="font-display text-display-sm text-ink-900 font-medium">
-              Tu cotización
+              Tu Carrito
             </h2>
             <p className="text-ink-500 mt-1 text-xs">
               {itemCount === 0
@@ -195,7 +182,7 @@ export function QuoteDrawer() {
             ref={closeButtonRef}
             type="button"
             onClick={close}
-            aria-label="Cerrar la cotización"
+            aria-label="Cerrar el carrito"
             className="text-ink-500 hover:bg-ink-100 hover:text-ink-900 -mr-2 flex h-11 w-11 shrink-0 items-center justify-center rounded-full transition-colors duration-250 ease-[var(--ease-out-quint)]"
           >
             <X className="h-5 w-5" aria-hidden="true" />
@@ -205,10 +192,10 @@ export function QuoteDrawer() {
         {lines.length === 0 ? (
           <div className="flex flex-1 flex-col items-center justify-center gap-4 px-8 text-center">
             <span className="bg-brand-50 text-brand-600 flex h-16 w-16 items-center justify-center rounded-full">
-              <FileText className="h-7 w-7" aria-hidden="true" />
+              <ShoppingCart className="h-7 w-7" aria-hidden="true" />
             </span>
             <p className="font-display text-display-sm text-ink-900 font-medium">
-              Tu cotización está vacía
+              Tu carrito está vacío
             </p>
             <p className="text-ink-500 max-w-xs text-sm leading-relaxed">
               Agrega productos desde el catálogo y arma tu pedido. Te respondemos con precios en
@@ -270,7 +257,7 @@ export function QuoteDrawer() {
                             remove(product.id);
                             focusClose();
                           }}
-                          aria-label={`Quitar ${product.name} de la cotización`}
+                          aria-label={`Quitar ${product.name} del carrito`}
                           className="text-ink-400 hover:bg-danger-100 hover:text-danger-700 -mr-1 flex h-11 w-10 items-center justify-center rounded-full transition-colors duration-250 ease-[var(--ease-out-quint)]"
                         >
                           <Trash2 className="h-4 w-4" aria-hidden="true" />
@@ -300,7 +287,7 @@ export function QuoteDrawer() {
               className="mt-4 w-full px-4!"
             >
               <WhatsAppIcon className="h-5 w-5" aria-hidden="true" />
-              Enviar cotización por WhatsApp
+              Enviar pedido por WhatsApp
             </ButtonAnchor>
 
             <button
@@ -311,7 +298,7 @@ export function QuoteDrawer() {
               }}
               className="text-ink-400 hover:text-danger-700 mx-auto mt-2 flex h-11 items-center justify-center px-4 text-xs font-semibold transition-colors duration-250 ease-[var(--ease-out-quint)]"
             >
-              Vaciar cotización
+              Vaciar carrito
             </button>
           </footer>
         )}

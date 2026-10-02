@@ -1,12 +1,12 @@
 import { ArrowUp } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { WhatsAppIcon } from '../icons/SocialIcons';
-import { socialLinks } from '../../data/social-links';
 import { cn } from '../../lib/cn';
+import { buildWhatsappHref, whatsappMessages } from '../../lib/whatsapp';
 
 const SHOW_TOP_AFTER = 600;
 
-const whatsapp = socialLinks.find((link) => link.id === 'whatsapp');
+const whatsappHref = buildWhatsappHref(whatsappMessages.general);
 
 const tooltipClass =
   'bg-ink-900 pointer-events-none absolute right-full mr-3 hidden translate-x-1 rounded-full px-3 py-1.5 text-xs font-medium whitespace-nowrap text-white opacity-0 shadow-[var(--shadow-e2)] transition-[opacity,transform,translate,scale,rotate] duration-250 ease-[var(--ease-out-quint)] group-hover:translate-x-0 group-hover:opacity-100 group-focus-visible:translate-x-0 group-focus-visible:opacity-100 sm:block';
@@ -48,20 +48,18 @@ export function FloatingActions() {
         <ArrowUp className="h-5 w-5" aria-hidden="true" />
       </button>
 
-      {whatsapp && (
-        <a
-          href={whatsapp.href}
-          target="_blank"
-          rel="noreferrer"
-          aria-label="Escríbenos por WhatsApp"
-          className="group bg-brand-600 hover:bg-brand-700 pointer-events-auto relative grid h-12 w-12 place-items-center rounded-full text-white shadow-[var(--shadow-brand)] transition-[background-color,transform,translate,scale,rotate] duration-250 ease-[var(--ease-out-quint)] hover:-translate-y-0.5"
-        >
-          <span className={tooltipClass} aria-hidden="true">
-            Cotiza por WhatsApp
-          </span>
-          <WhatsAppIcon className="h-6 w-6" aria-hidden="true" />
-        </a>
-      )}
+      <a
+        href={whatsappHref}
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Escríbenos por WhatsApp"
+        className="group bg-brand-600 hover:bg-brand-700 pointer-events-auto relative grid h-12 w-12 place-items-center rounded-full text-white shadow-[var(--shadow-brand)] transition-[background-color,transform,translate,scale,rotate] duration-250 ease-[var(--ease-out-quint)] hover:-translate-y-0.5"
+      >
+        <span className={tooltipClass} aria-hidden="true">
+          Escríbenos por WhatsApp
+        </span>
+        <WhatsAppIcon className="h-6 w-6" aria-hidden="true" />
+      </a>
     </div>
   );
 }

@@ -13,8 +13,8 @@ import { SmartImage } from '../components/ui/SmartImage';
 import { QUOTE_MINIMUM_MXN } from '../context/quote-store';
 import { categories, getCategoryBySlug } from '../data/categories';
 import { getProductsByCategory } from '../data/products';
-import { socialLinks } from '../data/social-links';
 import { formatInteger, formatPrice, formatReferences } from '../lib/format';
+import { buildWhatsappHref, categoryWhatsappMessage } from '../lib/whatsapp';
 import type { Category } from '../types/category';
 import type { Product } from '../types/product';
 
@@ -26,9 +26,6 @@ const SORT_OPTIONS: { value: SortKey; label: string }[] = [
   { value: 'novedades', label: 'Novedades' },
   { value: 'nombre', label: 'Nombre A-Z' },
 ];
-
-const whatsappBase =
-  socialLinks.find((link) => link.id === 'whatsapp')?.href ?? 'https://wa.me/525543218800';
 
 const SERVICE_FACTS = [
   'Pedidos confirmados antes de las 14:00 salen el mismo día desde nuestro centro de distribución.',
@@ -150,9 +147,7 @@ export function CategoryPage() {
   if (!category) return <CategoryNotFound />;
 
   const others = categories.filter((entry) => entry.slug !== category.slug);
-  const whatsappHref = `${whatsappBase}?text=${encodeURIComponent(
-    `Hola Buda Belleza, quiero asesoría sobre la línea de ${category.name} para mi negocio.`,
-  )}`;
+  const whatsappHref = buildWhatsappHref(categoryWhatsappMessage(category));
 
   return (
     <div className="flex flex-col gap-6 pb-12 sm:gap-10">

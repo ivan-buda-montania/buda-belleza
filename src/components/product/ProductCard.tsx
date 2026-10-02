@@ -77,9 +77,7 @@ export function ProductCard({ product, className }: ProductCardProps) {
           type="button"
           onClick={() => add(product)}
           aria-label={
-            justAdded
-              ? `${product.name} añadido a la cotización`
-              : `Añadir ${product.name} a la cotización`
+            justAdded ? `${product.name} añadido al carrito` : `Añadir ${product.name} al carrito`
           }
           className={cn(
             'bg-surface/90 ring-ink-900/[0.06] absolute right-3 bottom-3 z-10 flex h-11 w-11',
@@ -124,9 +122,7 @@ export function ProductCard({ product, className }: ProductCardProps) {
             variant={justAdded ? 'subtle' : 'primary'}
             onClick={() => add(product)}
             aria-label={
-              justAdded
-                ? `${product.name} añadido a la cotización`
-                : `Añadir ${product.name} a la cotización`
+              justAdded ? `${product.name} añadido al carrito` : `Añadir ${product.name} al carrito`
             }
             className={cn(
               'relative z-10 shrink-0 @max-[11rem]:w-full',

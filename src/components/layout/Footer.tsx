@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { socialIconMap } from '../icons/socialIconMap';
 import { WhatsAppIcon } from '../icons/SocialIcons';
 import { branches, certifications, paymentMethods } from '../../data/institutional';
+import { buildWhatsappHref, socialLinkHref, whatsappMessages } from '../../lib/whatsapp';
 import { ButtonAnchor, ButtonLink } from '../ui/Button';
 import { Eyebrow } from '../ui/Eyebrow';
 import { Logotype } from './Logotype';
@@ -56,7 +57,7 @@ export function Footer({ categories, socialLinks }: FooterProps) {
               </ButtonLink>
               {whatsapp && (
                 <ButtonAnchor
-                  href={whatsapp.href}
+                  href={buildWhatsappHref(whatsappMessages.advisor)}
                   target="_blank"
                   rel="noreferrer"
                   variant="outlineOnDark"
@@ -162,7 +163,7 @@ export function Footer({ categories, socialLinks }: FooterProps) {
             return (
               <li key={link.id}>
                 <a
-                  href={link.href}
+                  href={socialLinkHref(link)}
                   target="_blank"
                   rel="noreferrer"
                   className="group text-ink-200 flex items-center gap-2.5 rounded-full border border-white/12 py-1.5 pr-4 pl-1.5 text-sm transition-colors duration-200 hover:border-white/40 hover:text-white"

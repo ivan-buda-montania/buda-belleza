@@ -9,6 +9,7 @@ import { socialLinks } from '../../data/social-links';
 import { cn } from '../../lib/cn';
 import { formatReferences } from '../../lib/format';
 import { IMG } from '../../lib/images';
+import { buildWhatsappHref, socialLinkHref, whatsappMessages } from '../../lib/whatsapp';
 import { ButtonAnchor, ButtonLink } from '../ui/Button';
 import { Eyebrow } from '../ui/Eyebrow';
 import { SmartImage } from '../ui/SmartImage';
@@ -552,7 +553,7 @@ export function Navbar() {
               </ButtonLink>
               {whatsapp && (
                 <ButtonAnchor
-                  href={whatsapp.href}
+                  href={buildWhatsappHref(whatsappMessages.general)}
                   target="_blank"
                   rel="noreferrer"
                   variant="outline"
@@ -570,7 +571,7 @@ export function Navbar() {
                 return (
                   <li key={link.id}>
                     <a
-                      href={link.href}
+                      href={socialLinkHref(link)}
                       target="_blank"
                       rel="noreferrer"
                       aria-label={`${link.label} de Buda Belleza`}

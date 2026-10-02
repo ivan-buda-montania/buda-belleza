@@ -30,9 +30,9 @@ import { certifications, faqs, processSteps } from '../data/institutional';
 import { socialLinks } from '../data/social-links';
 import { cn } from '../lib/cn';
 import { formatPrice } from '../lib/format';
+import { buildWhatsappHref, whatsappMessages } from '../lib/whatsapp';
 
 const whatsapp = socialLinks.find((link) => link.id === 'whatsapp');
-const whatsappHref = whatsapp?.href ?? 'https://wa.me/525543218800';
 const whatsappHandle = whatsapp?.handle ?? '+52 55 4321 8800';
 
 const heroBenefits = [
@@ -526,7 +526,7 @@ export function ClientsPage() {
                 cuenta se convierte en definitiva sin volver a hacer papeleo.
               </p>
               <ButtonAnchor
-                href={whatsappHref}
+                href={buildWhatsappHref(whatsappMessages.validationAccount)}
                 target="_blank"
                 rel="noreferrer noopener"
                 variant="outline"
@@ -656,7 +656,7 @@ export function ClientsPage() {
                 </ol>
 
                 <ButtonAnchor
-                  href={whatsappHref}
+                  href={buildWhatsappHref(whatsappMessages.signup)}
                   target="_blank"
                   rel="noreferrer noopener"
                   variant="gold"

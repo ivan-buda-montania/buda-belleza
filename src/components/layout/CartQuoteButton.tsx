@@ -1,4 +1,4 @@
-import { FileText } from 'lucide-react';
+import { ShoppingCart } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { useQuote } from '../../context/quote-store';
 import { cn } from '../../lib/cn';
@@ -22,8 +22,8 @@ export function CartQuoteButton({ className }: CartQuoteButtonProps) {
 
   const label =
     itemCount === 0
-      ? 'Abrir cotización, sin productos'
-      : `Abrir cotización, ${itemCount} ${itemCount === 1 ? 'producto' : 'productos'}`;
+      ? 'Abrir el carrito, sin productos'
+      : `Abrir el carrito, ${itemCount} ${itemCount === 1 ? 'producto' : 'productos'}`;
 
   return (
     <button
@@ -35,8 +35,8 @@ export function CartQuoteButton({ className }: CartQuoteButtonProps) {
         className,
       )}
     >
-      <FileText className="h-[1.15rem] w-[1.15rem] shrink-0" aria-hidden="true" />
-      <span className="hidden lg:inline">Cotización</span>
+      <ShoppingCart className="h-[1.15rem] w-[1.15rem] shrink-0" aria-hidden="true" />
+      <span className="hidden lg:inline">Tu Carrito</span>
       {itemCount > 0 && (
         <span
           aria-hidden="true"
